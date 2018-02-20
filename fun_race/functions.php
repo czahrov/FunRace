@@ -1,18 +1,23 @@
 <?php
 add_theme_support('post-thumbnails');
 
+define( 'DMODE', isset( $_COOKIE[ 'sprytne' ] )?( true ):( false ) );
+
 if( !is_admin() ){
-	wp_enqueue_style( "fonts", get_template_directory_uri() . "/css/fonts.css", array() );
-	wp_enqueue_style( "font-awesome", get_template_directory_uri() . "/css/font-awesome.min.css", array() );
-	wp_enqueue_style( "facepalm", get_template_directory_uri() . "/css/facepalm.css", array() );
-	wp_enqueue_style( "style", get_template_directory_uri() . "/style.css", array() );
+	$infix = DMODE?( ".min" ):( "" );
+	$buster = DMODE?( time() ):( false );
 	
-    wp_enqueue_script( "googleapis", "https://maps.googleapis.com/maps/api/js?key=AIzaSyC7wAbhUOIL7TmcbI5B441KDINDoQW2H4I&callback=initMap" );
-	wp_enqueue_script( "jQ", get_template_directory_uri() . "/js/jquery.js" );
-	wp_enqueue_script( "classie", get_template_directory_uri() . "/js/classie.js" );
-    wp_enqueue_script( "main", get_template_directory_uri() . "/js/main.js" );
-	wp_enqueue_script( "partnerzy", get_template_directory_uri() . "/js/partnerzy.js" );
-    wp_enqueue_script( "map", get_template_directory_uri() . "/js/map.js" );
+	wp_enqueue_style( "fonts", get_template_directory_uri() . "/css/fonts{$infix}.css", array(), $buster );
+	wp_enqueue_style( "font-awesome", get_template_directory_uri() . "/css/font-awesome.min.css", array() );
+	wp_enqueue_style( "facepalm", get_template_directory_uri() . "/css/facepalm{$infix}.css", array(), $buster );
+	wp_enqueue_style( "style", get_template_directory_uri() . "/style{$infix}.css", array(), $buster );
+	
+	wp_enqueue_script( "jQ", get_template_directory_uri() . "/js/jquery.js", array(), false, true );
+    wp_enqueue_script( "map", get_template_directory_uri() . "/js/map{$infix}.js", array(), $buster, true );
+    wp_enqueue_script( "googleapis", "https://maps.googleapis.com/maps/api/js?key=AIzaSyC7wAbhUOIL7TmcbI5B441KDINDoQW2H4I&callback=initMap", array(), false, true );
+	wp_enqueue_script( "classie", get_template_directory_uri() . "/js/classie{$infix}.js", array(), $buster, true );
+    wp_enqueue_script( "main", get_template_directory_uri() . "/js/main{$infix}.js", array(), $buster, true );
+	wp_enqueue_script( "partnerzy", get_template_directory_uri() . "/js/partnerzy{$infix}.js", array(), $buster, true );
     
 }
 
