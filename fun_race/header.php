@@ -1,3 +1,13 @@
+<?php
+	session_start();
+	
+	if( !checkAccess() ){
+		include 'wbudowie.php';
+		exit;
+		
+	}
+	
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>

@@ -16,13 +16,10 @@ if( !is_admin() ){
     wp_enqueue_script( "map", get_template_directory_uri() . "/js/map{$infix}.js", array(), $buster, true );
     wp_enqueue_script( "googleapis", "https://maps.googleapis.com/maps/api/js?key=AIzaSyC7wAbhUOIL7TmcbI5B441KDINDoQW2H4I&callback=initMap", array(), false, true );
 	wp_enqueue_script( "classie", get_template_directory_uri() . "/js/classie{$infix}.js", array(), $buster, true );
-    wp_enqueue_script( "main", get_template_directory_uri() . "/js/main{$infix}.js", array(), $buster, true );
 	wp_enqueue_script( "partnerzy", get_template_directory_uri() . "/js/partnerzy{$infix}.js", array(), $buster, true );
+    wp_enqueue_script( "main", get_template_directory_uri() . "/js/main{$infix}.js", array(), $buster, true );
     
 }
-
-
-
 
 // Breadcrumbs
 function custom_breadcrumbs() {
@@ -255,11 +252,17 @@ function custom_breadcrumbs() {
        
 }
 
-
-
-
-?>
-
-
-
+// dostęp do witryny
+function checkAccess(){
+	if( isset( $_GET[ 'sprytne' ] ) or isset( $_COOKIE[ 'sprytne' ] ) or isset( $_SESSION[ 'access' ] ) ){
+		$_SESSION[ 'access' ] = true;
+		return true;
+		
+	}
+	else{
+		return false;
+		
+	}
+	
+}
 
