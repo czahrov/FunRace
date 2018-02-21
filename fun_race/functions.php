@@ -4,7 +4,7 @@ add_theme_support('post-thumbnails');
 define( 'DMODE', isset( $_COOKIE[ 'sprytne' ] )?( true ):( false ) );
 
 if( !is_admin() ){
-	$infix = DMODE?( ".min" ):( "" );
+	$infix = DMODE?( "" ):( ".min" );
 	$buster = DMODE?( time() ):( false );
 	
 	wp_enqueue_style( "fonts", get_template_directory_uri() . "/css/fonts{$infix}.css", array(), $buster );
