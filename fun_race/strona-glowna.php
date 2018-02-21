@@ -8,59 +8,68 @@
 
 <body>
  <header>
-    <?php get_template_part("template/menu"); ?>
+	<?php get_template_part("template/menu"); ?>
+	<?php
+		$pages = get_pages( array(
+			'parent' => 449,
+			'sort_order' => 'ASC',
+			'sort_column' => 'menu_order, post_title',
+			'number' => 3,
+			
+		) );
 		
+	?>
 	<div class="poster flex flex-items-center" id="slider-main">
-
-          
-           <div class="slide flex flex-column flex-justify-center show">
-                <div class="cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/baner_1_lato_funrace.jpg);"></div>
-                <div class="content">
-                    <h2>Wyjazdy narciarskie do <span class="block">Włoch i Austrii</span></h2>
-                    <a href="wyjazdy-alpy.html" class="flex flex-items-center flex-justify-center">sprawdź szczegóły</a>
-                </div>
-	        </div>
-	          <div class="slide flex flex-column flex-justify-center">
-                <div class="cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/szkolenia_sportowe.jpg);"></div>
-                <div class="content">
-                    <h2>Szkolenia sportowe <span class="block">Race</span></h2>
-                    <a href="szkolenia-ind-grup.html" class="flex flex-items-center flex-justify-center">sprawdź szczegóły</a>
-                </div>
-	        </div>
-           
-            <div class="slide flex flex-column flex-justify-center">
-                <div class="cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/sitn_pzn2.jpg);"></div>
-                <div class="content">
-                    <h2>Kursy instruktorskie <span class="block">SITN PZN</span></h2>
-                    <a href="kursy-instruktorskie.html" class="flex flex-items-center flex-justify-center">sprawdź szczegóły</a>
-                </div>
-	        </div>
-
-		
-		<div class="labels flex flex-items-end">
-			<div class="label base3 flex flex-items-center active">
-				<p>Wyjazdy narciarskie do<span class="block">Włoch i Austrii</span></p>
-				<div class="sticker" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/baner_1_lato_funrace.jpg)"></div>
-			</div>
-			<div class="label base3 flex flex-items-center">
-				<p>Szkolenia sportowe<span class="block">Race</span></p>
-				<div class="sticker" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/szkolenia_sportowe.jpg)"></div>
-			</div>
-			<div class="label base3 flex flex-items-center">
-				<p>Kursy instruktorskie<span class="block">Sitn pzn</span></p>
-				<div class="sticker" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/sitn_pzn2.jpg)"></div>
+<?php foreach( $pages as $num => $item ): ?>
+		<div class="slide flex flex-column flex-justify-center <?php echo $num === 0?( 'show' ):( '' ); ?>">
+			<div class="cover" style="background-image: url(<?php echo get_the_post_thumbnail_url( $item->ID, 'full' ); ?>);"></div>
+			<div class="content">
+				<?php
+					printf(
+						"<h2>%s<span class='block'>%s</span></h2>",
+						get_post_meta( $item->ID, 'title', true ),
+						get_post_meta( $item->ID, 'subtitle', true )
+						
+					);
+				?>
+				<a href="<?php echo get_the_permalink( get_post_meta( $item->ID, 'link_url', true ) ); ?>" class="flex flex-items-center flex-justify-center">
+					<?php
+						$title = get_post_meta( $item->ID, 'link_title', true );
+						if( empty( $title ) ) $title = 'Sprawdź szczegóły';
+						echo $title;
+					?>
+				</a>
+				
 			</div>
 		</div>
-       
-        <div class="box prev flex flex-items-center flex-justify-center"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></div>
-        <div class="box next right flex flex-items-center flex-justify-center"><span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></span></div>
+		<?php endforeach; ?>
+		
+		<div class="labels flex flex-items-end">
+			<?php foreach( $pages as $num => $item ): ?>
+			<div class="label base3 flex flex-items-center <?php echo $num === 0?( 'active' ):( '' ); ?>">
+				<?php
+					printf(
+						"<p>%s<span class='block'>%s</span></p>",
+						get_post_meta( $item->ID, 'title', true ),
+						get_post_meta( $item->ID, 'subtitle', true )
+						
+					);
+				?>
+				<div class="sticker" style="background-image: url(<?php echo get_the_post_thumbnail_url( $item->ID, 'full' ); ?>)"></div>
+			</div>
+			<?php endforeach; ?>
+			
+		</div>
+		
+		<div class="box prev flex flex-items-center flex-justify-center"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></div>
+		<div class="box next right flex flex-items-center flex-justify-center"><span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></span></div>
 		
 	</div>
  </header>
  
  
-    <!-- BREADCRUMBS -->
-    <?php get_template_part('template/breadcrumbs'); ?>
+	<!-- BREADCRUMBS -->
+	<?php get_template_part('template/breadcrumbs'); ?>
 
 	<div class="intro grid">
 	
@@ -258,12 +267,12 @@
 					<div class="cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/aktualnosci/1.jpg);"></div>
 					<a href="#" class="filtr"></a>
 					<div class="label">
-					    <div class="flex">
-					        <div class="date">15 grudnia 2017</div>
-					        <div class="tag">aktualności</div>
-					    </div>
-					    <div class="text">Wyjazd na Słowację, ponad 20 zdjć w galerii</div>
-                        <a href="#">czytaj dalej<span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></span></a>
+						<div class="flex">
+							<div class="date">15 grudnia 2017</div>
+							<div class="tag">aktualności</div>
+						</div>
+						<div class="text">Wyjazd na Słowację, ponad 20 zdjć w galerii</div>
+						<a href="#">czytaj dalej<span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></span></a>
 					</div>
 				</div>
 			</div>
@@ -272,12 +281,12 @@
 					<div class="cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/aktualnosci/2.jpg);"></div>
 					<a href="#" class="filtr"></a>
 					<div class="label">
-					    <div class="flex">
-					        <div class="date">21 grudnia 2017</div>
-					        <div class="tag">aktualności</div>
-					    </div>
-					    <div class="text">Zobacz jak nasi instruktorzy poradzili sobie w Austrii</div>
-                        <a href="#">czytaj dalej<span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></span></a>
+						<div class="flex">
+							<div class="date">21 grudnia 2017</div>
+							<div class="tag">aktualności</div>
+						</div>
+						<div class="text">Zobacz jak nasi instruktorzy poradzili sobie w Austrii</div>
+						<a href="#">czytaj dalej<span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></span></a>
 					</div>
 				</div>
 			</div>
@@ -286,12 +295,12 @@
 					<div class="cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/aktualnosci/3.jpg);"></div>
 					<a href="#" class="filtr"></a>
 					<div class="label">
-					    <div class="flex">
-					        <div class="date">21 grudnia 2017</div>
-					        <div class="tag">aktualności</div>
-					    </div>
-					    <div class="text">Rozpoczęliśmy sezon oraz uaktualniliśmy ofertę</div>
-                        <a href="#">czytaj dalej<span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></span></a>
+						<div class="flex">
+							<div class="date">21 grudnia 2017</div>
+							<div class="tag">aktualności</div>
+						</div>
+						<div class="text">Rozpoczęliśmy sezon oraz uaktualniliśmy ofertę</div>
+						<a href="#">czytaj dalej<span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></span></a>
 					</div>
 				</div>
 			</div>
@@ -300,12 +309,12 @@
 					<div class="cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/aktualnosci/4.jpg);"></div>
 					<a href="#" class="filtr"></a>
 					<div class="label">
-					    <div class="flex">
-					        <div class="date">12 stycznia 2017</div>
-					        <div class="tag">aktualności</div>
-					    </div>
-					    <div class="text">Lorem ipsum se amet dolor</div>
-                        <a href="#">czytaj dalej<span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></span></a>
+						<div class="flex">
+							<div class="date">12 stycznia 2017</div>
+							<div class="tag">aktualności</div>
+						</div>
+						<div class="text">Lorem ipsum se amet dolor</div>
+						<a href="#">czytaj dalej<span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></span></a>
 					</div>
 				</div>
 			</div>

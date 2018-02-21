@@ -9,45 +9,56 @@
 <body class="lato">
  <header>
     <?php get_template_part("template/menu-lato"); ?>
+	<?php
+		$pages = get_pages( array(
+			'parent' => 437,
+			'sort_order' => 'ASC',
+			'sort_column' => 'menu_order, post_title',
+			'number' => 3,
+			
+		) );
 		
+	?>
 	<div class="poster flex flex-items-center" id="slider-main">
-           <div class="slide flex flex-column flex-justify-center show">
-                <div class="cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/lato/kajak.jpg);"></div>
-                <div class="content">
-                    <h2>Spływy kajakowe <span class="block">na Dunajcu</span></h2>
-                    <a href="#" class="flex flex-items-center flex-justify-center">sprawdź szczegóły</a>
-                </div>
-	        </div>
-	        <div class="slide flex flex-column flex-justify-center">
-                <div class="cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/lato/park-linowy.jpg);"></div>
-                <div class="content">
-                    <h2>Park <span class="block">Linowy</span></h2>
-                    <a href="#" class="flex flex-items-center flex-justify-center">sprawdź szczegóły</a>
-                </div>
-	        </div>
-           
-            <div class="slide flex flex-column flex-justify-center">
-                <div class="cover" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/lato/rower.jpg);"></div>
-                <div class="content">
-                    <h2><span class="block">Rowery</span></h2>
-                    <a href="#" class="flex flex-items-center flex-justify-center">sprawdź szczegóły</a>
-                </div>
-	        </div>
-
+		<?php foreach( $pages as $num => $item ): ?>
+		<div class="slide flex flex-column flex-justify-center <?php echo $num === 0?( 'show' ):( '' ); ?>">
+			<div class="cover" style="background-image: url(<?php echo get_the_post_thumbnail_url( $item->ID, 'full' ); ?>);"></div>
+			<div class="content">
+				<?php
+					printf(
+						"<h2>%s<span class='block'>%s</span></h2>",
+						get_post_meta( $item->ID, 'title', true ),
+						get_post_meta( $item->ID, 'subtitle', true )
+						
+					);
+				?>
+				<a href="<?php echo get_the_permalink( get_post_meta( $item->ID, 'link_url', true ) ); ?>" class="flex flex-items-center flex-justify-center">
+					<?php
+						$title = get_post_meta( $item->ID, 'link_title', true );
+						if( empty( $title ) ) $title = 'Sprawdź szczegóły';
+						echo $title;
+					?>
+				</a>
+				
+			</div>
+		</div>
+		<?php endforeach; ?>
 		
 		<div class="labels flex flex-items-end">
-			<div class="label base3 flex flex-items-center active">
-				<p>Spływy kajakowe<span class="block">Na Dunajcu</span></p>
-				<div class="sticker" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/lato/kajak.jpg)"></div>
+			<?php foreach( $pages as $num => $item ): ?>
+			<div class="label base3 flex flex-items-center <?php echo $num === 0?( 'active' ):( '' ); ?>">
+				<?php
+					printf(
+						"<p>%s<span class='block'>%s</span></p>",
+						get_post_meta( $item->ID, 'title', true ),
+						get_post_meta( $item->ID, 'subtitle', true )
+						
+					);
+				?>
+				<div class="sticker" style="background-image: url(<?php echo get_the_post_thumbnail_url( $item->ID, 'full' ); ?>)"></div>
 			</div>
-			<div class="label base3 flex flex-items-center">
-				<p>Park<span class="block">Linowy</span></p>
-				<div class="sticker" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/lato/park-linowy.jpg)"></div>
-			</div>
-			<div class="label base3 flex flex-items-center">
-				<p><span class="block">Rowery</span></p>
-				<div class="sticker" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/lato/rower.jpg)"></div>
-			</div>
+			<?php endforeach; ?>
+			
 		</div>
 
         <div class="box prev flex flex-items-center flex-justify-center"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></div>

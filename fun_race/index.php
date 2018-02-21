@@ -19,5 +19,6 @@
         </div>
         <p>wszystkie prawa zastrzeżone FunRace.pl 2017</p>
     </header>
+	<?php wp_footer(); ?>
 </body>
 </html>

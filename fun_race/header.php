@@ -9,7 +9,7 @@
 	
 ?>
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl_PL">
 <head>
 	<meta charset="utf-8">
   	<title><?php wp_title("",true); ?> | <?php bloginfo('name'); ?></title>
