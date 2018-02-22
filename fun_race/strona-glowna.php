@@ -44,26 +44,6 @@
 		</div>
 		<?php endforeach; ?>
 		
-		<div class="labels flex flex-items-end">
-			<?php foreach( $pages as $num => $item ): ?>
-			<div class="label base3 flex flex-items-center <?php echo $num === 0?( 'active' ):( '' ); ?>">
-				<?php
-					printf(
-						"<p>%s<span class='block'>%s</span></p>",
-						get_post_meta( $item->ID, 'title', true ),
-						get_post_meta( $item->ID, 'subtitle', true )
-						
-					);
-				?>
-				<div class="sticker" style="background-image: url(<?php echo get_the_post_thumbnail_url( $item->ID, 'full' ); ?>)"></div>
-			</div>
-			<?php endforeach; ?>
-			
-		</div>
-		
-		<div class="box prev flex flex-items-center flex-justify-center"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></div>
-		<div class="box next right flex flex-items-center flex-justify-center"><span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png"></span></div>
-		
 	</div>
  </header>
  
