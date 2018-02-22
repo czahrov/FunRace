@@ -1392,6 +1392,12 @@ footer .top .container .inner .item .fa-map-marker {
 	font-size: 35px;
 }
 
+footer .su-column-inner{
+	padding: 10px 0;
+	line-height: 30px;
+	text-align: justify;
+	
+}
 
 /*MIDDLE*/
 

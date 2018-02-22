@@ -11,6 +11,7 @@
     <div class="middle grid">
         <div class="container">
             <div class="inner flex flex-justify-around flex-justify-between-ds flex-items-center flex-wrap">
+				<?php dynamic_sidebar( 'footer-1' ); ?>
                 <div class="item base1 base3-ml">&copy; FunRace, 2017</div>
                 <div class="item base1 base3-ml">
                     

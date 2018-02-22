@@ -22,6 +22,14 @@ if( !is_admin() ){
     
 }
 
+register_sidebar( array(
+	'id' => 'footer-1',
+	'name' => 'Tekst w stopce',
+	'before_widget' => '<div class="item base1">',
+	'after_widget' => '</div>',
+	
+) );
+
 // Breadcrumbs
 function custom_breadcrumbs() {
        
@@ -295,3 +303,4 @@ function dlaczegoFunRace(){
 	
 	return $ret;
 }
+
