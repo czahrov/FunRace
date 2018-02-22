@@ -1857,12 +1857,11 @@ OFFER
 */
 
 .offer .container {
-	border: 1px solid #ebebeb;
-	border-bottom: 0;
+	
 }
 
 .offer .container .row {
-	border-bottom: 1px solid #ebebeb;
+	
 }
 
 .offer .container .row .destiny {
