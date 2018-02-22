@@ -55,9 +55,9 @@
 		<div class="nav-end hide flex-dm no-shrink">
 			<a href="<?php echo home_url('zima/rezerwuj'); ?>" class="booking flex flex-items-center flex-justify-center">Rezerwuj online</a>
 			<a href="<?php echo home_url('lato'); ?>" class="season flex flex-column-dm flex-items-center flex-justify-center winter">
-				<span class="nana">Lato</span>
-				<span class="year">2017</span>
-				<span class="rotate"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow_blue.png"></span>
+				<span class="nana">Oferta</span>
+				<span class="year">Lato</span>
+				<span class="rotate"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png"></span>
 			</a>
 		</div>
 	</nav>
