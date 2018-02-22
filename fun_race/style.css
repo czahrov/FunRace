@@ -969,16 +969,13 @@ REASONS
 }
 
 .reasons .container .wrapper .element {
-	flex-shrink: 0;
-	flex-grow: 1;
-	min-width: 280px;
 	margin-top: 30px;
 }
 
 .reasons .container .wrapper .element .inner {
 	text-align: center;
 	color: #fff;
-	padding-bottom: 100px;
+	padding: 0 10px 100px;
 	position: relative;
 }
 
@@ -994,7 +991,6 @@ REASONS
 }
 
 .reasons .container .wrapper .element .inner p {
-	max-width: 290px;
 	line-height: 2;
 	font-size: 16px;
 	font-family: var(--font-regular);
@@ -4469,9 +4465,6 @@ MEDIA
 		line-height: 1.5;
 		max-width: 280px;
 		margin: 0 auto;
-	}
-	.reasons .container .wrapper .element {
-		min-width: 300px;
 	}
 	.newsletter .container form .box button {
 		max-width: 172px;

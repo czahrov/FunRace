@@ -1,5 +1,6 @@
 <?php
 add_theme_support('post-thumbnails');
+add_theme_support('widgets');
 
 define( 'DMODE', isset( $_COOKIE[ 'sprytne' ] )?( true ):( false ) );
 
@@ -266,3 +267,31 @@ function checkAccess(){
 	
 }
 
+// generowanie danych do sekcji na stronie glownej
+function dlaczegoFunRace(){
+	$ret = array(
+		'Doświadczenie' => array(
+			'icon' => '/img/icons/doswiadczenie.png',
+			'text' => 'Znajdujesz się w miejscu, w którym znajdziesz ofertę jakiej potrzebujesz. Oferta jest dla każdego',
+		),
+		'Sprzęt' => array(
+			'icon' => '/img/icons/sprzet.png',
+			'text' => 'Znajdujesz się w miejscu, w którym znajdziesz ofertę jakiej potrzebujesz. Oferta jest dla każdego',
+		),
+		'Team' => array(
+			'icon' => '/img/icons/team.png',
+			'text' => 'Znajdujesz się w miejscu, w którym znajdziesz ofertę jakiej potrzebujesz. Oferta jest dla każdego',
+		),
+		'Pomysł' => array(
+			'icon' => '/img/icons/pomysl.png',
+			'text' => 'Znajdujesz się w miejscu, w którym znajdziesz ofertę jakiej potrzebujesz. Oferta jest dla każdego',
+		),
+		'Kompleksowa obsługa' => array(
+			'icon' => '/img/icons/kompleksowa_obsluga.png',
+			'text' => 'Znajdujesz się w miejscu, w którym znajdziesz ofertę jakiej potrzebujesz. Oferta jest dla każdego',
+		),
+		
+	);
+	
+	return $ret;
+}
