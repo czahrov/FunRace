@@ -20,10 +20,10 @@
 <div class="mamucik">
     <div class="grid">
         <div class="container padding">
-            <div class="intro flex flex-column flex-row-ds">
+            <div class="intro flex flex-column">
                     <!-- col1-->
-                <div class="col col1 no-shrink-ds flex flex-column flex-row-ml flex-column-ds">
-                    <div class="image flex flex-items-center flex-justify-center flex-justify-start-ds"><img src="<?php echo get_template_directory_uri(); ?>/img/mamucik-snowboardowy.jpg" alt="mamucik-kurs-snowboardowy"></div>
+                <div class="col col1 flex flex-column flex-row-ml">
+                    <div class="image flex flex-items-start flex-justify-center"><img src="<?php echo get_template_directory_uri(); ?>/img/mamucik-snowboardowy.jpg" alt="mamucik-kurs-snowboardowy"></div>
                     <div class="boxes">
                         <div class="box">
                             <div class="bar flex flex-items-center">

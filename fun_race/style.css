@@ -2267,8 +2267,8 @@ header .poster-single .content h2 span {
 }
 
 .mamucik .grid .container .intro .col1 .image img {
-	max-height: 230px;
 	width: auto;
+	max-width: 100%;
 }
 
 .mamucik .grid .container .intro .col1 .boxes {
@@ -2290,7 +2290,7 @@ header .poster-single .content h2 span {
 	top: 0;
 	bottom: 0;
 	right: 0;
-	left: -100px;
+	left: -20px;
 }
 
 .mamucik .grid .container .intro .col1 .box .bar .icon {
@@ -4701,10 +4701,10 @@ MEDIA
 		margin-bottom: 40px;
 	}
 	.mamucik .grid .container .intro .col1 .image {
-		order: 1;
+		
 	}
 	.mamucik .grid .container .intro .col1 .boxes {
-		padding-top: 80px;
+		padding-left: 50px;
 	}
 	.instrukt .grid .container .intro .col1 {
 		margin-right: 30px;
@@ -4800,7 +4800,6 @@ MEDIA
 		right: -100px;
 	}
 	.mamucik .grid .container .intro .col1 {
-		max-width: 400px;
 		margin-right: 30px;
 	}
 	.mamucik .grid .container .intro .col1 .boxes {
@@ -4960,7 +4959,7 @@ MEDIA
 		margin: 0px 75px;
 	}
 	.mamucik .grid .container .intro .col1 {
-		max-width: 558px;
+		
 	}
 	header .poster-sub {
 		height: 786px;
