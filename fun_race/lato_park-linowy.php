@@ -5,7 +5,7 @@
 	Template Name: lato park linowy
 	*/
 ?>
-<body class="lato" id="park-linowy">
+<body id="park-linowy" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu-lato"); ?>		
 	<?php banner(); ?>

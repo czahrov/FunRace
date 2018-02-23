@@ -6,7 +6,7 @@
 	*/
 ?>
 
-<body>
+<body class='<?php do_action( 'body_hook' ); ?>'>
  <header>
 	<?php get_template_part("template/menu"); ?>
 	<div class="poster flex flex-items-center" id="slider-main">

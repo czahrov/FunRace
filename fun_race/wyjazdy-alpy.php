@@ -5,7 +5,7 @@
 	Template Name: wyjazdy-alpy
 	*/
 ?>
-<body id="wyjazdy-alpy">
+<body id="wyjazdy-alpy" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
      <?php get_template_part("template/menu"); ?>
 	<?php banner(); ?>

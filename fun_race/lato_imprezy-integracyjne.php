@@ -4,7 +4,7 @@
 	Template Name: lato imprezy integracyjne
 	*/
 ?>
-<body class="lato" id="imprezy-integracyjne-lato">
+<body id="imprezy-integracyjne-lato" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
 	<?php get_template_part("template/menu-lato"); ?>	
 	<?php banner(); ?>

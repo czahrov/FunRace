@@ -5,7 +5,7 @@
 	Template Name: oferta
 	*/
 ?>
-<body id="oferta">
+<body id="oferta" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
      <?php get_template_part("template/menu"); ?>	
 		

@@ -6,7 +6,7 @@
 	*/
 ?>
 
-<body class="lato">
+<body class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu-lato"); ?>
 	<div class="poster flex flex-items-center" id="slider-main">

@@ -46,8 +46,16 @@
 				<li><a href="<?php echo home_url('zima/kontakt'); ?>">Kontakt</a></li>
 				
 				<li class="menu-social flex flex-justify-center">
-					<div class="icon"><a href="#" class="box"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
-					<div class="icon"><a href="#" class="box"><i class="fa fa-youtube" aria-hidden="true"></i></a></div>
+					<div class="icon">
+						<a href="#" class="box">
+							<i class="fa fa-facebook" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="icon">
+						<a href="#" class="box">
+							<i class="fa fa-youtube" aria-hidden="true"></i>
+						</a>
+					</div>
 				<li>
 			</ul>
 

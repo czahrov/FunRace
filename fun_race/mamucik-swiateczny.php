@@ -5,7 +5,7 @@
 	Template Name: mamucik-swiateczny
 	*/
 ?>
-<body id="mamucik-swiateczny">
+<body id="mamucik-swiateczny" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
 	  <?php get_template_part("template/menu"); ?>	
 	<?php banner(); ?>

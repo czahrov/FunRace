@@ -4,7 +4,7 @@
 	Template Name: szkolenia head
 	*/
 ?>
-<body id="szoklenie-head">
+<body id="szoklenie-head" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
  
 	 <?php get_template_part("template/menu"); ?>	

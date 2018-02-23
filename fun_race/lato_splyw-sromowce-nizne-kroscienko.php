@@ -5,7 +5,7 @@
 	Template Name: lato splyw Sromowce niżne-kroscienko
 	*/
 ?>
-<body class="lato" id="splyw-niedzica-szczawnica">
+<body id="splyw-niedzica-szczawnica" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu-lato"); ?>		
 	<?php banner(); ?>

@@ -4,7 +4,7 @@
 	Template Name: lato oferta dla szkol
 	*/
 ?>
-<body class="lato" id="szkola">
+<body id="szkola" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu-lato"); ?>	
 	<?php banner(); ?>

@@ -5,7 +5,7 @@
 	Template Name: lato o-nas
 	*/
 ?>
-<body class="lato" id="o-nas">
+<body id="o-nas" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu-lato"); ?>	
 	<?php banner(); ?>

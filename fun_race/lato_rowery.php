@@ -5,7 +5,7 @@
 	Template Name: lato rowery
 	*/
 ?>
-<body class="lato" id="rowery">
+<body id="rowery" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu-lato"); ?>		
 	<?php banner(); ?>

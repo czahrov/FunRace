@@ -4,7 +4,7 @@
 	Template Name: szkolenia grupowe
 	*/
 ?>
-<body id="szkolenia-grupowe">
+<body id="szkolenia-grupowe" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu"); ?>		
 	<?php banner(); ?>

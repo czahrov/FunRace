@@ -5,7 +5,7 @@
 	Template Name: lato referencje
 	*/
 ?>
-<body class="lato" id="referencje">
+<body id="referencje" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
 	<?php get_template_part("template/menu-lato"); ?>	
 	<?php banner(); ?>

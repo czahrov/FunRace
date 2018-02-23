@@ -4,8 +4,8 @@
             <?php custom_breadcrumbs(); ?>
         </div>
 		<div class="social hide flex-dm flex-column">
-			<a href="#" class="box"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			<a href="#" class="box"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-			<a href="#" class="box"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+			<a href="#" class="box fb"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a href="#" class="box yt"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+			<a href="#" class="box letter"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
 		</div>
 	</div>

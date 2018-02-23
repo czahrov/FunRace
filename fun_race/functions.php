@@ -359,3 +359,15 @@ function banner(){
 	);
 	
 }
+
+// dodawanie klas elementowi body ( lato/zima )
+add_action( 'body_hook', function( $arg ){
+	$postID = get_post()->ID;
+	
+	while( !in_array( get_post( $postID )->ID, array( 4, 6 ) ) ){
+		$postID = get_post( $postID )->post_parent;
+		
+	}
+	
+	printf( " %s ", get_post( $postID )->post_name );
+} );

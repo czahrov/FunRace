@@ -5,7 +5,7 @@
 	Template Name: kontakt
 	*/
 ?>
-<body id="kontakt">
+<body id="kontakt" class="<?php do_action( 'body_hook' ); ?>">
  <header>
       <?php get_template_part("template/menu"); ?>
 	<?php banner(); ?>

@@ -4,7 +4,7 @@
 	Template Name: szkolenia ind-grup
 	*/
 ?>
-<body id="szkolenia-ind-grup">
+<body id="szkolenia-ind-grup" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu"); ?>
 	<?php banner(); ?>

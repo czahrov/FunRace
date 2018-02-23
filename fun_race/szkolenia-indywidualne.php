@@ -4,7 +4,7 @@
 	Template Name: szkolenia indywidualne
 	*/
 ?>
-<body id="szkolenia-indywidualne">
+<body id="szkolenia-indywidualne" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu"); ?>	
 	<?php banner(); ?>

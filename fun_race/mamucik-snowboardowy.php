@@ -5,7 +5,7 @@
 	Template Name: mamucik-snowboardowy
 	*/
 ?>
-<body id="mamucik-snowboardowy">
+<body id="mamucik-snowboardowy" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu"); ?>	
 	<?php banner(); ?>

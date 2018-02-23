@@ -5,7 +5,7 @@
 	Template Name: lato aktualnosci
 	*/
 ?>
-<body class="lato" id="aktualnosci">
+<body id="aktualnosci" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu-lato"); ?>
 	<?php banner(); ?>

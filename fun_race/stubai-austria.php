@@ -5,7 +5,7 @@
 	Template Name: stubai-austria
 	*/
 ?>
-<body id="stubai-austria">
+<body id="stubai-austria" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu"); ?>		
 	<?php banner(); ?>

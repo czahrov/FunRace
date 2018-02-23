@@ -5,7 +5,7 @@
 	Template Name: lato rezerwuj-kajakarstwo
 	*/
 ?>
-<body class="lato" id="rezerwuj-kajakarstwo">
+<body id="rezerwuj-kajakarstwo" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu-lato"); ?>	
     

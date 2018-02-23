@@ -730,6 +730,18 @@ BREADCRUMBS
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: #ADADAD;
+}
+
+body.lato .breadcrumbs .social .box.letter{
+	background-color: var(--color-winter);
+	color: #fff;
+}
+
+body.zima .breadcrumbs .social .box.letter{
+	background-color: var(--color-summer);
+	color: #fff;
+	
 }
 
 .breadcrumbs .social .box,
@@ -739,7 +751,6 @@ BREADCRUMBS
 
 .breadcrumbs .social .box .fa {
 	font-size: 21px;
-	color: #ADADAD;
 	transition: color .3s linear;
 }
 

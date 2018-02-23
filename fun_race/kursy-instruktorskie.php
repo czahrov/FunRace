@@ -5,7 +5,7 @@
 	Template Name: kursy-instruktorskie
 	*/
 ?>
-<body id="kursy-instruktorskie">
+<body id="kursy-instruktorskie" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
         <?php get_template_part("template/menu"); ?>
 	<?php banner(); ?>

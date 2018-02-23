@@ -5,7 +5,7 @@
 	Template Name: lato kontakt
 	*/
 ?>
-<body class="lato" id="kontakt">
+<body id="kontakt" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
      <?php get_template_part("template/menu-lato"); ?>
 	<?php banner(); ?>

@@ -5,7 +5,7 @@
 	Template Name: lato splyw Zakopane
 	*/
 ?>
-<body class="lato" id="splyw-zakopane">
+<body id="splyw-zakopane" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu-lato"); ?>		
 	<?php banner(); ?>

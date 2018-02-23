@@ -5,7 +5,7 @@
 	Template Name: rezerwuj-grupowe
 	*/
 ?>
-<body id="rezerwuj-single">
+<body id="rezerwuj-single" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
 	  <?php get_template_part("template/menu"); ?>	
 	<div class="poster-sub poster-sub-rezerwuj poster-sub-rezerwuj-single flex flex-justify-center flex-items-center">

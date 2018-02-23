@@ -5,7 +5,7 @@
 	Template Name: lato off-road
 	*/
 ?>
-<body class="lato" id="off-road">
+<body id="off-road" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu-lato"); ?>		
 	<?php banner(); ?>

@@ -5,7 +5,7 @@
 	Template Name: mamucik-feryjny
 	*/
 ?>
-<body id="mamucik-feryjny">
+<body id="mamucik-feryjny" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
    <?php get_template_part("template/menu"); ?>	
    <?php banner(); ?>

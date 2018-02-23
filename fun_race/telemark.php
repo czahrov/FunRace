@@ -4,7 +4,7 @@
 	Template Name: telemark
 	*/
 ?>
-<body id="telemark">
+<body id="telemark" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
 	<?php get_template_part("template/menu"); ?>	
 	<?php banner(); ?>

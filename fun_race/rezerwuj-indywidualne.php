@@ -5,7 +5,7 @@
 	Template Name: rezerwuj-indywidualne
 	*/
 ?>
-<body id="rezerwuj-single">
+<body id="rezerwuj-single" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
     <?php get_template_part("template/menu"); ?>	
     

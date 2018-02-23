@@ -5,7 +5,7 @@
 	Template Name: lato splywy dunajec
 	*/
 ?>
-<body class="lato" id="splywy-kajakowe">
+<body id="splywy-kajakowe" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
      <?php get_template_part("template/menu-lato"); ?>
 	<?php banner(); ?>
