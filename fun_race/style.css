@@ -1368,7 +1368,7 @@ footer .top .container .inner .item {
 	height: 100%;
 	color: rgba(256, 256, 256, .7);
 	font-size: 18px;
-	font-family: var(--font-medium);
+	font-family: var(--font-regular);
 	min-height: 76px;
 }
 
@@ -1422,7 +1422,7 @@ footer .middle .container .inner .item {
 	justify-content: center;
 	height: 100%;
 	font-size: 18px;
-	font-family: var(--font-medium);
+	font-family: var(--font-regular);
 }
 
 footer .middle .container .inner .item a {
@@ -1492,7 +1492,7 @@ footer .bottom .container .inner .item.full .part {}
 
 footer .bottom .container .inner .item.full .part .text {
 	padding-bottom: 15px;
-	font-family: var(--font-medium);
+	font-family: var(--font-regular);
 	font-size: 21px;
 }
 
@@ -1501,13 +1501,13 @@ footer .bottom .container .inner .item.full .part .icon {
 }
 
 footer .bottom .container .inner .item p {
-	font-family: var(--font-medium);
+	font-family: var(--font-regular);
 	font-size: 18px;
 	line-height: 2;
 }
 
 footer .bottom .container .inner .item h3 {
-	font-family: var(--font-bold);
+	font-family: var(--font-regular);
 	font-size: 18px;
 	line-height: 2;
 	text-transform: uppercase;
@@ -1940,7 +1940,7 @@ OFFER
 }
 
 .offer .container .row .destiny h3 {
-	font-family: var(--font-bold);
+	font-family: var(--font-regular);
 	font-size: 26px;
 	text-transform: uppercase;
 	padding-bottom: 58px;
