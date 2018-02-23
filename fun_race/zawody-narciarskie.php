@@ -18,7 +18,7 @@
 <!-- Mamucik -->
 <div class="mamucik">
     <div class="grid">
-        <div class="container padding text-padding">
+        <div class="container padding">
             <div class="white-space-40"></div>
            <div class="average-list">
                                     <p>Zajmujemy się profesjonalną i  kompleksową organizacją zawodów narciarskich dla firm, szkół oraz grup zorganizowanych.</p>

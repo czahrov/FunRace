@@ -95,7 +95,7 @@
 
 <div class="mamucik">
     <div class="grid">
-        <div class="container padding text-padding" style="border-top: 0;">
+        <div class="container padding" style="border-top: 0;">
         <div class="average-list">
            <div class="white-space-40"></div>
             <h3>DLACZEGO WARTO WYBRAĆ SZKOLENIA INDYWIDUALNE – SYSTEM HEAD WAY:</h3>

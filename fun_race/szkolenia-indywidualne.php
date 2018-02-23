@@ -96,7 +96,7 @@
 
 <div class="mamucik">
     <div class="grid">
-        <div class="container padding text-padding">
+        <div class="container padding">
         <div class="average-list">
            <div class="white-space-40"></div>
             <h3>DLACZEGO WARTO WYBRAĆ SZKOLENIA INDYWIDUALNE Z FUNRACE?:</h3>

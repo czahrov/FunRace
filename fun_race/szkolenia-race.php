@@ -24,7 +24,7 @@
 <!-- Mamucik -->
 <div class="mamucik">
     <div class="grid">
-        <div class="container padding text-padding">
+        <div class="container padding">
             <div class="white-space-40"></div>
            <div class="average-list average-list-comb">
                                     <p>Ta oferta skierowana jest dla narciarzy, ze sportową żyłką. Szkolenia sportowe to nie tylko doskonalenie jazdy na stoku (jazda techniczna i zadaniowa), ale przede wszystkim zajęcia na tyczkach (slalom, slalom gigant) pod okiem naszych trenerów i instruktorów. W trakcie naszych szkoleń poznasz tajniki przygotowania zawodników, różnorodne ćwiczenia, przeżyjesz prawdziwy trening narciarski. Zapraszamy również tych z Państwa, którzy nigdy wcześniej nie brali udziału w treningu sportowym. Nasi instruktorzy stopniowo wprowadzą Państwa w trening, rozpoczynając zajęcia od krótkich tyczek tzw. „kolanówek”.</p>

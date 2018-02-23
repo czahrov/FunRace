@@ -18,7 +18,7 @@
 <!-- Mamucik -->
 <div class="mamucik">
     <div class="grid">
-        <div class="container padding text-padding">
+        <div class="container padding">
             <div class="white-space-40"></div>
            <div class="average-list average-list-comb">
                                     <p>Nie posiadamy gotowych projektów do realizacji, bo najważniejsze dla nas jest indywidualne podejście do klienta. Zdradzimy, że imprezy integracyjne organizowane przez FUN&amp;RACE Event to niepowtarzalne chwile dobrej zabawy z dawką adrenaliny, to różnorodność propozycji,  to profesjonalna obsługa i 100% bezpieczeństwa, to dbałość o najdrobniejsze szczegóły bo ten dzień  musi być idealny… szkoda każdej chwili.</p>

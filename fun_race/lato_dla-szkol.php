@@ -40,7 +40,7 @@
 
 
 <!-- PILS -->
-                                  <div class="pils pils100">
+                                  <div class="pils">
                         <div class="tab-wrapper">
   
                           <ul class="tab-menu flex flex-column flex-row-mm">

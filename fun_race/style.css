@@ -30,6 +30,12 @@ body {
 	height: 100%;
 }
 
+.padding{
+	padding-left: 40px;
+	padding-right: 40px;
+	
+}
+
 header nav {
 	height: 80px;
 	background-color: #fff;
@@ -4708,13 +4714,13 @@ MEDIA
 		order: initial;
 	}
 	.wypozyczalnia .grid .container .intro .content {
-		padding-left: 68px;
+		
 	}
 	.wypozyczalnia .grid .container .intro .box .pic {
 		margin-left: 30px;
 	}
 	.wypozyczalnia .table-rent-desc {
-		padding-left: 68px;
+		
 	}
 	.wypozyczalnia .grid .container .intro .box .pic {
 		max-width: 710px;
@@ -4794,7 +4800,6 @@ MEDIA
 		right: -100px;
 	}
 	.mamucik .grid .container .intro .col1 {
-		padding-left: 40px;
 		max-width: 400px;
 		margin-right: 30px;
 	}
@@ -4806,7 +4811,7 @@ MEDIA
 		padding-right: 100px;
 	}
 	.wypozyczalnia .grid .container .intro .content {
-		padding-left: 100px;
+		
 	}
 	.wypozyczalnia .grid .container .help {
 		padding-left: 100px;
@@ -4955,14 +4960,13 @@ MEDIA
 		margin: 0px 75px;
 	}
 	.mamucik .grid .container .intro .col1 {
-		padding-left: 100px;
 		max-width: 558px;
 	}
 	header .poster-sub {
 		height: 786px;
 	}
 	.wypozyczalnia .table-rent-desc {
-		padding-left: 100px;
+		
 	}
 	.referencje .grid .container .wrapper .item:nth-of-type(3n)::before {
 		border-right: 1px solid #ebebeb;
@@ -5919,7 +5923,7 @@ body.lato .mamucik .grid .container .intro .col1 .box .content .simple-list ul {
 
 @media screen and (min-width: 1280px) {
 	body.lato .table-kajak {
-		padding-left: 100px;
+		
 	}
 	.pils100 {
 		padding-left: 100px;
