@@ -304,3 +304,58 @@ function dlaczegoFunRace(){
 	return $ret;
 }
 
+// funkcja generująca slajder
+function mainSlider( $path ){
+	$pages = get_pages( array(
+		'parent' => get_page_by_path( $path )->ID,
+		'sort_order' => 'ASC',
+		'sort_column' => 'menu_order, post_title',
+		'number' => 0,
+		
+	) );
+	
+	foreach( $pages as $num => $item ){
+		$link_title = get_post_meta( $item->ID, 'link_title', true );
+		if( empty( $link_title ) ) $link_title = 'Sprawdź szczegóły';
+		
+		printf(
+			"<div class='slide flex flex-column flex-justify-center %s'>
+				<div class='cover' style='background-image: url(%s); background-position: center 0px;'></div>
+				<div class='content'>
+					<h2>%s
+						<span class='block'>%s</span>
+					</h2>
+					<a href='%s' class='flex flex-items-center flex-justify-center'>%s</a>
+				</div>
+			</div>",
+			$num === 0?( 'show' ):( '' ),
+			get_the_post_thumbnail_url( $item->ID, 'full' ),
+			get_post_meta( $item->ID, 'title', true ),
+			get_post_meta( $item->ID, 'subtitle', true ),
+			get_the_permalink( get_post_meta( $item->ID, 'link_url', true ) ),
+			$link_title
+			
+		);
+		
+	}
+	
+}
+
+// funkcja generująca banner na podstronach
+function banner(){
+	
+	printf(
+		"<div class='poster-sub flex flex-justify-center flex-items-end'>
+			<div class='cover' style='background-image:url(%s);'></div>
+			<div class='filtr'></div>
+			<div class='content'>
+				<h2>%s<span class='block'>%s</span></h2>
+			</div>
+		</div>",
+		get_the_post_thumbnail_url( get_post()->ID, 'full' ),
+		get_bloginfo( 'name' ),
+		get_post()->post_title
+		
+	);
+	
+}

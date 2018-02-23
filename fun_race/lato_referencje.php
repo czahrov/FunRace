@@ -8,14 +8,7 @@
 <body class="lato" id="referencje">
  <header>
 	<?php get_template_part("template/menu-lato"); ?>	
-		
-	<div class="poster-sub flex flex-justify-center flex-items-center">
-		<div class="cover" style='background-image:url(<?php echo get_the_post_thumbnail_url( get_post()->ID, 'full' ); ?>);'></div>
-        <div class="filtr"></div>
-		<div class="content">
-			<h2>Fun&amp;Race <span class="block">Referencje</span></h2>
-		</div>
-	</div>
+	<?php banner(); ?>
  </header>
  
  

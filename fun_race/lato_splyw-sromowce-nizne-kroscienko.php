@@ -2,19 +2,13 @@
 	get_header();
 
 	/*
-	Template Name: lato splyw Sromowce-kroscienko
+	Template Name: lato splyw Sromowce niżne-kroscienko
 	*/
 ?>
 <body class="lato" id="splyw-niedzica-szczawnica">
  <header>
     <?php get_template_part("template/menu-lato"); ?>		
-	<div class="poster-sub poster-single flex flex-justify-center flex-items-end">
-		<div class="cover"></div>
-        <div class="filtr"></div>
-		<div class="content">
-			<h2>Fun&amp;Race <span class="block">Spływ kajakowy – <br> Sromowce Niżne – Krościenko n/Dunajcem</span></h2>
-		</div>
-	</div>
+	<?php banner(); ?>
  </header>
 
      <!-- BREADCRUMBS -->

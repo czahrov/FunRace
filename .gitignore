@@ -2,3 +2,4 @@
 **/fonts/**
 .*_tmp_random_file
 test.php
+*.min.*

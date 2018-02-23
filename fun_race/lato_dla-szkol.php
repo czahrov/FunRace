@@ -7,14 +7,7 @@
 <body class="lato" id="szkola">
  <header>
     <?php get_template_part("template/menu-lato"); ?>	
-		
-	<div class="poster-sub poster-single flex flex-justify-center flex-items-center">
-		<div class="cover"></div>
-        <div class="filtr"></div>
-		<div class="content">
-			<h2>Fun&amp;Race <span class="block">Oferta dla szkół</span></h2>
-		</div>
-	</div>
+	<?php banner(); ?>
  </header>
 
      <!-- BREADCRUMBS -->

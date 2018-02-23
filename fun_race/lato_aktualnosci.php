@@ -8,59 +8,52 @@
 <body class="lato" id="aktualnosci">
  <header>
     <?php get_template_part("template/menu-lato"); ?>
-		
-	<div class="poster-sub flex flex-justify-center flex-items-center">
-		<div class="cover"></div>
-        <div class="filtr"></div>
-		<div class="content">
-			<h2>Fun&amp;Race <span class="block">Aktualności</span></h2>
-		</div>
-		<div class="nav-act">
+	<?php banner(); ?>
+	<div class="nav-act">
 		<div class="grid">
-		    <div class="container">
-		        <div class="bar flex flex-column flex-row-mm">
-		            <div class="select">
-		                <div class="select-head flex flex-items-center flex-justify-center flex-justify-start-mm">
-		                    <div class="title">Wszystkie kategorie</div>
-		                    <div class="icon">
-		                        <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_small_white.png" alt="arrow">
-		                    </div>
-		                </div>
-		                <div class="select-options">
-		                    <div class="option flex-justify-center flex-justify-start-mm">wydarzenia</div>
-		                    <div class="option flex-justify-center flex-justify-start-mm">aktualności</div>
-		                    <div class="option flex-justify-center flex-justify-start-mm">zawody narciarskie</div>
-		                </div>
-		            </div>
-		            <div class="select">
-		                  <div class="select-head flex flex-items-center flex-justify-center"> 
-                              <div class="title">Sezon 2017</div>
-                              <div class="icon">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_small_white.png" alt="arrow">
-                                </div>
-		                  </div>
-		               <div class="select-options">
-		                    <div class="option flex-justify-center">Sezon 2016</div>
-		                    <div class="option flex-justify-center">Sezon 2015</div>
-		                    <div class="option flex-justify-center">Sezon 2014</div>
-		                </div>
-		            </div>
-		            <div class="select">
-		                  <div class="select-head flex flex-items-center flex-justify-center"> <div class="title">Sezon Letni</div>
-		                  <div class="icon">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_small_white.png" alt="arrow">
-                                </div>
-		                  </div>
-		                  <a href="<?php echo home_url('zima\aktualnosci'); ?>" class="select-options">
-		                    <div class="option flex-justify-center">Sezon Zimowy</div>
-		                  </a>
-		            </div>
-		        </div>
-		    </div>
+			<div class="container">
+				<div class="bar flex flex-column flex-row-mm">
+					<div class="select">
+						<div class="select-head flex flex-items-center flex-justify-center flex-justify-start-mm">
+							<div class="title">Wszystkie kategorie</div>
+							<div class="icon">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_small_white.png" alt="arrow">
+							</div>
+						</div>
+						<div class="select-options">
+							<div class="option flex-justify-center flex-justify-start-mm">wydarzenia</div>
+							<div class="option flex-justify-center flex-justify-start-mm">aktualności</div>
+							<div class="option flex-justify-center flex-justify-start-mm">zawody narciarskie</div>
+						</div>
+					</div>
+					<div class="select">
+						  <div class="select-head flex flex-items-center flex-justify-center"> 
+							  <div class="title">Sezon 2017</div>
+							  <div class="icon">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_small_white.png" alt="arrow">
+								</div>
+						  </div>
+					   <div class="select-options">
+							<div class="option flex-justify-center">Sezon 2016</div>
+							<div class="option flex-justify-center">Sezon 2015</div>
+							<div class="option flex-justify-center">Sezon 2014</div>
+						</div>
+					</div>
+					<div class="select">
+						  <div class="select-head flex flex-items-center flex-justify-center"> <div class="title">Sezon Letni</div>
+						  <div class="icon">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_small_white.png" alt="arrow">
+								</div>
+						  </div>
+						  <a href="<?php echo home_url('zima\aktualnosci'); ?>" class="select-options">
+							<div class="option flex-justify-center">Sezon Zimowy</div>
+						  </a>
+					</div>
+				</div>
+			</div>
 		</div>
-		</div>
-
 	</div>
+	
  </header>
  
  

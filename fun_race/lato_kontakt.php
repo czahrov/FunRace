@@ -7,14 +7,8 @@
 ?>
 <body class="lato" id="kontakt">
  <header>
-      <?php get_template_part("template/menu-lato"); ?>
-	<div class="poster-sub flex flex-justify-center flex-items-center">
-		<div class="cover"></div>
-        <div class="filtr"></div>
-		<div class="content">
-			<h2>Fun&amp;Race <span class="block">Kontakt</span></h2>
-		</div>
-	</div>
+     <?php get_template_part("template/menu-lato"); ?>
+	<?php banner(); ?>
  </header>
  
  

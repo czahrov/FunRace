@@ -9,40 +9,8 @@
 <body class="lato">
  <header>
     <?php get_template_part("template/menu-lato"); ?>
-	<?php
-		$pages = get_pages( array(
-			'parent' => 437,
-			'sort_order' => 'ASC',
-			'sort_column' => 'menu_order, post_title',
-			'number' => 3,
-			
-		) );
-		
-	?>
 	<div class="poster flex flex-items-center" id="slider-main">
-		<?php foreach( $pages as $num => $item ): ?>
-		<div class="slide flex flex-column flex-justify-center <?php echo $num === 0?( 'show' ):( '' ); ?>">
-			<div class="cover" style="background-image: url(<?php echo get_the_post_thumbnail_url( $item->ID, 'full' ); ?>);"></div>
-			<div class="content">
-				<?php
-					printf(
-						"<h2>%s<span class='block'>%s</span></h2>",
-						get_post_meta( $item->ID, 'title', true ),
-						get_post_meta( $item->ID, 'subtitle', true )
-						
-					);
-				?>
-				<a href="<?php echo get_the_permalink( get_post_meta( $item->ID, 'link_url', true ) ); ?>" class="flex flex-items-center flex-justify-center">
-					<?php
-						$title = get_post_meta( $item->ID, 'link_title', true );
-						if( empty( $title ) ) $title = 'Sprawdź szczegóły';
-						echo $title;
-					?>
-				</a>
-				
-			</div>
-		</div>
-		<?php endforeach; ?>
+		<?php mainSlider( 'lato/slider' ); ?>
 		
 	</div>
  </header>

@@ -8,13 +8,7 @@
 <body id="kontakt">
  <header>
       <?php get_template_part("template/menu"); ?>
-	<div class="poster-sub flex flex-justify-center flex-items-center">
-		<div class="cover"></div>
-        <div class="filtr"></div>
-		<div class="content">
-			<h2>Fun&amp;Race <span class="block">Kontakt</span></h2>
-		</div>
-	</div>
+	<?php banner(); ?>
  </header>
  
  

@@ -1542,7 +1542,7 @@ header .poster-sub .filtr {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background-color: rgba(0, 0, 0, .2);
+	background-color: rgba(0, 0, 0, .3);
 	z-index: -1;
 }
 
@@ -1552,6 +1552,7 @@ header .poster-sub .content {
 	font-family: var(--font-bold);
 	overflow-wrap: break-word;
 	max-width: 100%;
+	margin-bottom: 50px;
 }
 
 header .poster-sub .content h2 {
@@ -1559,7 +1560,6 @@ header .poster-sub .content h2 {
 	font-size: 32px;
 	letter-spacing: 1px;
 	line-height: 1.5;
-	text-shadow: 2px 2px 1px #333;
 }
 
 header .poster-sub .content h2 span {
@@ -3282,22 +3282,25 @@ AKTUALNOSCI
 	background-image: ;
 }
 
-.poster-sub .nav-act {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
+header{
+	position: relative;
+	
 }
 
-.poster-sub .nav-act .grid {}
+header .nav-act {
+	
+}
 
-.poster-sub .nav-act .grid .container {}
+header .nav-act .grid {}
 
-.poster-sub .nav-act .grid .container .bar {
+header .nav-act .grid .container {}
+
+header .nav-act .grid .container .bar {
 	width: 100%;
 	height: 150px;
 }
 
-.poster-sub .nav-act .grid .container .bar .select {
+header .nav-act .grid .container .bar .select {
 	position: relative;
 	flex-basis: 620px;
 	background-color: #EE6900;
@@ -3307,37 +3310,37 @@ AKTUALNOSCI
 	padding: 0 10px;
 }
 
-.poster-sub .nav-act .grid .container .bar .select * {
+header .nav-act .grid .container .bar .select * {
 	cursor: pointer;
 }
 
-.poster-sub .nav-act .grid .container .bar .select:nth-of-type(2) {
+header .nav-act .grid .container .bar .select:nth-of-type(2) {
 	flex-basis: 520px;
 }
 
-.poster-sub .nav-act .grid .container .bar .select:hover {
+header .nav-act .grid .container .bar .select:hover {
 	background-color: #ED832F;
 }
 
-.poster-sub .nav-act .grid .container .bar .select .select-head {
+header .nav-act .grid .container .bar .select .select-head {
 	height: 100%;
 	width: 100%;
 }
 
-.poster-sub .nav-act .grid .container .bar .select .select-head .title {
+header .nav-act .grid .container .bar .select .select-head .title {
 	font-family: var(--font-medium);
 	color: #fff;
 	font-size: 26px;
 }
 
-.poster-sub .nav-act .grid .container .bar .select .select-head .icon {
+header .nav-act .grid .container .bar .select .select-head .icon {
 	margin-left: 30px;
 	height: 26px;
 	width: 26px;
 	display: none;
 }
 
-.poster-sub .nav-act .grid .container .bar .select .select-options {
+header .nav-act .grid .container .bar .select .select-options {
 	position: absolute;
 	top: 100%;
 	width: 100%;
@@ -3346,11 +3349,11 @@ AKTUALNOSCI
 	z-index: 9;
 }
 
-.poster-sub .nav-act .grid .container .bar .select:hover .select-options {
+header .nav-act .grid .container .bar .select:hover .select-options {
 	display: block;
 }
 
-.poster-sub .nav-act .grid .container .bar .select .select-options .option {
+header .nav-act .grid .container .bar .select .select-options .option {
 	height: 81px;
 	display: flex;
 	align-items: center;
@@ -3363,7 +3366,7 @@ AKTUALNOSCI
 	transition: background .2s linear;
 }
 
-.poster-sub .nav-act .grid .container .bar .select .select-options .option:hover {
+header .nav-act .grid .container .bar .select .select-options .option:hover {
 	background-color: #ED832F;
 }
 
@@ -3726,7 +3729,7 @@ REZERWUJ
 ----------
 */
 
-.poster-sub-rezerwuj .nav-act .grid .container .bar .select .select-options .option {
+header .nav-act .grid .container .bar .select .select-options .option {
 	text-transform: lowercase;
 	font-size: 16px;
 	height: 58px;
@@ -3738,8 +3741,7 @@ REZERWUJ
 .rezerwuj .grid {}
 
 .rezerwuj .grid .container {
-	border: 1px solid #ebebeb;
-	border-bottom: 0;
+	
 }
 
 .rezerwuj .grid .container .content {
@@ -3834,8 +3836,6 @@ REZERWUJ-SINGLE
 .rezerwuj-single .grid {}
 
 .rezerwuj-single .grid .container {
-	border: 1px solid #ebebeb;
-	border-bottom: 0;
 	padding-top: 57px;
 	overflow: hidden;
 }
@@ -4565,18 +4565,18 @@ MEDIA
 	.alp-trainings .row .image {
 		margin-right: 40px;
 	}
-	.poster-sub .nav-act .grid .container .bar .select:nth-of-type(1) {
+	header .nav-act .grid .container .bar .select:nth-of-type(1) {
 		padding-left: 90px;
 	}
-	.poster-sub .nav-act .grid .container .bar .select:nth-of-type(1) .select-options .option {
+	header .nav-act .grid .container .bar .select:nth-of-type(1) .select-options .option {
 		padding-left: 90px;
 	}
-	.poster-sub .nav-act .grid .container .bar .select .select-head .icon {
+	header .nav-act .grid .container .bar .select .select-head .icon {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-	.poster-sub .nav-act .grid .container .bar {
+	header .nav-act .grid .container .bar {
 		width: 100%;
 		height: 117px;
 	}
@@ -4731,7 +4731,7 @@ MEDIA
 	.aktualnosci .grid .container .main .side .inner .side-nav .row .content {
 		padding-left: 53px;
 	}
-	.poster-sub-rezerwuj .nav-act .grid .container .bar .select:nth-of-type(2) {
+	header .nav-act .grid .container .bar .select:nth-of-type(2) {
 		padding-left: 54px;
 	}
 	.offer .container .row .destiny .cover {
@@ -4822,7 +4822,7 @@ MEDIA
 		padding-right: 0;
 	}
 	.rezerwuj-single .grid .container .wrapper .details .label {
-		border-left: 0;
+		
 	}
 }
 
@@ -5504,20 +5504,20 @@ body.lato .referencje .grid .container .wrapper .item:hover:after {
 
 /* AKTUALNOSCI LATO */
 
-body.lato .poster-sub .nav-act .grid .container .bar .select {
+body.lato header .nav-act .grid .container .bar .select {
 	background-color: #0080ff;
 }
 
-body.lato .poster-sub .nav-act .grid .container .bar .select .select-options .option {
+body.lato header .nav-act .grid .container .bar .select .select-options .option {
 	background-color: #0080ff;
 	border-top: #009FE9;
 }
 
-body.lato .poster-sub .nav-act .grid .container .bar .select .select-options .option:hover {
+body.lato header .nav-act .grid .container .bar .select .select-options .option:hover {
 	background-color: #009FE9;
 }
 
-body.lato .poster-sub .nav-act .grid .container .bar .select:hover {
+body.lato header .nav-act .grid .container .bar .select:hover {
 	background-color: #009FE9;
 }
 
@@ -5704,7 +5704,7 @@ body.lato .tab-content>div .title-big {
 
 /* REZERWUJ */
 
-body.lato .poster-sub-rezerwuj .nav-act .grid .container .bar .select .select-options .option {
+body.lato header .nav-act .grid .container .bar .select .select-options .option {
 	text-transform: initial;
 }
 

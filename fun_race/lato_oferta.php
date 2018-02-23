@@ -8,14 +8,7 @@
 <body class="lato" id="oferta">
  <header>
      <?php get_template_part("template/menu-lato"); ?>	
-		
-	<div class="poster-sub flex flex-justify-center flex-items-center">
-		<div class="cover parallax"></div>
-        <div class="filtr"></div>
-		<div class="content">
-			<h2>Fun&amp;Race <span class="block">Oferta letnia</span></h2>
-		</div>
-	</div>
+	<?php banner(); ?>
  </header>
  
  

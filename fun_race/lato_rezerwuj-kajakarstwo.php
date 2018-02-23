@@ -11,10 +11,9 @@
     
 	<div class="poster-sub poster-sub-rezerwuj poster-sub-rezerwuj-single flex flex-justify-center flex-items-center">
 		<div class="cover"></div>
-        <div class="filtr"></div>
-		<div class="content">
-			<h2>Fun&amp;Race <span class="block">Rezerwuj online</span></h2>
-		</div>
+        <?php banner(); ?>
+
+	</div>
 		<div class="nav-act">
 		<div class="grid">
 		    <div class="container">
@@ -46,8 +45,6 @@
 		    </div>
 		</div>
 		</div>
-
-	</div>
  </header>
  
      <!-- BREADCRUMBS -->

@@ -7,14 +7,7 @@
 <body id="wypozyczalnia">
  <header>
     <?php get_template_part("template/menu"); ?>	
-		
-	<div class="poster-sub poster-single flex flex-justify-center flex-items-center">
-		<div class="cover"></div>
-        <div class="filtr"></div>
-		<div class="content">
-			<h2>Fun&amp;Race <span class="block">Wypożyczalnia</span></h2>
-		</div>
-	</div>
+	<?php banner(); ?>
  </header>
 
     <!-- BREADCRUMBS -->
