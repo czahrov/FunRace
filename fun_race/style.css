@@ -4511,12 +4511,13 @@ MEDIA
 	.intro .container .col .inner .box.long-two {
 		padding-left: 11px;
 		padding-right: 0px;
+		height: 403px;
 	}
 	.intro .container .col2 .inner .box {
-		height: 245px;
+		
 	}
 	.intro .container .col2 .inner .box.long {
-		height: 470px;
+		
 	}
 	header .poster .content h2 {
 		max-width: initial;
