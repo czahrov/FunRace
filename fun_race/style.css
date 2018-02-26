@@ -1434,12 +1434,21 @@ footer .middle .container .inner {
 footer .middle .container .inner .item {
 	min-height: 70px;
 	flex-shrink: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	height: 100%;
 	font-size: 18px;
 	font-family: var(--font-regular);
+}
+
+footer .middle .container .inner .item .textwidget {
+	line-height: 30px;
+	padding-top: 50px;
+	text-align: justify;
+	
+}
+
+footer .middle .container .inner .item .textwidget * {
+	line-height: inherit;
+	
 }
 
 footer .middle .container .inner .item a {
@@ -4662,7 +4671,7 @@ MEDIA
 		justify-content: flex-start;
 	}
 	footer .middle .container .inner .item:nth-of-type(3) {
-		justify-content: flex-end;
+		
 	}
 	footer .top .container .inner .item:first-of-type {
 		justify-content: flex-start;

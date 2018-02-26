@@ -12,15 +12,16 @@
         <div class="container">
             <div class="inner flex flex-justify-around flex-justify-between-ds flex-items-center flex-wrap">
 				<?php dynamic_sidebar( 'footer-1' ); ?>
-                <div class="item base1 base3-ml">&copy; FunRace, 2017</div>
-                <div class="item base1 base3-ml">
-                    
-                <a href="#" class="box"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			<a href="#" class="box"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-			<a href="#" class="box"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                <div class="item base1 base3-ml flex flex-items-center flex-justify-center flex-justify-start-ml">&copy; FunRace, 2017</div>
+                <div class="item base1 base3-ml flex flex-items-center flex-justify-center">
+					<a href="#" class="box"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="#" class="box"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+					<a href="#" class="box"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                     
                 </div>
-                <div class="item base3-ml"><a class="scepter" href="http://www.scepter.pl">Dlaczego Agencja interaktywna Scepter?</a></div>
+                <div class="item base1 base3-ml flex flex-items-center flex-justify-center flex-justify-end-ml">
+					<a class="scepter" href="http://www.scepter.pl">Dlaczego Agencja interaktywna Scepter?</a>
+				</div>
             </div>
         </div>
     </div>
