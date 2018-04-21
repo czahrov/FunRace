@@ -193,6 +193,7 @@ $(function () {
 					items.eq( 0 ),
 					{
 						opacity: 1,
+						zIndex: 1,
 						
 					}
 				);
@@ -201,6 +202,7 @@ $(function () {
 					items.eq( 0 ).siblings( '.slide' ),
 					{
 						opacity: 0,
+						zIndex: 0,
 						
 					}
 				);
@@ -253,6 +255,7 @@ $(function () {
 						duration / 1000,
 						{
 							opacity: 0,
+							zIndex: 0,
 						}
 					),
 					0
@@ -263,6 +266,7 @@ $(function () {
 						duration / 1000,
 						{
 							opacity: 1,
+							zIndex: 1,
 						}
 					),
 					0
@@ -284,7 +288,7 @@ $(function () {
 				}, delay );
 				
 			},
-			mouseenter: function( e ){
+			mouseover: function( e ){
 				$(this).triggerHandler( 'stop' );
 				
 			},

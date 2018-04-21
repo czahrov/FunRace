@@ -30,63 +30,30 @@
             <h3>Trasy spływów kajakowych <span> na Dunajcu</span></h3>
         </div>
         
-        <!-- wrapper -->
-        
-        <div class="wrapper wrapper-whole flex flex-justify-center flex-wrap">
-            <a href="<?php echo home_url('lato/oferta/splywy-kajakowe/sromowce-nizne-szczawnica'); ?>" class="element">
-                <div class="inner">
-                    <div class="picture" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/lato/splywy-dunajec.jpg);"></div>
-                    <div class="name">
-                        <div class="main flex flex-items-center flex-justify-center">Sromowce niżne - szczawnica</div>
-                        <div class="sticker flex flex-items-center flex-justify-center">
-                        Zobacz ofertę
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png" alt="arrow">
-                        </div>
-                    </div>
-                </div>
-            </a>
-              <a href="<?php echo home_url('lato/oferta/splywy-kajakowe/sromowce-nizne-kroscienko'); ?>" class="element">
-                <div class="inner">
-                    <div class="picture" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/lato/splywy-dunajec2.jpg);"></div>
-                    <div class="name">
-                        <div class="main flex flex-items-center flex-justify-center">Sromowce Niżne - Krościenko n/Dunajcem</div>
-                        <div class="sticker flex flex-items-center flex-justify-center">
-                        Zobacz ofertę
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png" alt="arrow">
-                        </div>
-                    </div>
-                </div>
-            </a>
-              <a href="<?php echo home_url('lato/oferta/splywy-kajakowe/niedzica-szczawnica'); ?>" class="element">
-                <div class="inner">
-                    <div class="picture" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/lato/splywy-dunajec3.jpg);"></div>
-                    <div class="name">
-                        <div class="main flex flex-items-center flex-justify-center">Niedzica - Szczawnica</div>
-                        <div class="sticker flex flex-items-center flex-justify-center">
-                        Zobacz ofertę
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png" alt="arrow">
-                        </div>
-                    </div>
-                </div>
-            </a>
-             <a href="<?php echo home_url('lato/oferta/splywy-kajakowe/zakopane'); ?>" class="element">
-                <div class="inner">
-                    <div class="picture" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/lato/splywy-dunajec4.jpg);"></div>
-                    <div class="name">
-                        <div class="main flex flex-items-center flex-justify-center">Spływy kajakowe Zakopane</div>
-                        <div class="sticker flex flex-items-center flex-justify-center">
-                        Zobacz ofertę
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png" alt="arrow">
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        
-        <!-- // end wrapper -->
-        
-
-        
+		<div class='wrapper'>
+			<?php
+				$pages = get_pages( array(
+					'parent' => get_post()->ID,
+					
+				) );
+				
+				foreach( $pages as $page ):
+			?>
+			<div class='item' style='background-image: url( <?php echo get_the_post_thumbnail_url( $page->ID, 'medium' ); ?> );'>
+				<a href='<?php the_permalink( $page->ID ); ?>' class='hitbox'>
+					<div class='btn'>
+						zobacz ofertę
+					</div>
+					
+				</a>
+				<div class='name'>
+					<?php echo $page->post_title; ?>
+				</div>
+				
+			</div>
+			<?php endforeach; ?>
+		</div>
+		
     </div>
 </div>
 

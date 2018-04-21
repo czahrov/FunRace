@@ -318,7 +318,7 @@ function mainSlider( $path ){
 		'parent' => get_page_by_path( $path )->ID,
 		'sort_order' => 'ASC',
 		'sort_column' => 'menu_order, post_title',
-		'number' => 0,
+		// 'number' => 0,
 		
 	) );
 	
@@ -328,7 +328,7 @@ function mainSlider( $path ){
 		
 		printf(
 			'<div class="slide flex flex-column flex-justify-center %s">
-				<div class="cover" style="background-image: url(%s); background-position: center 0px;"></div>
+				<div class="cover" style="background-image: url(%s);"></div>
 				<div class="content">
 					<h2>%s
 						<span class="block">%s</span>
