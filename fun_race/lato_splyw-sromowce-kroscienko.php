@@ -33,7 +33,7 @@
 
                 <div class="white-space-80"></div>
                 <div class="intro flex flex-column flex-row-ds">
-                    <div class="col col1 no-shrink-ds flex flex-column flex-row-ml flex-column-ds">
+                    <div class="col col1 flex flex-column flex-row-ml flex-column-ds">
                         <div class="image flex flex-items-center flex-justify-center flex-justify-start-ds"><img src="<?php echo get_template_directory_uri(); ?>/img/lato/splywy-dunajec2.jpg" alt="spływy"></div>
                     </div>
                     <div class="col col2">
@@ -48,7 +48,7 @@
             <div class="intro flex flex-column flex-row-ds">
                    
                 <!-- col1-->
-                <div class="col col1 no-shrink-ds flex flex-column flex-row-ml flex-column-ds">
+                <div class="col col1 flex flex-column flex-row-ml flex-column-ds">
 
                     <div class="boxes">
                         <div class="box">

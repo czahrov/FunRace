@@ -2,25 +2,7 @@
 add_theme_support('post-thumbnails');
 add_theme_support('widgets');
 
-define( 'DMODE', isset( $_COOKIE[ 'sprytne' ] )?( true ):( false ) );
-
-if( !is_admin() ){
-	$infix = DMODE?( "" ):( ".min" );
-	$buster = DMODE?( time() ):( false );
-	
-	wp_enqueue_style( "fonts", get_template_directory_uri() . "/css/fonts{$infix}.css", array(), $buster );
-	wp_enqueue_style( "font-awesome", get_template_directory_uri() . "/css/font-awesome.min.css", array() );
-	wp_enqueue_style( "facepalm", get_template_directory_uri() . "/css/facepalm{$infix}.css", array(), $buster );
-	wp_enqueue_style( "style", get_template_directory_uri() . "/style{$infix}.css", array(), $buster );
-	
-	wp_enqueue_script( "jQ", get_template_directory_uri() . "/js/jquery.js", array(), false, true );
-    wp_enqueue_script( "map", get_template_directory_uri() . "/js/map{$infix}.js", array(), $buster, true );
-    wp_enqueue_script( "googleapis", "https://maps.googleapis.com/maps/api/js?key=AIzaSyC7wAbhUOIL7TmcbI5B441KDINDoQW2H4I&callback=initMap", array(), false, true );
-	wp_enqueue_script( "classie", get_template_directory_uri() . "/js/classie{$infix}.js", array(), $buster, true );
-	wp_enqueue_script( "partnerzy", get_template_directory_uri() . "/js/partnerzy{$infix}.js", array(), $buster, true );
-    wp_enqueue_script( "main", get_template_directory_uri() . "/js/main{$infix}.js", array(), $buster, true );
-    
-}
+define( 'DMODE', isset( $_COOKIE[ 'sprytne' ] ) );
 
 register_sidebar( array(
 	'id' => 'footer-1',
@@ -37,7 +19,8 @@ function custom_breadcrumbs() {
     $separator          = '-';
     $breadcrums_id      = 'breadcrumbs';
     $breadcrums_class   = 'breadcrumbs';
-    $home_title         = 'Fun&amp;Race';
+    // $home_title         = 'Fun&amp;Race';
+    $home_title         = get_bloginfo( 'name' );
       
     // If you have any custom post types with custom taxonomies, put the taxonomy name below (e.g. product_cat)
     $custom_taxonomy    = 'product_cat';
@@ -277,7 +260,7 @@ function checkAccess(){
 
 // generowanie danych do sekcji na stronie glownej
 function dlaczegoFunRace(){
-	$ret = array(
+	/* $ret = array(
 		'Doświadczenie' => array(
 			'icon' => '/img/icons/doswiadczenie.png',
 			'text' => 'Znajdujesz się w miejscu, w którym znajdziesz ofertę jakiej potrzebujesz. Oferta jest dla każdego',
@@ -299,7 +282,32 @@ function dlaczegoFunRace(){
 			'text' => 'Znajdujesz się w miejscu, w którym znajdziesz ofertę jakiej potrzebujesz. Oferta jest dla każdego',
 		),
 		
-	);
+	); */
+	
+	$season = getSeason();
+	$season_name = "sprawdz-dlaczego-{$season}";
+	
+	if( $season === false ) return false;
+	
+	$posts = get_posts( array(
+		'category_name' => $season_name,
+		'numberposts' => 5,
+		'meta_key' => 'kolejność',
+		'orderby' => 'meta_value_num',
+		'order' => 'ASC',
+		
+	) );
+	
+	$ret = array();
+	
+	foreach( $posts as $post ){
+		$ret[ $post->post_title ] = array(
+			'icon' => get_the_post_thumbnail_url( $post->ID, 'medium' ),
+			'text' => $post->post_content,
+			
+		);
+		
+	}
 	
 	return $ret;
 }
@@ -319,16 +327,17 @@ function mainSlider( $path ){
 		if( empty( $link_title ) ) $link_title = 'Sprawdź szczegóły';
 		
 		printf(
-			"<div class='slide flex flex-column flex-justify-center %s'>
-				<div class='cover' style='background-image: url(%s); background-position: center 0px;'></div>
-				<div class='content'>
+			'<div class="slide flex flex-column flex-justify-center %s">
+				<div class="cover" style="background-image: url(%s); background-position: center 0px;"></div>
+				<div class="content">
 					<h2>%s
-						<span class='block'>%s</span>
+						<span class="block">%s</span>
 					</h2>
-					<a href='%s' class='flex flex-items-center flex-justify-center'>%s</a>
+					<a href="%s" class="flex flex-items-center flex-justify-center">%s</a>
 				</div>
-			</div>",
-			$num === 0?( 'show' ):( '' ),
+			</div>',
+			// $num === 0?( 'show' ):( '' ),
+			'',
 			get_the_post_thumbnail_url( $item->ID, 'full' ),
 			get_post_meta( $item->ID, 'title', true ),
 			get_post_meta( $item->ID, 'subtitle', true ),
@@ -338,6 +347,14 @@ function mainSlider( $path ){
 		);
 		
 	}
+	
+	echo "<div class='pagin'>";
+	for( $i = 1; $i <= count( $pages ); $i++ ){
+		$t = $i === 1?( 'active' ):( '' );
+		echo "<div class='item {$t}'></div>";
+		
+	}
+	echo "</div>";
 	
 }
 
@@ -360,6 +377,12 @@ function banner(){
 	
 }
 
+// sprawdza czy do otwarcia strony użyto ajaxa
+function isAjax(){
+	return $_SERVER[ "HTTP_X_REQUESTED_WITH" ] === "XMLHttpRequest";
+	
+}
+
 // dodawanie klas elementowi body ( lato/zima )
 add_action( 'body_hook', function( $arg ){
 	$postID = get_post()->ID;
@@ -371,3 +394,29 @@ add_action( 'body_hook', function( $arg ){
 	
 	printf( " %s ", get_post( $postID )->post_name );
 } );
+
+// sprawdza czy dana strona jest podstroną lata, czy zimy
+function getSeason(){
+	// lato - id 4
+	// zima - id 6
+	$id = get_post()->ID;
+	
+	while( !in_array( get_post( $id )->post_parent, array( 0, 4, 6 ) ) ){
+		$id = get_post( $id )->post_parent;
+		
+	}
+	
+	switch( $id ){
+		case 4:
+			return 'lato';
+		break;
+		case 6:
+			return 'zima';
+		break;
+		default:
+			// strona nie jest podstoną ani lata, ani zimy
+			return false;
+		
+	}
+	
+}

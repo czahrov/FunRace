@@ -14,8 +14,8 @@
 	
 	$items = get_pages( array(
 		'parent' => $kafelki_root->ID,
-		'sort_order' => 'DESC',
-		'sort_column' => 'date',
+		'sort_order' => 'ASC',
+		'sort_column' => 'menu_order',
 		
 	) );
 	

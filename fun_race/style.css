@@ -3733,21 +3733,29 @@ KONTAKT
 	margin-bottom: 95px;
 }
 
-.kontakt .grid .container .content form .item input.invalid {
+.kontakt .grid .container .content form .invalid {
 	font-family: var(--font-bold);
 	color: #fff;
 	background-color: #f72525;
-	background-image: url(../img/icons/invalid.png);
+	background-image: url(img/icons/invalid.png);
 	background-position: 96% center;
 	background-repeat: no-repeat;
 }
 
-.kontakt .grid .container .content form .item input.valid {
+.kontakt .grid .container .content form .valid {
 	font-family: var(--font-bold);
 	color: #fff;
-	background-color: var(--color-summer);
 }
 
+body.lato .kontakt .grid .container .content form .valid{
+	background-color: var(--color-winter);
+	
+}
+
+body.zima .kontakt .grid .container .content form .valid{
+	background-color: var(--color-summer);
+	
+}
 
 /*
 /////////
@@ -4714,7 +4722,7 @@ MEDIA
 		
 	}
 	.mamucik .grid .container .intro .col1 .boxes {
-		padding-left: 50px;
+		
 	}
 	.instrukt .grid .container .intro .col1 {
 		margin-right: 30px;

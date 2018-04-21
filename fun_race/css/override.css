@@ -1,0 +1,135 @@
+#intro .intro-poster {
+  position: relative;
+}
+#intro .intro-poster .img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-size: auto 100%;
+}
+#intro .intro-poster .img.skier {
+  left: 0;
+  background-image: url(../img/skier.png);
+  background-position: left;
+}
+#intro .intro-poster .img.biker {
+  right: 0;
+  background-image: url(../img/biker.png);
+  background-position: center;
+}
+@media (min-width: 1200px) {
+  #intro .intro-poster .img.biker {
+    background-position: right;
+  }
+}
+#intro .intro-poster .logo {
+  margin-top: -60px;
+  padding: 0;
+  max-height: 400px;
+  max-width: 30vw;
+}
+#intro .intro-poster p {
+  font-family: var(--font-light);
+}
+#intro .intro-poster .links a:nth-child(1) {
+  background-color: var(--color-summer);
+}
+#intro .intro-poster .links a:nth-child(2) {
+  background-color: var(--color-winter);
+}
+#intro .circles > .wheel {
+  width: 45vw;
+  height: 45vw;
+}
+#intro .circles > .circle:nth-child(2) {
+  width: 50vw;
+  height: 50vw;
+}
+#intro .circles > .circle:nth-child(3) {
+  width: 60vw;
+  height: 60vw;
+}
+#intro .circles > .circle:nth-child(4) {
+  width: 70vw;
+  height: 70vw;
+}
+
+#wypozyczalnia-kajakow .grid > .container p,
+#szkola .grid > .container p,
+#szkola-kajakarstwa .grid > .container p,
+#rafting .grid > .container p,
+#splywy-kajakowe .grid > .container p {
+  font-family: var(--font-light);
+}
+
+#slider-main {
+  overflow: hidden;
+  position: relative;
+}
+#slider-main > .slide {
+  z-index: 0;
+  visibility: visible;
+  opacity: 0;
+}
+#slider-main .pagin {
+  position: absolute;
+  margin: 30px 0;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: 5;
+}
+#slider-main .pagin .item {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 4px;
+  width: 40px;
+  height: 40px;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 50%;
+  background-origin: content-box;
+  background-clip: content-box;
+  -webkit-transition: background .5s linear;
+  transition: background .5s linear;
+  cursor: pointer;
+}
+
+body header nav .menu > ul > li > a {
+  font-family: var(--font-light);
+}
+body header .poster .content h2 {
+  text-shadow: none;
+}
+@media (min-width: 1440px) {
+  body.lato header nav .nav-end .season.winter {
+    background-color: var(--color-summer);
+  }
+}
+body.lato #slider-main .pagin .item {
+  border-color: var(--color-summer);
+}
+body.lato #slider-main .pagin .item.active {
+  background-color: var(--color-summer);
+}
+@media (min-width: 1440px) {
+  body.zima header nav .nav-end .season.winter {
+    background-color: var(--color-winter);
+  }
+}
+body.zima #slider-main .pagin .item {
+  border-color: var(--color-winter);
+}
+body.zima #slider-main .pagin .item.active {
+  background-color: var(--color-winter);
+}
+
+footer .top .container .inner .item span {
+  display: inline-block;
+  padding-right: 10px;
+  color: var(--color-winter);
+}
+
+/*# sourceMappingURL=override.css.map */

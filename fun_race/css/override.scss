@@ -1,0 +1,338 @@
+#intro
+{
+	
+	.intro-poster{
+		position: relative;
+		
+		.img{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 50%;
+			background:{
+				size: auto 100%;
+			};
+			
+			&.skier{
+				left: 0;
+				background:{
+					image: url(../img/skier.png);
+					position: left;
+				};
+				
+			}
+			
+			&.biker{
+				right: 0;
+				background:{
+					image: url(../img/biker.png);
+					position: center;
+				};
+				
+				@media(min-width: 1200px){
+					background-position: right;
+					
+				}
+				
+			}
+			
+		}
+		
+		.logo{
+			margin-top: -60px;
+			padding: 0;
+			max-height: 400px;
+			max-width: 30vw;
+			
+		}
+		
+		p{
+			font-family: var(--font-light);
+			
+		}
+		
+		.links{
+			
+			a{
+				
+				&:nth-child(1){
+					background-color: var(--color-summer);
+					
+				}
+				
+				&:nth-child(2){
+					background-color: var(--color-winter);
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	.circles{
+		
+		& > .wheel{
+			width: 45vw;
+			height: 45vw;
+			
+		}
+		
+		& > .circle{
+			
+			&:nth-child(2){
+				width: 50vw;
+				height: 50vw;
+				
+			}
+			
+			&:nth-child(3){
+				width: 60vw;
+				height: 60vw;
+				
+			}
+			
+			&:nth-child(4){
+				width: 70vw;
+				height: 70vw;
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+#wypozyczalnia-kajakow,
+#szkola,
+#szkola-kajakarstwa,
+#rafting,
+#splywy-kajakowe
+{
+	
+	.grid{
+		
+		& > .container{
+			
+			p{
+				font-family: var(--font-light);
+				
+			}
+		
+		}
+		
+	}
+	
+}
+
+#slider-main
+{
+	overflow: hidden;
+	position: relative;
+	
+	& > .slide{
+		z-index: 0;
+		visibility: visible;
+		opacity: 0;
+		
+	}
+	
+	.pagin{
+		position: absolute;
+		margin: 30px 0;
+		left: 50%;
+		bottom: 0;
+		transform: translate(-50%,0);
+		z-index: 5;
+		
+		.item{
+			display: inline-block;
+			margin: 0 10px;
+			padding: 4px;
+			width: 40px;
+			height: 40px;
+			border:{
+				style: solid;
+				width: 4px;
+			};
+			border-radius: 50%;
+			background:{
+				origin: content-box;
+				clip: content-box;
+			};
+			transition: background .5s linear;
+			cursor: pointer;
+			
+		}
+		
+	}
+	
+}
+
+body{
+	
+	header{
+			 
+		nav{
+			
+			.menu{
+				
+				& > ul{
+					
+					& > li{
+						
+						& > a{
+							font-family: var(--font-light);
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		.poster{
+			
+			.content{
+				
+				h2{
+					text-shadow: none;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	&.lato{
+		
+		header{
+			 
+			nav{
+				
+				.nav-end{
+					
+					.season{
+						
+						&.winter{
+							
+							@media( min-width: 1440px ){
+								background-color: var(--color-summer);
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		#slider-main
+		{
+			
+			.pagin{
+				
+				.item{
+					border-color: var(--color-summer);
+					
+					&.active{
+						background-color: var(--color-summer);
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	&.zima{
+		
+		header{
+			 
+			nav{
+				
+				.nav-end{
+					
+					.season{
+						
+						&.winter{
+							
+							@media( min-width: 1440px ){
+								background-color: var(--color-winter);
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		#slider-main
+		{
+			
+			.pagin{
+				
+				.item{
+					border-color: var(--color-winter);
+					
+					&.active{
+						background-color: var(--color-winter);
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+footer{
+	
+	.top{
+		
+		.container{
+			
+			.inner{
+				
+				.item{
+					
+					span{
+						display: inline-block;
+						padding-right: 10px;
+						color: var(--color-winter);
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+

@@ -4,9 +4,9 @@
 
 <body id="intro">
     <header class="intro-poster flex">
-        <div class="img img1"></div>
-        <div class="img img2"></div>
-        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo_intro.png" alt="Fun_Race">
+        <div class="img skier"></div>
+        <div class="img biker"></div>
+        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo_intro_alt.png" alt="Fun_Race">
         <div class="circles flex flex-justify-center flex-items-center">
             <div class="wheel"></div>
             <div class="circle"></div>

@@ -1,6 +1,6 @@
 	<nav class="flex flex-justify-between flex-items-center">
 		<a href="<?php echo home_url('lato'); ?>" class="logo no-shrink">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/FUNRACE_logo-1200x334.png" alt="Fun Race">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Fun Race">
 		</a>
 		<div class="menu flex flex-justify-end flex-justify-center-dm flex-items-center grow ">
 			<button class="hamburger hide-dm">
