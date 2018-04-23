@@ -190,6 +190,14 @@
   }
 }
 
+#newsletter {
+  margin: 100px 40px;
+}
+#newsletter .return {
+  display: inline-block;
+  margin-top: 30px;
+}
+
 body header nav .menu > ul > li > a {
   font-family: var(--font-light);
 }

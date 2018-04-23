@@ -47,13 +47,18 @@
 				
 				<li class="menu-social flex flex-justify-center">
 					<div class="icon">
-						<a href="#" class="box">
+						<a href="https://www.facebook.com/funracepl" class="box" target='_blank'>
 							<i class="fa fa-facebook" aria-hidden="true"></i>
 						</a>
 					</div>
-					<div class="icon">
+					<!--<div class="icon">
 						<a href="#" class="box">
 							<i class="fa fa-youtube" aria-hidden="true"></i>
+						</a>
+					</div>-->
+					<div class="icon">
+						<a href="https://www.instagram.com/explore/tags/funrace/" class="box" target='_blank'>
+							<i class="fa fa-instagram" aria-hidden="true"></i>
 						</a>
 					</div>
 				<li>

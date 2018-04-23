@@ -2,9 +2,30 @@
     <div class="top grid">
        <div class="container">
             <div class="inner flex flex-justify-center flex-justify-between-ml flex-items-center flex-wrap">
-                <div class="item base1 base3-ml no-shrink flex flex-justify-start flex-justify-center-mm"><i class="fa fa-mobile" aria-hidden="true"></i>Tel.: +48 501 724 216 <span>lub</span> +48 609 375 913</div>
-                <div class="item base1 base3-ml no-shrink flex flex-justify-start flex-justify-center-mm"><i class="fa fa-map-marker" aria-hidden="true"></i>ul. Jana Pawła 54 34.460 Szczawnica</div>
-                <div class="item base1 base3-ml no-shrink flex flex-justify-start flex-justify-center-mm"><i class="fa fa-envelope" aria-hidden="true"></i>biuro@funrace.pl</div>
+                <div class="item base1 base4-ml no-shrink flex flex-justify-start flex-justify-center-mm">
+					<i class="fa fa-mobile" aria-hidden="true"></i>
+					<a href='tel:+48501724216'>
+						Tel.: +48 501 724 216
+					</a>
+				</div>
+                <div class="item base1 base4-ml no-shrink flex flex-justify-start flex-justify-center-mm">
+					<i class="fa fa-phone" aria-hidden="true"></i>
+					<a href='tel:+48609375913'>
+						Tel.: +48 609 375 913
+					</a>
+				</div>
+                <div class="item base1 base4-ml no-shrink flex flex-justify-start flex-justify-center-mm">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+					<a href='https://www.google.pl/maps/place/Jana+Pawła+II+54,+34-460+Szlachtowa' target="_blank">
+						ul. Jana Pawła 54 34-460 Szczawnica
+					</a>
+				</div>
+                <div class="item base1 base4-ml no-shrink flex flex-justify-start flex-justify-center-mm">
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+					<a href="mailto:biuro@funrace.pl">
+						biuro@funrace.pl
+					</a>
+				</div>
             </div>
         </div>
     </div>

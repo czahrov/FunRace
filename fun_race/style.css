@@ -1398,6 +1398,10 @@ footer .top .container .inner .item .fa-mobile {
 	font-size: 50px;
 }
 
+footer .top .container .inner .item .fa-phone {
+	font-size: 35px;
+}
+
 footer .top .container .inner .item .fa-envelope,
 footer .top .container .inner .item .fa-map-marker {
 	font-size: 35px;

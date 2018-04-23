@@ -4,6 +4,34 @@ add_theme_support('widgets');
 
 define( 'DMODE', isset( $_COOKIE[ 'sprytne' ] ) );
 
+include __DIR__ . "/php/PHPMailer/PHPMailerAutoload.php";
+include __DIR__ . "/php/Newsletter/Newsletter.php";
+
+function getNL(){
+	static $NL = null;
+	
+	if( $NL === null ){
+		$NL = new Newsletter();
+		
+	}
+	
+	return $NL;
+}
+
+function getMailer(){
+	static $mailer = null;
+	
+	if( $mailer === null ){
+		$mailer = new PHPMailer();
+		$mailer->Encoding = "base64";
+		$mailer->CharSet = "utf-8";
+		$mailer->setLanguage( 'pl' );
+		
+	}
+	
+	return $mailer;
+}
+
 register_sidebar( array(
 	'id' => 'footer-1',
 	'name' => 'Tekst w stopce',
@@ -420,3 +448,4 @@ function getSeason(){
 	}
 	
 }
+
