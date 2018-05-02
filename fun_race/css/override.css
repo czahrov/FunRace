@@ -1,3 +1,7 @@
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 #intro .intro-poster {
   position: relative;
 }
@@ -198,11 +202,74 @@
   margin-top: 30px;
 }
 
-body header nav .menu > ul > li > a {
-  font-family: var(--font-light);
+footer .line_sep {
+  border-bottom: 1px solid #666;
 }
+footer .kontakt .inner {
+  height: 76px;
+}
+footer .kontakt .inner .item {
+  padding: 0 16px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  font-family: var(--font-regular);
+}
+footer .kontakt .inner .item .icon {
+  padding-right: 27px;
+}
+footer .kontakt .inner .item .icon.mobile {
+  font-size: 50px;
+}
+footer .kontakt .inner .item .icon.phone, footer .kontakt .inner .item .icon.marker, footer .kontakt .inner .item .icon.mail {
+  font-size: 35px;
+}
+footer .postext {
+  padding: 50px 0 10px;
+  text-align: justify;
+  font-size: 18px;
+  font-family: var(--font-regular);
+}
+footer .postext * {
+  line-height: 30px;
+}
+footer .postext .textwidget {
+  padding: 0 15px;
+}
+
 body header .poster .content h2 {
   text-shadow: none;
+}
+body header .nav-act .grid .container .bar .select {
+  padding: 0;
+}
+body header .nav-act .grid .container .bar .select .select-head {
+  padding: 0 20px;
+}
+body header .nav-act .grid .container .bar .select .select-options .option {
+  padding: 0 20px;
+}
+@media (max-width: 767px) {
+  body header .nav-act .grid .container .bar {
+    height: initial;
+  }
+  body header .nav-act .grid .container .bar .select {
+    padding: 0;
+  }
+  body header .nav-act .grid .container .bar .select, body header .nav-act .grid .container .bar .select:nth-of-type(2) {
+    -ms-flex-preferred-size: initial;
+        flex-basis: initial;
+  }
+  body header .nav-act .grid .container .bar .select .select-head {
+    padding: 20px 5px;
+  }
+  body header .nav-act .grid .container .bar .select .select-options {
+    position: static;
+    display: block;
+  }
+  body header .nav-act .grid .container .bar .select .select-options .option {
+    margin: 10px 5px;
+    border: solid 1px #fff !important;
+  }
 }
 @media (min-width: 1440px) {
   body.lato header nav .nav-end .season.winter {
@@ -215,6 +282,9 @@ body.lato #slider-main .pagin .item {
 body.lato #slider-main .pagin .item.active {
   background-color: var(--color-summer);
 }
+body.lato footer .kontakt .icon {
+  color: var(--color-winter);
+}
 @media (min-width: 1440px) {
   body.zima header nav .nav-end .season.winter {
     background-color: var(--color-winter);
@@ -226,11 +296,8 @@ body.zima #slider-main .pagin .item {
 body.zima #slider-main .pagin .item.active {
   background-color: var(--color-winter);
 }
-
-footer .top .container .inner .item span {
-  display: inline-block;
-  padding-right: 10px;
-  color: var(--color-winter);
+body.zima footer .kontakt .icon {
+  color: var(--color-summer);
 }
 
 /*# sourceMappingURL=override.css.map */

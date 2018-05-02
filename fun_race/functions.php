@@ -35,7 +35,7 @@ function getMailer(){
 register_sidebar( array(
 	'id' => 'footer-1',
 	'name' => 'Tekst w stopce',
-	'before_widget' => '<div class="item base1">',
+	'before_widget' => '<div class="grid">',
 	'after_widget' => '</div>',
 	
 ) );
@@ -287,7 +287,7 @@ function checkAccess(){
 }
 
 // generowanie danych do sekcji na stronie glownej
-function dlaczegoFunRace(){
+function dlaczegoFunRace( $season = null ){
 	/* $ret = array(
 		'Doświadczenie' => array(
 			'icon' => '/img/icons/doswiadczenie.png',
@@ -312,7 +312,7 @@ function dlaczegoFunRace(){
 		
 	); */
 	
-	$season = getSeason();
+	$season = $season === null?( getSeason() ):( $season );
 	$season_name = "sprawdz-dlaczego-{$season}";
 	
 	if( $season === false ) return false;
@@ -429,10 +429,18 @@ function getSeason(){
 	// zima - id 6
 	$id = get_post()->ID;
 	
-	while( !in_array( get_post( $id )->post_parent, array( 0, 4, 6 ) ) ){
+	if( !in_array( $id, array( 0, 4, 6 ) ) ){
+		$terminator = 0;
+		while( $terminator < 100 and !in_array( get_post( $id )->post_parent, array( 0, 4, 6 ) ) ){
+			$id = get_post( $id )->post_parent;
+			$terminator++;
+			
+		}
+		
 		$id = get_post( $id )->post_parent;
 		
 	}
+	
 	
 	switch( $id ){
 		case 4:
@@ -448,4 +456,97 @@ function getSeason(){
 	}
 	
 }
+
+// generuje menu rezerwacji
+function rezerwujMenu( $season = null ){
+	if( $season === null ) return false;
+	
+/*
+<div class='nav-act'>
+	<div class='grid'>
+		<div class='container'>
+			<div class='bar flex flex-column flex-row-mm'>
+				
+				<div class='select'>
+					<div class='select-head flex flex-items-center flex-justify-center flex-justify-start-mm'>
+						<div class='title'>Rafting</div>
+						<div class='icon'>
+							<img src='<?php echo get_template_directory_uri(); ?>/img/arrow_small_white.png' alt='arrow'>
+						</div>
+					</div>
+					
+					<div class='select-options'>
+						<a href='<?php echo home_url('lato/rezerwuj/rafting'); ?>' class='option flex-justify-center flex-justify-start-mm'>RAFTING na Dunajcu</a>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+*/
+	
+	echo <<<EOT
+<div class='nav-act'>
+	<div class='grid'>
+		<div class='container'>
+			<div class='bar flex flex-column flex-row-mm'>
+EOT;
+	
+	$pages_main = get_pages( array(
+		'parent' => get_page_by_path( "{$season}/rezerwuj" )->ID,
+		
+	) );
+	
+	
+	foreach( $pages_main as $main ){
+		
+		printf(
+			"<div class='select'>
+					<div class='select-head flex flex-items-center flex-justify-center flex-justify-start-mm'>
+						<div class='title'>%s</div>
+						<div class='icon'>
+							<img src='%s/img/arrow_small_white.png' alt='arrow'>
+						</div>
+					</div>",
+			$main->post_title,
+			get_template_directory_uri()
+			
+		);
+		
+		$pages_sub = get_pages( array(
+			'parent' => $main->ID,
+			
+		) );
+		
+		echo "<div class='select-options'>";
+		
+		foreach( $pages_sub as $sub ){
+			printf(
+				"<a href='%s' class='option flex-justify-center flex-justify-start-mm'>
+					%s
+				</a>",
+				get_the_permalink( $sub->ID ),
+				$sub->post_title
+				
+			);
+			
+		}
+		
+		echo "</div>
+			</div>";
+		
+	}
+	
+	echo <<<EOT
+			</div>
+		</div>
+	</div>
+</div>
+EOT;
+	
+}
+
 

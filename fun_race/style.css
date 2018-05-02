@@ -3980,7 +3980,9 @@ REZERWUJ-SINGLE
 	margin-bottom: 12px;
 }
 
-.rezerwuj-single .grid .container .wrapper .details .personal .item input {
+.rezerwuj-single .grid .container .wrapper .details .personal .item input,
+.rezerwuj-single .grid .container .wrapper .details select
+{
 	height: 47px;
 	padding-left: 15px;
 	border: 1px solid #ebebeb;
@@ -4261,12 +4263,12 @@ REZERWUJ-SINGLE
 
 /*BUTTONS*/
 
-.rezerwuj-single .grid .container .wrapper .details .personal .buttons {
+.rezerwuj-single .grid .container .wrapper .details .buttons {
 	padding: 0 20px;
 	margin-bottom: 30px;
 }
 
-.rezerwuj-single .grid .container .wrapper .details .personal .buttons .send {
+.rezerwuj-single .grid .container .wrapper .details .buttons .send {
 	height: 49px;
 	width: 201px;
 	background-color: var(--color-summer);
@@ -4276,13 +4278,13 @@ REZERWUJ-SINGLE
 	border: 0;
 	outline: 0;
 	color: #fff;
-	margin-right: 26px;
+	/* margin-right: 26px; */
 	margin-bottom: 30px;
 	cursor: pointer;
 	transition: .3s ease-in;
 }
 
-.rezerwuj-single .grid .container .wrapper .details .personal .buttons .add {
+.rezerwuj-single .grid .container .wrapper .details .buttons .add {
 	background-color: #dadada;
 	height: 49px;
 	width: 221px;
@@ -4296,20 +4298,20 @@ REZERWUJ-SINGLE
 	transition: .3s ease-in;
 }
 
-.rezerwuj-single .grid .container .wrapper .details .personal .buttons .send:hover,
-.rezerwuj-single .grid .container .wrapper .details .personal .buttons .add:hover {
+.rezerwuj-single .grid .container .wrapper .details .buttons .send:hover,
+.rezerwuj-single .grid .container .wrapper .details .buttons .add:hover {
 	opacity: 0.8;
 }
 
-.rezerwuj-single .grid .container .wrapper .details .personal .buttons .add {
+.rezerwuj-single .grid .container .wrapper .details .buttons .add {
 	cursor: pointer;
 }
 
-.rezerwuj-single .grid .container .wrapper .details .personal .buttons .add p {
+.rezerwuj-single .grid .container .wrapper .details .buttons .add p {
 	padding: 0 15px;
 }
 
-.rezerwuj-single .grid .container .wrapper .details .personal .buttons .add .fa {
+.rezerwuj-single .grid .container .wrapper .details .buttons .add .fa {
 	padding: 0 15px;
 }
 
@@ -4605,10 +4607,10 @@ MEDIA
 		margin-right: 40px;
 	}
 	header .nav-act .grid .container .bar .select:nth-of-type(1) {
-		padding-left: 90px;
+		/* padding-left: 90px; */
 	}
 	header .nav-act .grid .container .bar .select:nth-of-type(1) .select-options .option {
-		padding-left: 90px;
+		/* padding-left: 90px; */
 	}
 	header .nav-act .grid .container .bar .select .select-head .icon {
 		display: flex;
@@ -4771,7 +4773,7 @@ MEDIA
 		padding-left: 53px;
 	}
 	header .nav-act .grid .container .bar .select:nth-of-type(2) {
-		padding-left: 54px;
+		/* padding-left: 54px; */
 	}
 	.offer .container .row .destiny .cover {
 		opacity: 0;
@@ -5768,7 +5770,7 @@ body.lato .rezerwuj-single .grid .container .wrapper .details .personal .area te
 	border-color: var(--color-winter);
 }
 
-body.lato .rezerwuj-single .grid .container .wrapper .details .personal .buttons .send {
+body.lato .rezerwuj-single .grid .container .wrapper .details .buttons .send {
 	background-color: var(--color-winter);
 }
 

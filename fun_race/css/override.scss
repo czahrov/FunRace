@@ -1,3 +1,8 @@
+*{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	
+}
+
 #intro
 {
 	
@@ -288,7 +293,8 @@
 	
 }
 
-#newsletter{
+#newsletter
+{
 	margin: 100px 40px;
 	
 	.return{
@@ -299,22 +305,38 @@
 	
 }
 
-body{
+footer{
 	
-	header{
-			 
-		nav{
+	.line_sep{
+		border-bottom: 1px solid #666;
+		
+	}
+	
+	.kontakt{
+		
+		.inner{
+			height: 76px;
 			
-			.menu{
+			.item{
+				padding: 0 16px;
+				color: rgba(255,255,255,.7);
+				font:{
+					size: 18px;
+					family: var(--font-regular);
+				};
 				
-				& > ul{
+				.icon{
+					padding-right: 27px;
 					
-					& > li{
+					&.mobile{
+						font-size: 50px;
 						
-						& > a{
-							font-family: var(--font-light);
-							
-						}
+					}
+					
+					&.phone,
+					&.marker,
+					&.mail{
+						font-size: 35px;
 						
 					}
 					
@@ -323,6 +345,34 @@ body{
 			}
 			
 		}
+		
+	}
+	
+	.postext{
+		padding: 50px 0 10px;
+		text-align: justify;
+		font:{
+			size: 18px;
+			family: var(--font-regular);
+		};
+		
+		*{
+			line-height: 30px;
+			
+		}
+		
+		.textwidget{
+			padding: 0 15px;
+			
+		}
+		
+	}
+	
+}
+
+body{
+	
+	header{
 		
 		.poster{
 			
@@ -336,6 +386,74 @@ body{
 			}
 			
 		}
+		
+		.nav-act{
+		
+			.grid{
+				
+				.container{
+					
+					.bar{
+						
+						.select{
+							padding: 0;
+							
+							.select-head{
+								padding: 0 20px;
+								
+							}
+							
+							.select-options{
+								
+								.option{
+									padding: 0 20px;
+									
+								}
+								
+							}
+							
+						}
+						
+						@media( max-width: 767px ){
+							height: initial;
+							
+							.select{
+								padding: 0;
+							
+								&, &:nth-of-type(2){
+									flex-basis: initial;
+									
+								}
+								
+								.select-head{
+									padding: 20px 5px;
+									
+								}
+								
+								.select-options{
+									position: static;
+									display: block;
+									
+									.option{
+										margin: 10px 5px;
+										border: solid 1px #fff !important;
+										
+									}
+									
+								}
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
 		
 	}
 	
@@ -378,6 +496,19 @@ body{
 						background-color: var(--color-summer);
 						
 					}
+					
+				}
+				
+			}
+			
+		}
+		
+		footer{
+			
+			.kontakt{
+				
+				.icon{
+					color: var(--color-winter);
 					
 				}
 				
@@ -433,29 +564,15 @@ body{
 			
 		}
 		
-	}
-	
-}
-
-footer{
-	
-	.top{
-		
-		.container{
+		footer{
 			
-			.inner{
+			.kontakt{
 				
-				.item{
-					
-					span{
-						display: inline-block;
-						padding-right: 10px;
-						color: var(--color-winter);
-						
-					}
+				.icon{
+					color: var(--color-summer);
 					
 				}
-				
+			
 			}
 			
 		}
