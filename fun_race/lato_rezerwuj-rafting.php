@@ -59,7 +59,7 @@
 							</div>
 							<div class="personal personal-parent">
 								<div class="flex flex-wrap">
-									<input type='hidden' name='Rezerwacja na' value='<?php echo get_post()->post_title; ?>'>
+									<input type='hidden' name='Wydarzenie' value='<?php echo get_post()->post_title; ?>'>
 									<div class="item imie flex flex-column base1 base2-mm">
 										<label for="">Imię</label>
 										<input type="text" id="" name="Imię rezerwującego" required>
@@ -112,21 +112,54 @@
 								<div class="person flex flex-wrap">
 									<div class="item imie flex flex-column base1 base2-mm">
 										<label for="">Imię</label>
-										<input type="text" id="" name="Imię uczestnika[]">
+										<input type="text" id="" name="Imię uczestnika[]" required>
 									</div>
 									<div class="item nazwisko flex flex-column base1 base2-mm">
 										<label for="">Nazwisko</label>
-										<input type="text" id="" name="Nazwisko uczestnika[]">
+										<input type="text" id="" name="Nazwisko uczestnika[]" required>
 									</div>
 									
 								</div>
-									<div class="buttons flex flex-wrap flex-column flex-items-center">
-										<button class="add flex flex-justify-center flex-items-center">
-											<p>Dodaj uczestnika</p>
-											<i class="fa fa-plus" aria-hidden="true"></i>
-										</button>
-										
+								<div class="person flex flex-wrap">
+									<div class="item imie flex flex-column base1 base2-mm">
+										<label for="">Imię</label>
+										<input type="text" id="" name="Imię uczestnika[]" required>
 									</div>
+									<div class="item nazwisko flex flex-column base1 base2-mm">
+										<label for="">Nazwisko</label>
+										<input type="text" id="" name="Nazwisko uczestnika[]" required>
+									</div>
+									
+								</div>
+								<div class="person flex flex-wrap">
+									<div class="item imie flex flex-column base1 base2-mm">
+										<label for="">Imię</label>
+										<input type="text" id="" name="Imię uczestnika[]" required>
+									</div>
+									<div class="item nazwisko flex flex-column base1 base2-mm">
+										<label for="">Nazwisko</label>
+										<input type="text" id="" name="Nazwisko uczestnika[]" required>
+									</div>
+									
+								</div>
+								<div class="person flex flex-wrap">
+									<div class="item imie flex flex-column base1 base2-mm">
+										<label for="">Imię</label>
+										<input type="text" id="" name="Imię uczestnika[]" required>
+									</div>
+									<div class="item nazwisko flex flex-column base1 base2-mm">
+										<label for="">Nazwisko</label>
+										<input type="text" id="" name="Nazwisko uczestnika[]" required>
+									</div>
+									
+								</div>
+								<div class="buttons flex flex-wrap flex-column flex-items-center">
+									<div class="add flex flex-justify-center flex-items-center">
+										<p>Dodaj uczestnika</p>
+										<i class="fa fa-plus" aria-hidden="true"></i>
+									</div>
+									
+								</div>
 								
 							</div>
 							

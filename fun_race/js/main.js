@@ -18,7 +18,6 @@ $(function () {
 	window.onload = init();
 
 	//animacja intra
-
 	$('#intro > .intro-poster > .links > a').click(function (e) {
 		e.preventDefault();
 		$('#intro .circle').css("animation", "puls forwards 2s");
@@ -516,9 +515,80 @@ $(function () {
 
 		});
 
-	})(
+	})
+	(
 		$('form.fpcf'),
 		$('form.fpcf').find('input, textarea'),
-		$('form.fpcf .submit'));
+		$('form.fpcf .submit')
+	);
+	
+	// rezerwacja
+	(function( form, addUser, zgody, personal ){
+		
+		var person_proto = personal.children( '.person' ).first().clone( true );
+		person_proto.find( 'input' ).attr( 'required', null );
+		
+		addUser.click( function( e ){
+			e.preventDefault();
+			$( this ).parent().before( person_proto.clone( true ) );
+			
+		} );
+		
+		zgody
+		.on({
+			invalid: function( e ){
+				TweenLite.fromTo(
+					$(this).parent(),
+					1,
+					{
+						backgroundColor: 'red',
+					},
+					{
+						backgroundColor: 'transparent',
+						
+					}
+				);
+				
+			},
+			
+		});
+		
+	})
+	(
+		$( '.rezerwuj-single form' ),
+		$( '.rezerwuj-single form .add' ),
+		$( '.rezerwuj-single form .zgody input' ),
+		$( '.rezerwuj-single form .personal' )
+		
+	);
+	
+	// oferta pojedyncza
+	(function( zakladki, zakladki_head, zakladki_content ){
+		zakladki
+		.find('h1, h2, h3, h4, h5, h6')
+		.addClass('theme-color');
+		
+		zakladki_head.click( function( e ){
+			var index = $(this).index();
+
+			$(this)
+			.addClass('active')
+			.siblings()
+			.removeClass('active');
+			
+			zakladki_content
+			.eq( index )
+			.addClass('active')
+			.siblings()
+			.removeClass('active');
+			
+		} );
+		
+	})
+	(
+		$('#oferta-single .zakladki'),
+		$('#oferta-single .zakladki .head .item'),
+		$('#oferta-single .zakladki .tabs .item')
+	)
 
 });

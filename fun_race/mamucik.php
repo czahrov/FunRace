@@ -5,7 +5,7 @@
 	Template Name: mamucik
 	*/
 ?>
-<body id="mamucik" class='<?php do_action( 'body_hook' ); ?>'>
+<body id="oferta-single" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
       <?php get_template_part("template/menu"); ?>	
 	<?php banner(); ?>
@@ -19,69 +19,47 @@
 <div class="single grid">
     <div class="container padding">
         <div class="content">
-            <h3><span>Dołącz</span> do nas tej zimy</h3>
-            <div class="title">Akademia Narciarska MAMUCIK - kursy dla dzieci i młodzieży</div>
-            <p>Zapraszamy wszystkie dzieci i młodzież na Jaworzynę Krynicką do pierwszej, profesjonalnej Akademii Narciarskiej MAMUCIK - miejsca szkoleń dla dzieci i młodzieży.</p>
-            <p>Mamucik wraz z instruktorami Szkoły Narciarskiej FUNRACE stworzyli wyjątkowe miejsce, w którym nie tylko uczą dzieci i młodzież narciarstwa - z dbałością o poprawność techniczną nauczanych elementów, w formie zabawowej, z elementami rywalizacji, przy wykorzystaniu ciekawych ćwiczeń oraz różnorodnych pomocy dydaktycznych ale także uczą jak bezpiecznie i aktywnie spędzać wolny czas. <br>Jako jedyna szkoła narciarska na Jaworzynie Krynickiej realizujemy w naszej Akademii pierwszy w Polsce Program Nauczania Dzieci SITN-PZN którego jesteśmy współautorami.</p>
+            <?php
+				the_post();
+				the_content();
+			?>
         </div>
         <div class="white-space-80"></div>
-        <div class="content">
-            <h3>Kursy akademi narciarskiej <span>Mamucik</span></h3>
-        </div>
+        <div class="content"></div>
         
         <!-- wrapper -->
         
-        <div class="wrapper flex flex-justify-center flex-wrap">
-            <a href="<?php echo home_url('zima/oferta/mamucik/mamucik-swiateczny'); ?>" class="element">
+        <div class="wrapper kafelki flex flex-justify-center flex-wrap">
+			<h2 class='title base1'>
+				Kursy akademi narciarskiej 
+				<span>
+					Mamucik
+				</span>
+			</h2>
+			<?php
+				$oferty = get_pages( array(
+					'parent' => get_post()->ID,
+					
+				) );
+				
+				foreach( $oferty as $oferta ):
+			?>
+            <a href="<?php the_permalink( $oferta->ID ); ?>" class="element">
                 <div class="inner">
-                    <div class="picture"></div>
+                    <div class="picture" style='background-image:url( <?php echo get_the_post_thumbnail_url( $oferta->ID, 'large' ); ?> );'></div>
                     <div class="name">
-                        <div class="main flex flex-items-center flex-justify-center"> Kurs świąteczny</div>
+                        <div class="main flex flex-items-center flex-justify-center">
+							<?php echo $oferta->post_title; ?>
+						</div>
                         <div class="sticker flex flex-items-center flex-justify-center">
-                        Zobacz ofertę
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png" alt="arrow">
+							Zobacz ofertę
+							<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png" alt="arrow">
                         </div>
                     </div>
                 </div>
             </a>
-              <a href="<?php echo home_url('zima/oferta/mamucik/mamucik-feryjny'); ?>" class="element">
-                <div class="inner">
-                    <div class="picture"></div>
-                    <div class="name">
-                        <div class="main flex flex-items-center flex-justify-center">Kurs feryjny</div>
-                        <div class="sticker flex flex-items-center flex-justify-center">
-                        Zobacz ofertę
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png" alt="arrow">
-                        </div>
-                    </div>
-                </div>
-            </a>
-              <a href="<?php echo home_url('zima/oferta/mamucik/mamucik-mini'); ?>" class="element">
-                <div class="inner">
-                    <div class="picture"></div>
-                    <div class="name">
-                        <div class="main flex flex-items-center flex-justify-center"> Kurs mini</div>
-                        <div class="sticker flex flex-items-center flex-justify-center">
-                        Zobacz ofertę
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png" alt="arrow">
-                        </div>
-                    </div>
-                </div>
-            </a>
-              <a href="<?php echo home_url('zima/oferta/mamucik/mamucik-snowboardowy'); ?>" class="element">
-                <div class="inner">
-                    <div class="picture"></div>
-                    <div class="name">
-                        <div class="main flex flex-items-center flex-justify-center">Kurs snowboardowy</div>
-                        <div class="sticker flex flex-items-center flex-justify-center">
-                        Zobacz ofertę
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png" alt="arrow">
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-        </div>
+			<?php endforeach; ?>
+		</div>
         
     </div>
 </div>

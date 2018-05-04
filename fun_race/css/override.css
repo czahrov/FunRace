@@ -206,7 +206,9 @@ footer .line_sep {
   border-bottom: 1px solid #666;
 }
 footer .kontakt .inner {
-  height: 76px;
+  min-height: 76px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 footer .kontakt .inner .item {
   padding: 0 16px;
@@ -236,6 +238,83 @@ footer .postext .textwidget {
   padding: 0 15px;
 }
 
+.rezerwuj-single .grid .container .wrapper .details .personal .check2 {
+  margin-bottom: 24px;
+}
+.rezerwuj-single .grid .container .wrapper .details .personal .check-row {
+  padding: 10px 20px;
+}
+
+body.lato .theme-color {
+  color: var(--color-winter);
+}
+body.lato .theme-bg {
+  background-color: var(--color-winter);
+}
+body.lato .theme-border {
+  border-color: var(--color-winter);
+}
+body.lato header nav .menu .dropdown .drop-container .item a:hover {
+  background-color: var(--color-winter);
+}
+@media (min-width: 1440px) {
+  body.lato header nav .nav-end .season.winter {
+    background-color: var(--color-winter);
+  }
+}
+body.lato header #slider-main .pagin .item {
+  border-color: var(--color-winter);
+}
+body.lato header #slider-main .pagin .item.active {
+  background-color: var(--color-winter);
+}
+body.lato header footer .kontakt .icon {
+  color: var(--color-winter);
+}
+body.lato #oferta-single .single .container .content h1, body.lato #oferta-single .single .container .content h2, body.lato #oferta-single .single .container .content h3, body.lato #oferta-single .single .container .content h4, body.lato #oferta-single .single .container .content h5, body.lato #oferta-single .single .container .content h6 {
+  color: var(--color-winter);
+}
+body.lato #oferta-single .single .container .content ul li::before {
+  border: 2px solid var(--color-winter);
+}
+body.lato #oferta-single .single .kafelki .title span {
+  color: var(--color-winter);
+}
+body.zima .theme-color {
+  color: var(--color-summer);
+}
+body.zima .theme-bg {
+  background-color: var(--color-summer);
+}
+body.zima .theme-border {
+  border-color: var(--color-summer);
+}
+body.zima header nav .menu .dropdown .drop-container .item a:hover {
+  background-color: var(--color-summer);
+}
+@media (min-width: 1440px) {
+  body.zima header nav .nav-end .season.winter {
+    background-color: var(--color-summer);
+  }
+}
+body.zima header #slider-main .pagin .item {
+  border-color: var(--color-summer);
+}
+body.zima header #slider-main .pagin .item.active {
+  background-color: var(--color-summer);
+}
+body.zima header footer .kontakt .icon {
+  color: var(--color-summer);
+}
+body.zima #oferta-single .single .container .content h1, body.zima #oferta-single .single .container .content h2, body.zima #oferta-single .single .container .content h3, body.zima #oferta-single .single .container .content h4, body.zima #oferta-single .single .container .content h5, body.zima #oferta-single .single .container .content h6 {
+  color: var(--color-summer);
+}
+body.zima #oferta-single .single .container .content ul li::before {
+  border: 2px solid var(--color-summer);
+}
+body.zima #oferta-single .single .kafelki .title span {
+  color: var(--color-summer);
+}
 body header .poster .content h2 {
   text-shadow: none;
 }
@@ -271,33 +350,254 @@ body header .nav-act .grid .container .bar .select .select-options .option {
     border: solid 1px #fff !important;
   }
 }
-@media (min-width: 1440px) {
-  body.lato header nav .nav-end .season.winter {
-    background-color: var(--color-summer);
+body header nav .menu .dropdown .drop-container .item a {
+  height: 60px;
+  padding: 0 20px 0 40px;
+  font-family: var(--font-bold);
+  -webkit-transition: background 0.3s linear;
+  transition: background 0.3s linear;
+}
+body header nav .menu .dropdown .drop-container .item a img {
+  padding-left: 20px;
+}
+body header nav .menu .dropdown .drop-container .item a:hover {
+  color: #fff;
+}
+
+#oferta-single .single .container .content {
+  text-align: initial;
+  font-family: var(--font-regular);
+  line-height: 1.5em;
+}
+#oferta-single .single .container .content h1, #oferta-single .single .container .content h2, #oferta-single .single .container .content h3, #oferta-single .single .container .content h4, #oferta-single .single .container .content h5, #oferta-single .single .container .content h6 {
+  font-family: var(--font-bold);
+  padding: 20px 0;
+}
+#oferta-single .single .container .content h3 {
+  font-size: 1.17em;
+}
+#oferta-single .single .container .content strong {
+  display: inline-block;
+  font-family: var(--font-regular);
+  line-height: 1.5em;
+}
+#oferta-single .single .container .content p {
+  padding: initial;
+  font-size: 1em;
+}
+#oferta-single .single .container .content ul {
+  list-style: none;
+  padding: 30px 0;
+}
+#oferta-single .single .container .content ul li {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  line-height: 2em;
+}
+#oferta-single .single .container .content ul li::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+}
+#oferta-single .single .kafelki {
+  margin: 50px 0;
+}
+#oferta-single .single .kafelki .title {
+  padding: 20px 0;
+  text-align: center;
+  color: initial;
+  font-family: var(--font-medium);
+}
+#oferta-single .single .kafelki .item {
+  position: relative;
+  height: 280px;
+  padding: 10px;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+  background-origin: content-box;
+  overflow: hidden;
+  font-family: var(--font-bold);
+}
+#oferta-single .single .kafelki .item .hitbox {
+  position: absolute;
+  margin: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+#oferta-single .single .kafelki .item .hitbox, #oferta-single .single .kafelki .item .hitbox * {
+  cursor: pointer;
+}
+#oferta-single .single .kafelki .item .hitbox .btn {
+  margin: auto;
+  padding: 10px 20px;
+  color: #fff;
+  border: solid 1px #fff;
+  white-space: nowrap;
+  letter-spacing: 2px;
+}
+#oferta-single .single .kafelki .item .name {
+  position: absolute;
+  z-index: 5;
+  margin: 0 10px 10px;
+  padding: 10px;
+  height: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+#oferta-single .single .kafelki .item:hover .hitbox {
+  opacity: 1;
+}
+#oferta-single .single .tabela > .info .bar .head {
+  padding: 0 20px;
+  height: 74px;
+  -webkit-box-shadow: 0 0 0px 1px #ebebeb inset;
+          box-shadow: 0 0 0px 1px #ebebeb inset;
+}
+#oferta-single .single .tabela > .info .bar .head .icon {
+  max-width: 46px;
+  max-height: 46px;
+}
+#oferta-single .single .tabela > .info .bar .head .text {
+  padding-left: 20px;
+  font-size: 16px;
+  font-family: var(--font-bold);
+}
+#oferta-single .single .tabela > .info .bar .body {
+  padding: 34px 20px;
+  family: var(--font-medium);
+}
+#oferta-single .single .tabela > .info .bar .body ul {
+  list-style: none;
+}
+#oferta-single .single .tabela > .info .bar .body * {
+  line-height: 30px;
+}
+#oferta-single .single .zakladki .top {
+  padding: 50px 0;
+}
+#oferta-single .single .zakladki .top .img img {
+  max-width: 200px;
+}
+#oferta-single .single .zakladki .top .text {
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--font-bold);
+}
+#oferta-single .single .zakladki .head {
+  border-style: solid;
+  border-width: 0 0 6px 0;
+}
+#oferta-single .single .zakladki .head .item {
+  position: relative;
+  -webkit-transition-property: background, font;
+  transition-property: background, font;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+  padding: 0 16px;
+  height: 74px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: var(--font-medium);
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+#oferta-single .single .zakladki .head .item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  margin: 20px 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  border-color: inherit;
+}
+@media (min-width: 1024px) {
+  #oferta-single .single .zakladki .head .item:not(:hover):not(.active) {
+    background-color: transparent;
+    color: #2d2d2d;
   }
 }
-body.lato #slider-main .pagin .item {
-  border-color: var(--color-summer);
+#oferta-single .single .zakladki .tabs .item {
+  padding: 60px 0;
+  font-family: var(--font-medium);
+  font-size: 16px;
 }
-body.lato #slider-main .pagin .item.active {
-  background-color: var(--color-summer);
+#oferta-single .single .zakladki .tabs .item strong {
+  font-family: var(--font-bold);
+  font-size: 18px;
 }
-body.lato footer .kontakt .icon {
-  color: var(--color-winter);
+#oferta-single .single .zakladki .tabs .item, #oferta-single .single .zakladki .tabs .item * {
+  line-height: 30px;
 }
-@media (min-width: 1440px) {
-  body.zima header nav .nav-end .season.winter {
-    background-color: var(--color-winter);
-  }
+#oferta-single .single .zakladki .tabs .item:not(.active) {
+  display: none;
 }
-body.zima #slider-main .pagin .item {
-  border-color: var(--color-winter);
+#oferta-single .single .zakladki .tabs .item.program_kursu ul {
+  list-style: none;
 }
-body.zima #slider-main .pagin .item.active {
-  background-color: var(--color-winter);
+#oferta-single .single .zakladki .tabs .item.program_kursu ul li {
+  position: relative;
+  padding-left: 40px;
+  margin: 20px 0;
 }
-body.zima footer .kontakt .icon {
-  color: var(--color-summer);
+#oferta-single .single .zakladki .tabs .item.program_kursu ul li::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../img/icons/czas.png);
+}
+#oferta-single .single .zakladki .tabs .item.dlaczego_kurs ul, #oferta-single .single .zakladki .tabs .item.informacje ul, #oferta-single .single .zakladki .tabs .item.cennik ul {
+  list-style: none;
+  border-color: inherit;
+}
+#oferta-single .single .zakladki .tabs .item.dlaczego_kurs ul li, #oferta-single .single .zakladki .tabs .item.informacje ul li, #oferta-single .single .zakladki .tabs .item.cennik ul li {
+  position: relative;
+  padding-left: 40px;
+  margin: 20px 0;
+  border-color: inherit;
+}
+#oferta-single .single .zakladki .tabs .item.dlaczego_kurs ul li::before, #oferta-single .single .zakladki .tabs .item.informacje ul li::before, #oferta-single .single .zakladki .tabs .item.cennik ul li::before {
+  content: '';
+  position: absolute;
+  margin-top: 15px;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: inherit;
+  border-radius: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
 /*# sourceMappingURL=override.css.map */

@@ -31,7 +31,7 @@
 				
 				foreach( $pages as $item ):
 			?>
-            <a href="<?php echo wp_get_attachment_url( $item->ID ); ?>" class="box flex flex-column flex-justify-center" target="_blank">
+            <a href="<?php echo wp_get_attachment_url( get_post_meta( $item->ID, 'dokument', true ) ); ?>" class="box flex flex-column flex-justify-center" target="_blank">
                <div class="content">
                     <div class="licence"><?php echo $item->post_title; ?></div>
                     <div class="tag"><?php echo get_post_meta( $item->ID, 'subtitle', true ); ?></div>

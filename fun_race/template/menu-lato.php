@@ -20,23 +20,22 @@
 					<a href="<?php echo home_url('lato\oferta'); ?>">Oferta</a>
 				
 					<div class="dropdown flex">
-						<div class="drop-container base1 base2-dm">
-							<ul>
-								<li><a href="<?php echo home_url('lato\oferta\rafting'); ?>">Rafting <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png"></a></li>
-								<li><a href="<?php echo home_url('lato\oferta\splywy-kajakowe'); ?>">Spływy kajakowe na Dunajcu<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png"></a></li>
-								<li><a href="<?php echo home_url('lato/oferta/wypozyczalnia-kajakow'); ?>">Wypożyczalnia kajaków<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png"></a></li>
-								<li><a href="<?php echo home_url('lato\oferta\szkola-kajakarstwa-gorskiego'); ?>">Szkoła kajakarstwa górskiego<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png"></a></li>
-								<li><a href="<?php echo home_url('lato\oferta\imprezy-integracyjne'); ?>">Imprezy integracyjne<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png"></a></li>
-							</ul>
-						</div>
-						<div class="drop-container base1 base2-dm">
-							<ul>
-								<li><a href="<?php echo home_url('lato\oferta\rowery'); ?>">Rowery<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png"></a></li>
-								<li><a href="<?php echo home_url('lato\oferta\oferta-dla-szkol'); ?>">Oferta dla szkół<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png"></a></li>
-								<li><a href="<?php echo home_url('lato\oferta\off-road'); ?>">Off-road<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png"></a></li>
-								<li><a href="<?php echo home_url('lato\oferta\park-linowy'); ?>">Park linowy<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png"></a></li>
-								<li><a></a></li>
-							</ul>
+						<div class="drop-container base1 flex flex-wrap">
+							<?php
+								$pages = get_pages( array(
+									'parent' => get_page_by_path( sprintf( '%s/oferta', getSeason() ) )->ID,
+									
+								) );
+								
+								foreach( $pages as $page ):
+							?>
+							<div class='item base1 base2-mm'>
+								<a href="<?php the_permalink( $page->ID ); ?>" class='flex flex-items-center'>
+									<?php echo $page->post_title; ?>
+									<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_white.png">
+								</a>
+							</div>
+							<?php endforeach; ?>
 						</div>
 					</div>
 					
