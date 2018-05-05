@@ -1271,3 +1271,62 @@ body{
 	}
 	
 }
+
+#aktualnosci
+{
+	
+	.aktualnosci{
+		
+		.share{
+			position: relative;
+			
+			& > .icon{
+				margin-right: 10px;
+				width: 30px;
+				height: 30px;
+				
+			}
+			
+			.text{
+				font:{
+					size: 12px;
+					family: var(--font-third-bold);
+				}
+				text-transform: uppercase
+				
+			}
+			
+			.links{
+				position: absolute;
+				left: 0;
+				top: 100%;
+				
+				.link{
+					display: inline-block;
+					margin: 10px;
+					font-size: 40px;
+					
+				}
+				
+			}
+			
+			&:not(:hover){
+				
+				.links{
+					display: none;
+					
+				}
+				
+			}
+			
+			&, & *{
+				cursor: pointer;
+				
+			}
+			
+		}
+		
+	}
+	
+}
+

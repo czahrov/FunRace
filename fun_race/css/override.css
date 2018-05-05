@@ -641,4 +641,34 @@ body header nav .menu .dropdown .drop-container .item a:hover {
   cursor: pointer;
 }
 
+#aktualnosci .aktualnosci .share {
+  position: relative;
+}
+#aktualnosci .aktualnosci .share > .icon {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+}
+#aktualnosci .aktualnosci .share .text {
+  font-size: 12px;
+  font-family: var(--font-third-bold);
+  text-transform: uppercase;
+}
+#aktualnosci .aktualnosci .share .links {
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+#aktualnosci .aktualnosci .share .links .link {
+  display: inline-block;
+  margin: 10px;
+  font-size: 40px;
+}
+#aktualnosci .aktualnosci .share:not(:hover) .links {
+  display: none;
+}
+#aktualnosci .aktualnosci .share, #aktualnosci .aktualnosci .share * {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=override.css.map */

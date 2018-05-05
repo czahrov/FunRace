@@ -549,4 +549,14 @@ EOT;
 	
 }
 
+// modyfikuje segment query adresu URI
+function queryModify( $arg = array() ){
+	$ret =  http_build_query( array_merge(
+		$_GET,
+		$arg
+	) );
+	
+	return empty( $ret )?( $_SERVER['REDIRECT_URL'] ):( "?{$ret}" );
+	
+}
 

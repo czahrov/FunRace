@@ -27,10 +27,19 @@
 			<div class="element base1 base2-mm base4-dm no-shrink">
 				<div class="inner">
 					<div class="cover" style="background-image: url(<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>);"></div>
-					<a href="#" class="filtr"></a>
+					<a href="<?php
+							printf(
+								'%s?item=%u',
+								home_url( sprintf( '%s/aktualnosci', getSeason() ) ),
+								$post->ID
+							);
+							
+						?>" class="filtr"></a>
 					<div class="label">
 					    <div class="flex">
-					        <div class="date"><?php echo get_post_time( 'd F Y', false, $post->ID, true ); ?></div>
+					        <div class="date">
+								<?php echo get_post_time( 'd F Y', false, $post->ID, true ); ?>
+							</div>
 					        <div class="tag">aktualności</div>
 					    </div>
 					    <div class="text">
@@ -48,7 +57,14 @@
 								
 							?>
 						</div>
-                        <a href="<?php the_permalink( $post->ID ); ?>">
+                        <a href="<?php
+							printf(
+								'%s?item=%u',
+								home_url( sprintf( '%s/aktualnosci', getSeason() ) ),
+								$post->ID
+							);
+							
+						?>">
 							czytaj dalej
 							<span>
 								<img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png">
