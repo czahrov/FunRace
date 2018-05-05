@@ -29,6 +29,7 @@
 		
 	);
 	
+	if( get_post_meta( get_post()->ID, 'on_tabela', true ) == true ):
 ?>
 <div class='tabela flex flex-wrap'>
 	<?php if( !empty( $logo ) ): ?>
@@ -66,3 +67,4 @@
 	</div>
 	
 </div>
+<?php endif; ?>

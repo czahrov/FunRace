@@ -29,18 +29,9 @@
 		
 	);
 	
-	$empty = true;
-	foreach( $data as $item ){
-		if( !empty( $item['content'] ) ){
-			$empty = false;
-			break;
-			
-		}
-		
-	}
 	
 ?>
-<?php if( !$empty ): ?>
+<?php if( get_post_meta( get_post()->ID, 'on_zakladki', true ) == true ): ?>
 <div class='zakladki'>
 	<div class='top flex flex-wrap flex-items-center flex-justify-around'>
 		<?php if( !empty( $ikona ) ): ?>

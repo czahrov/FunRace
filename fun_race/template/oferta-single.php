@@ -6,6 +6,11 @@
 	get_header();
 ?>
 <body id="oferta-single" class='<?php do_action( 'body_hook' ); ?>'>
+	<?php if( DMODE ): ?>
+	<!-- META
+		<?php var_dump( get_post_meta( get_post()->ID ) ); ?>
+	-->
+	<?php endif; ?>
  <header>
     <?php get_template_part("template/menu"); ?>
 	<?php banner(); ?>
@@ -28,6 +33,8 @@
         </div>
         <div class="white-space-40"></div>
 		<?php get_template_part('template/oferta-single-kursy'); ?>
+		<?php get_template_part('template/oferta-single-galeria'); ?>
+		<?php get_template_part('template/oferta-single-podobne'); ?>
 		
     </div>
 	
