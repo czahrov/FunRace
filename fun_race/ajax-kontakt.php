@@ -17,7 +17,7 @@ $filters = array(
 	'phone' => array(
 		'filter' => FILTER_VALIDATE_REGEXP,
 		'options' => array(
-			'regexp' => "~^(\+\d+\s*)?(\(\d+\)\s*)?(\d+(\s|\-)*)+$~",
+			'regexp' => "~^(\d+[\s\-]*)+\d$~",
 		),
 		
 	),
@@ -34,8 +34,66 @@ $filters = array(
 
 $safe = filter_input_array( INPUT_POST, $filters );
 
-echo json_encode( array(
-	'status' => 'success',
-	'msg' => 'ok',
+$mail = getMailer();
+
+$mail->setFrom( "noreply@{$_SERVER['HTTP_HOST']}", "Formularz kontaktowy" );
+if( DMODE ){
+	$mail->addAddress( 'sprytne@scepter.pl' );
+}
+else{
+	$mail->addAddress( $safe['email'] );
+	// $mail->addAddress( 'biuro@funrace.pl' );
+}
+$mail->addReplyTo( $safe['email'] );
+$mail->Subject = sprintf(
+	'Nowa wiadomość: %s',
+	$safe['subject']
 	
-) );
+);
+$mail->Body = sprintf(
+	'Wiadomość od: %s
+Telefon: %s
+Email: %s
+Temat: %s
+Treść wiadomości:
+%s
+
+---
+Mail wygenerowany automatycznie na %s',
+	$safe['person'],
+	$safe['phone'],
+	$safe['email'],
+	$safe['subject'],
+	$safe['message'],
+	home_url()
+	
+);
+
+if( DMODE ){
+	// echo "<!-- {$mail->Body} -->";
+	// $sended = $mail->send();
+	$sended = true;
+	
+}
+else{
+	$sended = $mail->send();
+	
+}
+
+if( $sended ){
+	echo json_encode( array(
+		'status' => 'success',
+		'msg' => 'Mail wysłany pomyślnie',
+		
+	) );
+	
+}
+else{
+	echo json_encode( array(
+		'status' => 'fail',
+		'msg' => 'Wysyłka maila nie powiodła się.',
+		
+	) );
+	
+}
+

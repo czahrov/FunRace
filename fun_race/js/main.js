@@ -394,7 +394,7 @@ $(function () {
 	/* slider główny */
 
 	// formularz kontaktowy
-	(function (form, inputs, submit) {
+	(function (form, inputs, notify_bar, submit) {
 		function veryfi(field) {
 			var type = $(field).attr('value-type');
 			var value = $(field).val();
@@ -482,6 +482,12 @@ $(function () {
 				
 			},
 			notify: function( e, status, msg ){
+				notify_bar
+				.hide()
+				.removeClass( 'success, fail' )
+				.addClass( status )
+				.html( msg )
+				.slideDown();
 				
 			},
 			
@@ -508,17 +514,25 @@ $(function () {
 				console.info('formularz zweryfikowany pomyślnie');
 				form.triggerHandler( 'send' );
 
-			} else {
+			}
+			else {
 				console.warn('formularz nie został wypełniony poprawnie');
 
 			}
 
 		});
-
+		
+		notify_bar
+		.click( function( e ){
+			$(this).slideUp();
+			
+		} );
+		
 	})
 	(
 		$('form.fpcf'),
 		$('form.fpcf').find('input, textarea'),
+		$('form.fpcf .notify'),
 		$('form.fpcf .submit')
 	);
 	

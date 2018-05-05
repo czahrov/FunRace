@@ -622,4 +622,23 @@ body header nav .menu .dropdown .drop-container .item a:hover {
   z-index: 1;
 }
 
+#kontakt .notify {
+  padding: 10px 20px;
+  color: #fff;
+  text-align: center;
+  font-family: var(--font-medium);
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+#kontakt .notify.success {
+  background-color: #178217;
+}
+#kontakt .notify.fail {
+  background-color: #990000;
+}
+#kontakt .notify, #kontakt .notify * {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=override.css.map */
