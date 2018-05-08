@@ -40,6 +40,37 @@ register_sidebar( array(
 	
 ) );
 
+register_sidebar( array(
+	'id' => 'kontakt',
+	'name' => 'Kontakt - kafelki informacyjne',
+	'description' => 'Dane wyświetlane w formie kafelków na stronie kontaktu',
+	'before_widget' => '<div class="box"><div class="inner">',
+	'after_widget' => '</div></div>',
+	'before_title' => '<h3>',
+	'after_title' => '</h3>'
+	
+) );
+
+register_sidebar( array(
+	'id' => 'kontakt-2',
+	'name' => 'Kontakt - kafelki z kontaktem',
+	'description' => 'Dane wyświetlane w formie kafelków na stronie kontaktu, pod kafelkami z informacjami',
+	'before_widget' => '<div class="box"><div class="inner">',
+	'after_widget' => '</div></div>',
+	'before_title' => '<h3>',
+	'after_title' => '</h3>'
+	
+) );
+
+register_sidebar( array(
+	'id' => 'oferta',
+	'name' => 'Oferta - masz pytania?',
+	'description' => 'Dane wyświetlane w formie kafelków na stronie ofert w segmencie z ciemnym tłem',
+	'before_widget' => '<div class="item btn flex ">',
+	'after_widget' => '</div>',
+	
+) );
+
 // Breadcrumbs
 function custom_breadcrumbs() {
        

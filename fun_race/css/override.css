@@ -14,24 +14,29 @@
 }
 #intro .intro-poster .img.skier {
   left: 0;
-  background-image: url(../img/skier.png);
-  background-position: left;
+  background-image: url(../img/skier.jpg);
+  background-position: 10%;
+}
+@media (min-width: 1280px) {
+  #intro .intro-poster .img.skier {
+    background-position: 0;
+  }
 }
 #intro .intro-poster .img.biker {
   right: 0;
-  background-image: url(../img/biker.png);
-  background-position: center;
+  background-image: url(../img/biker.jpg);
+  background-position: 50%;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   #intro .intro-poster .img.biker {
-    background-position: right;
+    background-position: 0;
   }
 }
 #intro .intro-poster .logo {
   margin-top: -60px;
   padding: 0;
   max-height: 400px;
-  max-width: 30vw;
+  max-width: 20vw;
 }
 #intro .intro-poster p {
   font-family: var(--font-light);
@@ -43,20 +48,21 @@
   background-color: var(--color-winter);
 }
 #intro .circles > .wheel {
-  width: 45vw;
-  height: 45vw;
+  width: 25vw;
+  height: 25vw;
+  background-color: white;
 }
 #intro .circles > .circle:nth-child(2) {
-  width: 50vw;
-  height: 50vw;
+  width: 30vw;
+  height: 30vw;
 }
 #intro .circles > .circle:nth-child(3) {
-  width: 60vw;
-  height: 60vw;
+  width: 40vw;
+  height: 40vw;
 }
 #intro .circles > .circle:nth-child(4) {
-  width: 70vw;
-  height: 70vw;
+  width: 50vw;
+  height: 50vw;
 }
 
 #wypozyczalnia-kajakow .grid > .container p,
@@ -238,6 +244,20 @@ footer .postext .textwidget {
   padding: 0 15px;
 }
 
+.rezerwuj-single .grid .container .infobar {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: var(--font-medium);
+  letter-spacing: 1px;
+  text-align: center;
+}
+.rezerwuj-single .grid .container .infobar.success {
+  background-color: #06ac0c;
+}
+.rezerwuj-single .grid .container .infobar.fail {
+  background-color: #dd0808;
+}
 .rezerwuj-single .grid .container .wrapper .details .personal .check2 {
   margin-bottom: 24px;
 }
@@ -640,6 +660,12 @@ body header nav .menu .dropdown .drop-container .item a:hover {
 #kontakt .notify, #kontakt .notify * {
   cursor: pointer;
 }
+#kontakt .kontakt .grid .container .content .row .box {
+  padding: 15px 15px 15px 40px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
 
 #aktualnosci .aktualnosci .share {
   position: relative;
@@ -669,6 +695,29 @@ body header nav .menu .dropdown .drop-container .item a:hover {
 }
 #aktualnosci .aktualnosci .share, #aktualnosci .aktualnosci .share * {
   cursor: pointer;
+}
+
+.contact-bar .container .buttons .item .textwidget {
+  position: relative;
+  width: 100%;
+}
+.contact-bar .container .buttons .item .textwidget p a {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: var(--font-bold);
+  font-size: 18px;
 }
 
 /*# sourceMappingURL=override.css.map */

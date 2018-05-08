@@ -21,21 +21,26 @@
 			&.skier{
 				left: 0;
 				background:{
-					image: url(../img/skier.png);
-					position: left;
+					image: url(../img/skier.jpg);
+					position: 10%;
 				};
+				
+				@media( min-width: 1280px ){
+					background-position: 0;
+					
+				}
 				
 			}
 			
 			&.biker{
 				right: 0;
 				background:{
-					image: url(../img/biker.png);
-					position: center;
+					image: url(../img/biker.jpg);
+					position: 50%;
 				};
 				
-				@media(min-width: 1200px){
-					background-position: right;
+				@media( min-width: 1280px ){
+					background-position: 0;
 					
 				}
 				
@@ -47,7 +52,7 @@
 			margin-top: -60px;
 			padding: 0;
 			max-height: 400px;
-			max-width: 30vw;
+			max-width: 20vw;
 			
 		}
 		
@@ -79,28 +84,29 @@
 	.circles{
 		
 		& > .wheel{
-			width: 45vw;
-			height: 45vw;
+			width: 25vw;
+			height: 25vw;
+			background-color: rgba( 255, 255, 255, 1 );
 			
 		}
 		
 		& > .circle{
 			
 			&:nth-child(2){
-				width: 50vw;
-				height: 50vw;
+				width: 30vw;
+				height: 30vw;
 				
 			}
 			
 			&:nth-child(3){
-				width: 60vw;
-				height: 60vw;
+				width: 40vw;
+				height: 40vw;
 				
 			}
 			
 			&:nth-child(4){
-				width: 70vw;
-				height: 70vw;
+				width: 50vw;
+				height: 50vw;
 				
 			}
 			
@@ -379,6 +385,25 @@ footer{
 	.grid{
 		
 		.container{
+			
+			.infobar{
+				padding: 10px;
+				margin-bottom: 20px;
+				color: #fff;
+				font-family: var(--font-medium);
+				letter-spacing: 1px;
+				text-align: center;
+				
+				&.success{
+					background-color: hsl(122, 93%, 35%);
+				}
+				
+				&.fail{
+					background-color: hsl(0, 93%, 45%);
+					
+				}
+				
+			}
 			
 			.wrapper{
 				
@@ -1270,6 +1295,32 @@ body{
 		
 	}
 	
+	.kontakt{
+		
+		.grid{
+			
+			.container{
+				
+				.content{
+					
+					.row{
+						
+						.box{
+							padding: 15px 15px 15px 40px;
+							justify-content: start;
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
 }
 
 #aktualnosci
@@ -1330,3 +1381,42 @@ body{
 	
 }
 
+.contact-bar{
+	
+	.container{
+		
+		.buttons{
+			
+			.item{
+				
+				.textwidget{
+					position: relative;
+					width: 100%;
+					
+					p{
+						
+						a{
+							position: absolute;
+							display: flex;
+							top: 0;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							align-items: center;
+							justify-content: center;
+							font-family: var(--font-bold);
+							font-size: 18px;
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

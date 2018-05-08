@@ -1504,7 +1504,7 @@ footer .bottom .container {
 }
 
 footer .bottom .container .inner {
-	max-width: 1590px;
+	/* max-width: 1590px; */
 	margin: 0 auto;
 	height: 100%;
 	width: 100%;
@@ -2119,7 +2119,7 @@ header .poster-single .content h2 span {
 }
 
 .contact-bar .container .buttons {
-	flex: 1 1 auto;
+	/* flex: 1 1 auto; */
 	width: 100%;
 }
 
@@ -4970,11 +4970,11 @@ MEDIA
 	.contact-bar .container .tips {
 		flex: 0 1 680px;
 		width: 100%;
-		padding-left: 64px;
-		margin: 9;
+		/* padding-left: 64px; */
+		/* margin: 9; */
 	}
 	.contact-bar .container .buttons {
-		flex: 1 1 1078px;
+		/* flex: 1 1 1078px; */
 	}
 	.single .container .wrapper {
 		max-width: 100%;
@@ -5416,8 +5416,8 @@ body.lato .contact-bar .container .buttons .btn:hover {
 }
 
 body.lato .contact-bar .container .buttons .btn:first-of-type:hover {
-	background-color: #fff;
-	color: var(--color-winter);
+	/* background-color: #fff;
+	color: var(--color-winter); */
 }
 
 

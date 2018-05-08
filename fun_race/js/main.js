@@ -2,6 +2,8 @@ $(function () {
 
 	//kurczenie menu
 	function init() {
+		if( $( 'header > nav' ).length < 1 ) return false;
+		
 		window.addEventListener('scroll', function (e) {
 			var distanceY = window.pageYOffset || document.documentElement.scrollTop,
 			shrinkOn = 500,
