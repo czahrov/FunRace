@@ -8,6 +8,9 @@
 			</div>
 		</div>
 		<div class="container">
+			<script>
+				var markers = JSON.parse( '<?php echo json_encode( getMarkers() ); ?>' );
+			</script>
 			<div id="map">
 			</div>
 		</div>

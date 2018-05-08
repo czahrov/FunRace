@@ -591,3 +591,62 @@ function queryModify( $arg = array() ){
 	
 }
 
+// zwraca tablicę znaczników na mapie
+function getMarkers(){
+	$pins = get_posts( array(
+		'category_name' => 'znacznik-na-mapie',
+		'numberposts' => -1,
+		
+	) );
+
+	$markers = array();
+
+	foreach( $pins as $pin ){
+		$marker = array();
+		
+		switch( get_post_meta( $pin->ID, 'typ_znacznika', true ) ){
+			case 'adres':
+				$marker = array_merge(
+					$marker,
+					array(
+						'address' => get_post_meta( $pin->ID, 'adres', true ),
+					)
+					
+				);
+				
+			break;
+			case 'gps':
+				$marker = array_merge(
+					$marker,
+					array(
+						'position' => array(
+							'lat' => (float)get_post_meta( $pin->ID, 'lat', true ),
+							'lng' => (float)get_post_meta( $pin->ID, 'long', true ),
+							
+						),
+					)
+					
+				);
+			break;
+			
+		}
+		
+		$imgID = get_post_meta( $pin->ID, 'grafika', true );
+		if( !empty( $imgID ) ){
+			$marker = array_merge(
+				$marker,
+				array(
+					'icon' => wp_get_attachment_image_url( $imgID ),
+				)
+				
+			);
+			
+		}
+		
+		$markers[] = $marker;
+		
+	}
+	
+	return $markers;
+	
+}

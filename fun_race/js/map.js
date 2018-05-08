@@ -1,15 +1,15 @@
 $(function(){
 	if( $( '#map' ).length > 0 ){
-		var pin = {
+		/* var pin = {
 			url: 'http://poligon.scepter.pl/PiotrM/Fun_Race/img/marker.png',
-		};
+		}; */
 		
-		var markers = [
+		/* var markers = [
 			{
 				// uluru
 				position: {
 					lat: 49.423736,
-					lng: 20.724273,					
+					lng: 20.724273,
 				},
 				icon: pin,
 			},
@@ -17,7 +17,7 @@ $(function(){
 				// szczawnica
 				position:{
 					lat: 49.416218,
-					lng: 20.528791,					
+					lng: 20.528791,
 				},
 				icon: pin,
 			},
@@ -25,12 +25,12 @@ $(function(){
 				// krynica
 				position: {
 					lat: 49.418502,
-					lng: 20.926673,					
+					lng: 20.926673,
 				},
 				icon: pin,
 			},
 			
-		];
+		]; */
 		
 		var map = $( '#map' )
 		.gmap3({
@@ -38,7 +38,7 @@ $(function(){
 			zoom: 10,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			navigationControl: true,
-			scrollwheel: true,
+			scrollwheel: false,
 			gestureHandling: 'cooperative',
 			mapTypeControl: false,
 			streetViewControl: false,

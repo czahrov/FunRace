@@ -133,7 +133,6 @@ $(function () {
 	($('.breadcrumbs .social'));
 
 	// Pojawianie sie paska rezerwuj i sezon
-
 	$(window).scroll(function () {
 		if (window.innerWidth < 1440) {
 			if ($(this).scrollTop() > 300) {
@@ -145,7 +144,6 @@ $(function () {
 	});
 
 	//PILS TAB
-
 	var $wrapper = $('.tab-wrapper'),
 	$allTabs = $wrapper.find('.tab-content > div'),
 	$tabMenu = $wrapper.find('.tab-menu li'),
@@ -331,7 +329,6 @@ $(function () {
 	);
 	
 	//SLIDER HOTEL
-
 	function SliderHotel() {
 		if ($('.hotel-slider').length == 0)
 			return false;
