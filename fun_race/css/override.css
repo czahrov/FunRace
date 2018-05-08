@@ -10,7 +10,7 @@
   top: 0;
   bottom: 0;
   width: 50%;
-  background-size: auto 100%;
+  background-size: cover;
 }
 #intro .intro-poster .img.skier {
   left: 0;
@@ -505,7 +505,7 @@ body header nav .menu .dropdown .drop-container .item a:hover {
 }
 #oferta-single .single .tabela > .info .bar .body {
   padding: 34px 20px;
-  family: var(--font-medium);
+  font-family: var(--font-medium);
 }
 #oferta-single .single .tabela > .info .bar .body ul {
   list-style: none;
@@ -667,6 +667,9 @@ body header nav .menu .dropdown .drop-container .item a:hover {
           justify-content: start;
 }
 
+#aktualnosci .aktualnosci {
+  padding-bottom: 80px;
+}
 #aktualnosci .aktualnosci .share {
   position: relative;
 }
@@ -675,6 +678,9 @@ body header nav .menu .dropdown .drop-container .item a:hover {
   width: 30px;
   height: 30px;
 }
+#aktualnosci .aktualnosci .share > .icon img {
+  margin: auto;
+}
 #aktualnosci .aktualnosci .share .text {
   font-size: 12px;
   font-family: var(--font-third-bold);
@@ -682,8 +688,13 @@ body header nav .menu .dropdown .drop-container .item a:hover {
 }
 #aktualnosci .aktualnosci .share .links {
   position: absolute;
+  padding: 10px;
   left: 0;
   top: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.3);
 }
 #aktualnosci .aktualnosci .share .links .link {
   display: inline-block;

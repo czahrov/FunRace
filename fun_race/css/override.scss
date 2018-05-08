@@ -15,7 +15,7 @@
 			bottom: 0;
 			width: 50%;
 			background:{
-				size: auto 100%;
+				size: cover
 			};
 			
 			&.skier{
@@ -1037,7 +1037,7 @@ body{
 					
 					.body{
 						padding: 34px 20px;
-						family: var(--font-medium);
+						font-family: var(--font-medium);
 						
 						ul{
 							list-style: none;
@@ -1327,6 +1327,7 @@ body{
 {
 	
 	.aktualnosci{
+		padding-bottom: 80px;
 		
 		.share{
 			position: relative;
@@ -1335,6 +1336,11 @@ body{
 				margin-right: 10px;
 				width: 30px;
 				height: 30px;
+				
+				img{
+					margin: auto;
+					
+				}
 				
 			}
 			
@@ -1349,8 +1355,12 @@ body{
 			
 			.links{
 				position: absolute;
+				padding: 10px;
 				left: 0;
 				top: 100%;
+				background-color: #fff;
+				border-radius: 10px;
+				box-shadow: 2px 2px 0px 1px rgba( 0, 0, 0, 0.3 );
 				
 				.link{
 					display: inline-block;

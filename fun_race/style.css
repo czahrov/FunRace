@@ -2145,8 +2145,8 @@ header .poster-single .content h2 span {
 }
 
 .contact-bar .container .buttons .btn:first-of-type:hover {
-	color: var(--color-summer);
-	background-color: #fff;
+	/* color: var(--color-summer);
+	background-color: #fff; */
 }
 
 
@@ -3412,7 +3412,7 @@ header .nav-act .grid .container .bar .select .select-options .option:hover {
 
 .aktualnosci .grid .container .main .post {
 	flex-basis: 58%;
-	padding-bottom: 80px;
+	/* padding-bottom: 80px; */
 }
 
 .aktualnosci .grid .container .main .post .post-pic {
@@ -4760,7 +4760,7 @@ MEDIA
 		padding-right: 20px;
 	}
 	.aktualnosci .grid .container .main .post .content {
-		padding-left: 60px;
+		/* padding-left: 60px; */
 		padding-right: 30px;
 	}
 	.aktualnosci .grid .container .main .side {
