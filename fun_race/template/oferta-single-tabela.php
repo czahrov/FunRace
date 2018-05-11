@@ -8,7 +8,7 @@
 		),
 		'poziom' => array(
 			'name' => 'Poziom',
-			'icon' => 'zjazd.png',
+			'icon' => getSeason() === 'zima'?('zjazd.png'):('kajak.png'),
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'poziom', true ) ),
 		),
 		'miejsce' => array(
@@ -16,10 +16,20 @@
 			'icon' => 'lokalizacja.png',
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'miejsce', true ) ),
 		),
+		'trasa' => array(
+			'name' => 'Trasa',
+			'icon' => 'lokalizacja.png',
+			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'trasa', true ) ),
+		),
 		'kiedy' => array(
 			'name' => 'Kiedy',
 			'icon' => 'czas.png',
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'kiedy', true ) ),
+		),
+		'czas_trwania' => array(
+			'name' => 'Czas trwania',
+			'icon' => 'czas.png',
+			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'czas_trwania', true ) ),
 		),
 		'terminy' => array(
 			'name' => 'Terminy',

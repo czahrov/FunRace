@@ -30,6 +30,6 @@
 		</div>
 	</div>
 	<!--PARTNERS-->
-	<?php get_template_part("template/partners"); ?>
+	<?php get_template_part("template/partners-full"); ?>
 	<!-- FOOTER -->
 	<?php get_footer(); ?>

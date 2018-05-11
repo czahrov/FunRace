@@ -1,9 +1,24 @@
 <?php
-	get_header();
-
 	/*
 	Template Name: referencje
 	*/
+
+	get_header();
+	
+	$referencje_lato = get_pages( array(
+		'parent' => get_page_by_path( "lato/referencje" )->ID,
+		'sort_order' => 'ASC',
+		'cort_column' => 'menu_order, post_title',
+		
+	) );
+	
+	$referencje_zima = get_pages( array(
+		'parent' => get_page_by_path( "zima/referencje" )->ID,
+		'sort_order' => 'ASC',
+		'cort_column' => 'menu_order, post_title',
+		
+	) );
+	
 ?>
 <body id="referencje" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
@@ -22,12 +37,26 @@
         <div class="container padding">
             <div class="wrapper flex flex-wrap">
 				<?php
-					$pages = get_pages( array(
-						'parent' => 91,
-						'sort_order' => 'ASC',
-						'cort_column' => 'menu_order, post_title',
+					$pages = array();
+					
+					if( getSeason() === 'zima' ){
+						$pages = array_merge(
+							$pages,
+							$referencje_zima,
+							$referencje_lato
+							
+						);
 						
-					) );
+					}
+					else{
+						$pages = array_merge(
+							$pages,
+							$referencje_lato,
+							$referencje_zima
+							
+						);
+						
+					}
 					
 					foreach( $pages as $item ):
 				?>
@@ -67,6 +96,6 @@
 
 
 <!--PARTNERS-->
-<?php get_template_part("template/partners"); ?>
+<?php get_template_part("template/partners-full"); ?>
 <!-- FOOTER -->
 <?php get_footer(); ?>

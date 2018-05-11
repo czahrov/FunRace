@@ -66,7 +66,7 @@ register_sidebar( array(
 	'id' => 'oferta',
 	'name' => 'Oferta - masz pytania?',
 	'description' => 'Dane wyświetlane w formie kafelków na stronie ofert w segmencie z ciemnym tłem',
-	'before_widget' => '<div class="item btn flex ">',
+	'before_widget' => '<div class="item btn flex theme-bg">',
 	'after_widget' => '</div>',
 	
 ) );
@@ -642,6 +642,14 @@ function getMarkers(){
 			);
 			
 		}
+		
+		$marker = array_merge(
+			$marker,
+			array(
+				'title' => $pin->post_title,
+			)
+			
+		);
 		
 		$markers[] = $marker;
 		

@@ -23,6 +23,7 @@ Version: 4.8.2
 
 body {
 	color: #2d2d2d;
+	font-family: var(--font-light);
 }
 
 .container {
@@ -126,7 +127,7 @@ header nav .menu>ul>li {
 header nav .menu>ul>li>a {
 	padding: 16px 0px;
 	text-transform: uppercase;
-	font-family: var(--font-regular);
+	font-family: var(--font-bold);
 	transition: color .25s linear;
 	position: relative;
 	font-size: 16px;
@@ -169,7 +170,7 @@ header nav .nav-end .booking {
 	//border-right: 1px solid #EBEBEB;
 	//border-left: 1px solid #EBEBEB;
 	height: 100%;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 18px;
 	color: #fff;
 	text-align: center;
@@ -184,7 +185,7 @@ header nav .nav-end .season:hover {
 }
 
 header nav .nav-end .season {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	text-align: center;
 	width: 50%;
 	font-size: 18px;
@@ -244,7 +245,7 @@ header nav .menu .dropdown .drop-container ul li a {
 	height: 100%;
 	line-height: 100%;
 	text-transform: uppercase;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 13px;
 	border-bottom: 1px solid #EBEBEB;
 	transition: linear .3s;
@@ -575,7 +576,7 @@ header .poster .content a {
 	background-color: #fff;
 	font-size: 18px;
 	text-transform: uppercase;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	cursor: pointer;
 	margin: 0 auto;
 }
@@ -642,7 +643,7 @@ header .poster .next:hover img {
 
 .labels .label p {
 	font-size: 12px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: #fff;
 	text-transform: uppercase;
 	line-height: 1.5;
@@ -705,17 +706,17 @@ BREADCRUMBS
 
 .breadcrumbs .container .crumbs {
 	font-size: 14px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 1.5;
 }
 
 .breadcrumbs .container .crumbs a {
 	font-size: 14px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 }
 
 .breadcrumbs .container .crumbs a:last-child {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .breadcrumbs .social {
@@ -818,7 +819,7 @@ INTRO
 
 .intro .container .col .inner .content {
 	padding: 50px 30px 20px 40px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	min-height: 322px;
 }
 
@@ -830,7 +831,7 @@ INTRO
 .intro .container .col .inner .content h2 span {
 	padding-top: 10px;
 	font-size: 42px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	padding-bottom: 30px;
 }
 
@@ -886,13 +887,13 @@ INTRO
 
 .intro .container .col .inner .box .inside .label h3 {
 	font-size: 21px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	padding-bottom: 6px;
 }
 
 .intro .container .col .inner .box .inside .label p {
 	font-size: 18px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 }
 
 .intro .container .col .inner .box .inside .cover {
@@ -914,7 +915,7 @@ INTRO
 	padding: 0 26px 0 16px;
 	font-size: 16px;
 	text-transform: uppercase;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: #fff;
 }
 
@@ -974,7 +975,7 @@ REASONS
 }
 
 .reasons .container h2 span {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .reasons .container .wrapper {
@@ -998,7 +999,7 @@ REASONS
 }
 
 .reasons .container .wrapper .element .inner h3 {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 32px;
 	height: 80px;
 }
@@ -1006,7 +1007,7 @@ REASONS
 .reasons .container .wrapper .element .inner p {
 	line-height: 2;
 	font-size: 16px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	margin: 0 auto;
 }
 
@@ -1058,7 +1059,7 @@ REASONS
 }
 
 .news .container h2 span {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: var(--color-summer);
 }
 
@@ -1122,7 +1123,7 @@ REASONS
 	width: 282px;
 	background-color: #fff;
 	padding: 20px 20px 10px 30px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .news .container .wrapper .element .inner .label .date {
@@ -1200,7 +1201,7 @@ REASONS
 }
 
 .newsletter .container h2 span {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .newsletter .container form .box {
@@ -1217,7 +1218,7 @@ REASONS
 	padding-left: 24px;
 	color: #fff;
 	font-size: 16px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	cursor: text;
 }
 
@@ -1234,7 +1235,7 @@ REASONS
 	cursor: pointer;
 	font-size: 16px;
 	text-transform: uppercase;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	padding-left: 20px;
 }
 
@@ -1260,7 +1261,7 @@ REASONS
 .newsletter .container p {
 	text-align: center;
 	font-size: 18px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	padding-top: 50px;
 }
 
@@ -1287,14 +1288,14 @@ REASONS
 
 .partners .container h2 span {
 	color: var(--color-summer);
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .partners .container p {
 	padding-bottom: 70px;
 	font-size: 16px;
 	line-height: 1.5;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 }
 
 .partners .container .wrapper {
@@ -1385,7 +1386,7 @@ footer .top .container .inner .item {
 	height: 100%;
 	color: rgba(256, 256, 256, .7);
 	font-size: 18px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	min-height: 76px;
 }
 
@@ -1440,7 +1441,7 @@ footer .middle .container .inner .item {
 	flex-shrink: 1;
 	height: 100%;
 	font-size: 18px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 }
 
 footer .middle .container .inner .item .textwidget {
@@ -1522,7 +1523,7 @@ footer .bottom .container .inner .item.full .part {}
 
 footer .bottom .container .inner .item.full .part .text {
 	padding-bottom: 15px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 21px;
 }
 
@@ -1531,13 +1532,13 @@ footer .bottom .container .inner .item.full .part .icon {
 }
 
 footer .bottom .container .inner .item p {
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 18px;
 	line-height: 2;
 }
 
 footer .bottom .container .inner .item h3 {
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 18px;
 	line-height: 2;
 	text-transform: uppercase;
@@ -1579,7 +1580,7 @@ header .poster-sub .filtr {
 header .poster-sub .content {
 	text-align: center;
 	color: #fff;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	overflow-wrap: break-word;
 	max-width: 100%;
 	margin-bottom: 50px;
@@ -1640,15 +1641,15 @@ header .poster-sub .content h2 span {
 .actual .container .side .box .content .licence {
 	padding-bottom: 18px;
 	font-size: 16px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	transition: .25s ease-in;
 }
 
 .actual .container .side .box .content .tag {
 	padding-bottom: 18px;
-	color: var(--color-summer);
+	/* color: var(--color-summer); */
 	text-transform: uppercase;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 12px;
 	transition: .25s ease-in;
 }
@@ -1688,7 +1689,7 @@ header .poster-sub .content h2 span {
 
 .actual .container .main .content .title {
 	font-size: 18px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	text-transform: uppercase;
 	line-height: 1.5;
 	padding: 10px 0;
@@ -1696,7 +1697,7 @@ header .poster-sub .content h2 span {
 
 .actual .container .main .content .sub-title {
 	font-size: 42px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	text-transform: uppercase;
 	padding-bottom: 36px;
 }
@@ -1704,7 +1705,7 @@ header .poster-sub .content h2 span {
 .actual .container .main .content p {
 	font-size: 16px;
 	line-height: 2;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 }
 
 .actual .container .main .wrapper {
@@ -1800,7 +1801,7 @@ header .poster-sub .content h2 span {
 }
 
 .actual .container .main .wrapper .element .inner .about p {
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 14px;
 	line-height: 1.5;
 	color: #fff;
@@ -1820,14 +1821,14 @@ header .poster-sub .content h2 span {
 
 .actual .container .main .wrapper .element .inner .label .name {
 	font-size: 18px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	text-transform: uppercase;
 	padding-bottom: 12px;
 }
 
 .actual .container .main .wrapper .element .inner .label .stand {
 	font-size: 12px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	text-transform: uppercase;
 	color: var(--color-summer);
 	padding-bottom: 14px;
@@ -1843,7 +1844,7 @@ header .poster-sub .content h2 span {
 	padding-right: 28px;
 	text-transform: uppercase;
 	font-size: 14px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	line-height: 18px;
 	letter-spacing: 1px;
 	transition: all .2s ease-in-out;
@@ -1970,7 +1971,7 @@ OFFER
 }
 
 .offer .container .row .destiny h3 {
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 26px;
 	text-transform: uppercase;
 	padding-bottom: 58px;
@@ -1992,7 +1993,7 @@ OFFER
 .offer .container .row .destiny .link .text {
 	padding-right: 28px;
 	font-size: 12px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	text-transform: uppercase;
 	line-height: 21px;
 	color: var(--color-summer);
@@ -2021,11 +2022,11 @@ OFFER
 	max-width: 712px;
 	line-height: 2;
 	font-size: 16px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 }
 
 .offer .container .row .description p .bold {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	display: block;
 	line-height: 2;
 }
@@ -2055,37 +2056,37 @@ header .poster-single .content h2 span {
 
 .single .container .content {
 	text-align: center;
-	max-width: 906px;
-	margin: 0 auto;
+	/* max-width: 906px; */
+	/* margin: 0 auto; */
 }
 
 .single .container .content h3 {
 	font-size: 36px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	padding-bottom: 80px;
 }
 
 .single .container .content h3 span {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: var(--color-summer);
 }
 
 .single .container .content .title {
 	font-size: 16px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	color: var(--color-summer);
 	line-height: 2;
 }
 
 .single .container .content p {
 	font-size: 14px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 2;
 	padding-bottom: 40px;
 }
 
 .single .container .content .bold {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 18px;
 }
 
@@ -2111,11 +2112,11 @@ header .poster-single .content h2 span {
 	line-height: 1.5;
 	font-size: 34px;
 	color: #fff;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 }
 
 .contact-bar .container .tips ul>li:last-of-type {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .contact-bar .container .buttons {
@@ -2127,17 +2128,17 @@ header .poster-single .content h2 span {
 	height: 70px;
 	width: 100%;
 	max-width: 326px;
-	background-color: #fff;
+	/* background-color: #fff; */
 	margin: 30px 0;
 	font-size: 18px;
-	color: var(--color-summer);
-	font-family: var(--font-bold);
+	/* color: var(--color-summer); */
+	font-family: var(--font-medium);
 	transition: .25s linear;
 }
 
 .contact-bar .container .buttons .btn:hover {
-	color: #fff;
-	background-color: var(--color-summer);
+	/* color: #fff;
+	background-color: var(--color-summer); */
 }
 
 .contact-bar .container .buttons .btn:first-of-type {
@@ -2212,7 +2213,7 @@ header .poster-single .content h2 span {
 	font-size: 14px;
 	color: #fff;
 	text-transform: uppercase;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	letter-spacing: 1px;
 	position: relative;
 }
@@ -2324,7 +2325,7 @@ header .poster-single .content h2 span {
 	color: var(--color-summer);
 	text-transform: uppercase;
 	font-size: 16px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .mamucik .grid .container .intro .col1 .box .content {}
@@ -2337,13 +2338,13 @@ header .poster-single .content h2 span {
 .mamucik .grid .container .intro .col1 .box .content ul li {
 	line-height: 2.2;
 	font-size: 15px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 }
 
 .mamucik .grid .container .intro .col1 .box .content p {
 	line-height: 1.5;
 	font-size: 15px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	padding: 30px 0;
 }
 
@@ -2377,7 +2378,7 @@ header .poster-single .content h2 span {
 .mamucik .grid .container .intro .col2 .images .text {
 	text-transform: uppercase;
 	font-size: 16px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	line-height: 2;
 	color: var(--color-summer);
 	text-align: center;
@@ -2413,7 +2414,7 @@ header .poster-single .content h2 span {
 
 .tab-menu li {
 	font-size: 18px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	position: relative;
 	background-color: #fff;
 	padding: 0px 16px 0px 16px;
@@ -2450,7 +2451,7 @@ header .poster-single .content h2 span {
 
 .tab-content>div p {
 	font-size: 16px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 2;
 	padding-bottom: 36px;
 }
@@ -2458,7 +2459,7 @@ header .poster-single .content h2 span {
 .tab-content>div .title {
 	text-transform: uppercase;
 	font-size: 16px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	line-height: 2;
 	color: var(--color-summer);
 }
@@ -2478,7 +2479,7 @@ header .poster-single .content h2 span {
 
 .timelist h3 {
 	font-size: 18px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	padding-bottom: 30px;
 }
 
@@ -2506,20 +2507,20 @@ header .poster-single .content h2 span {
 .timelist ul li .row .value {
 	line-height: 30px;
 	font-size: 16px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .timelist ul li .row .desc {
 	line-height: 2;
 	font-size: 16px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 }
 
 .average-list {}
 
 .average-list h3 {
 	font-size: 18px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	padding-bottom: 30px;
 	line-height: 1.5;
 }
@@ -2527,7 +2528,7 @@ header .poster-single .content h2 span {
 .average-list h3 span {
 	color: var(--color-summer);
 	text-transform: uppercase;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .average-list ul {
@@ -2538,20 +2539,20 @@ header .poster-single .content h2 span {
 .average-list ul li {
 	line-height: 2;
 	font-size: 16px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	position: relative;
 	padding-left: 30px;
 }
 
 .average-list ul li span {
 	color: var(--color-summer);
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 1.5;
 }
 
 .average-list ul li span.bold {
 	color: #000;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .average-list ul li:before {
@@ -2568,7 +2569,7 @@ header .poster-single .content h2 span {
 .average-list>p {
 	line-height: 2;
 	font-size: 16px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	position: relative;
 }
 
@@ -2576,14 +2577,14 @@ header .poster-single .content h2 span {
 
 .average-list .cost .price {
 	font-size: 32px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: var(--color-summer);
 	line-height: 1.5;
 }
 
 .average-list .cost .price .normal {
 	font-size: 16px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	color: #000;
 	padding-left: 10px;
 }
@@ -2591,11 +2592,11 @@ header .poster-single .content h2 span {
 .average-list .cost>p {
 	line-height: 2;
 	font-size: 16px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 }
 
 .average-list p.bold {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .average-list-comb ul li {
@@ -2696,7 +2697,7 @@ header .poster-single .content h2 span {
 
 .simple-list ul li {
 	font-size: 15px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 2;
 	position: relative;
 	margin-left: 20px;
@@ -2711,7 +2712,7 @@ header .poster-single .content h2 span {
 
 .simple-list h3 {
 	font-size: 18px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	padding-bottom: 30px;
 }
 
@@ -2745,7 +2746,7 @@ header nav .menu>ul>li>a.active:before {
 	background-color: #2D2D2D;
 	font-size: 18px;
 	color: #fff;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	text-transform: uppercase;
 	text-align: center;
 }
@@ -2803,7 +2804,7 @@ header nav .menu>ul>li>a.active:before {
 	background-color: #2D2D2D;
 	font-size: 18px;
 	color: #fff;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	text-transform: uppercase;
 }
 
@@ -2868,7 +2869,7 @@ header nav .menu>ul>li>a.active:before {
 	background-color: #2d2d2d;
 	color: #fff;
 	font-size: 14px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	border-bottom: 1px solid #ebebeb;
 	border-left: 1px solid #ebebeb;
 }
@@ -2901,7 +2902,7 @@ header nav .menu>ul>li>a.active:before {
 	color: #fff;
 	text-align: center;
 	font-size: 14px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	border-top: 0;
 	padding: 0 5px;
 }
@@ -2928,7 +2929,7 @@ header nav .menu>ul>li>a.active:before {
 .wypozyczalnia .grid .container .intro .box h2 {
 	padding-top: 40px;
 	font-size: 24px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	line-height: 1.5;
 	max-width: 640px;
 }
@@ -2940,13 +2941,13 @@ header nav .menu>ul>li>a.active:before {
 
 .wypozyczalnia .grid .container .intro .box p {
 	font-size: 15px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 2;
 	max-width: 640px;
 }
 
 .wypozyczalnia .grid .container .intro .box p .bold {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 16px;
 }
 
@@ -2954,7 +2955,7 @@ header nav .menu>ul>li>a.active:before {
 
 .simple-list h3 {
 	font-size: 16px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	line-height: 2;
 }
 
@@ -2992,7 +2993,7 @@ header nav .menu>ul>li>a.active:before {
 	text-align: center;
 	font-size: 35px;
 	color: #fff;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	line-height: 2;
 	text-transform: uppercase;
 }
@@ -3004,7 +3005,7 @@ header nav .menu>ul>li>a.active:before {
 }
 
 .help .box h3 {
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 21px;
 	line-height: 1.7;
 	text-transform: uppercase;
@@ -3013,7 +3014,7 @@ header nav .menu>ul>li>a.active:before {
 
 .help .box h3 span {
 	display: block;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 32px;
 }
 
@@ -3023,12 +3024,12 @@ header nav .menu>ul>li>a.active:before {
 
 .help .box ul li {
 	line-height: 2;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 16px;
 }
 
 .help .box ul li .bold {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 
@@ -3095,7 +3096,7 @@ ALPY //////
 
 .alp-trainings .row .image .img-title {
 	font-size: 21px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 2;
 	color: var(--color-summer);
 	text-align: center;
@@ -3143,7 +3144,7 @@ ALPY //////
 
 .alp-trainings .row .description ul li {
 	font-size: 16px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 2;
 }
 
@@ -3168,7 +3169,7 @@ ALPY //////
 	flex-shrink: 0;
 	min-height: 54px;
 	font-size: 16px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 1.5;
 	border-bottom: 1px solid #ebebeb;
 	padding: 0 10px;
@@ -3228,7 +3229,7 @@ REFERENCJE
 .referencje .grid .container .wrapper .item .name .front-name {
 	padding-left: 17.07%;
 	font-size: 16px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 }
 
 .referencje .grid .container .wrapper .item .name .cover-name {
@@ -3258,7 +3259,7 @@ REFERENCJE
 
 .referencje .grid .container .wrapper .item .name .cover-name .content {
 	font-size: 16px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	color: #fff;
 	padding-top: 20px;
 }
@@ -3358,7 +3359,7 @@ header .nav-act .grid .container .bar .select .select-head {
 }
 
 header .nav-act .grid .container .bar .select .select-head .title {
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	color: #fff;
 	font-size: 26px;
 }
@@ -3389,7 +3390,7 @@ header .nav-act .grid .container .bar .select .select-options .option {
 	align-items: center;
 	background-color: #EE6900;
 	border-top: #f79325;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: #fff;
 	font-size: 21px;
 	text-transform: uppercase;
@@ -3428,7 +3429,7 @@ header .nav-act .grid .container .bar .select .select-options .option:hover {
 }
 
 .aktualnosci .grid .container .main .post .content p {
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 16px;
 	line-height: 2;
 	padding-bottom: 36px;
@@ -3436,7 +3437,7 @@ header .nav-act .grid .container .bar .select .select-options .option:hover {
 
 .aktualnosci .grid .container .main .post .content p .emp {
 	display: block;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 21px;
 	line-height: 1.5;
 }
@@ -3480,7 +3481,7 @@ header .nav-act .grid .container .bar .select .select-options .option:hover {
 .aktualnosci .grid .container .main .side .inner .head .info-bar .date {
 	width: 100%;
 	max-width: 170px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 15px;
 	color: var(--color-summer);
 }
@@ -3509,7 +3510,7 @@ header .nav-act .grid .container .bar .select .select-options .option:hover {
 	display: flex;
 	align-items: center;
 	max-width: 420px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 21px;
 	line-height: 2.5;
 	text-transform: uppercase;
@@ -3537,14 +3538,14 @@ header .nav-act .grid .container .bar .select .select-options .option:hover {
 
 .aktualnosci .grid .container .main .side .inner .side-nav .row .content .date {
 	padding: 10px 0;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 15px;
 	transition: .3s ease-in;
 }
 
 .aktualnosci .grid .container .main .side .inner .side-nav .row .content .side-title {
 	padding: 10px 0;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 18px;
 	transition: .3s ease-in;
 }
@@ -3582,7 +3583,7 @@ KONTAKT
 .kontakt .grid .container .content h2 {
 	padding-bottom: 65px;
 	font-size: 28px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	line-height: 1.5;
 	text-transform: uppercase;
 }
@@ -3623,7 +3624,7 @@ KONTAKT
 .kontakt .grid .container .content .row .box .inner h3 {
 	line-height: 2.5;
 	font-size: 16px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: #fff;
 }
 
@@ -3634,7 +3635,7 @@ KONTAKT
 .kontakt .grid .container .content .row .box .inner ul li {
 	line-height: 2.5;
 	font-size: 16px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	color: #fff;
 }
 
@@ -3668,7 +3669,7 @@ KONTAKT
 
 .kontakt .grid .container .content form .item label {
 	padding-bottom: 13px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	text-transform: uppercase;
 }
@@ -3677,7 +3678,7 @@ KONTAKT
 	height: 47px;
 	border: 1px solid #ebebeb;
 	padding-left: 15px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 14px;
 	transition: .3s ease-in;
 }
@@ -3694,14 +3695,14 @@ KONTAKT
 	resize: none;
 	margin-bottom: 46px;
 	padding: 15px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 14px;
 	transition: .3s ease-in;
 }
 
 .kontakt .grid .container .content form .area>label {
 	margin-bottom: 13px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	text-transform: uppercase;
 }
@@ -3713,7 +3714,7 @@ KONTAKT
 .kontakt .grid .container .content form .submit .text {
 	padding-right: 30px;
 	font-size: 12px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: var(--color-summer);
 	text-transform: uppercase;
 }
@@ -3738,7 +3739,7 @@ KONTAKT
 }
 
 .kontakt .grid .container .content form .invalid {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: #fff;
 	background-color: #f72525;
 	background-image: url(img/icons/invalid.png);
@@ -3747,7 +3748,7 @@ KONTAKT
 }
 
 .kontakt .grid .container .content form .valid {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: #fff;
 }
 
@@ -3789,7 +3790,7 @@ header .nav-act .grid .container .bar .select .select-options .option {
 
 .rezerwuj .grid .container .content h2 {
 	font-size: 28px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	line-height: 1.5;
 	text-transform: uppercase;
 	padding-top: 50px;
@@ -3798,14 +3799,14 @@ header .nav-act .grid .container .bar .select .select-options .option {
 
 .rezerwuj .grid .container .content p {
 	max-width: 536px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 16px;
 	line-height: 2.5;
 }
 
 .rezerwuj .grid .container .content .sub-title {
 	margin-top: 120px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 16px;
 	line-height: 1.5;
 	margin-bottom: 30px;
@@ -3815,7 +3816,7 @@ header .nav-act .grid .container .bar .select .select-options .option {
 	height: 58px;
 	background-color: #ee6900;
 	font-size: 21px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: #fff;
 	padding: 10px 43px;
 	transition: .3s ease-in;
@@ -3862,7 +3863,7 @@ REZERWUJ-SINGLE
 
 .poster-sub-rezerwuj-single .nav-act .grid .container .bar .select:nth-of-type(2) .title {
 	font-size: 21px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 }
 
 .poster-sub-rezerwuj-single .nav-act .grid .container .bar .select:nth-of-type(2) * {
@@ -3892,7 +3893,7 @@ REZERWUJ-SINGLE
 .rezerwuj-single .grid .container .wrapper .levels .title {
 	height: 132px;
 	font-size: 21px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	line-height: 1.5;
 	padding-left: 30px;
 }
@@ -3902,7 +3903,7 @@ REZERWUJ-SINGLE
 	height: 68px;
 	background-color: #f79324;
 	font-size: 26px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	line-height: 1.5;
 	color: #fff;
 	text-transform: uppercase;
@@ -3912,7 +3913,7 @@ REZERWUJ-SINGLE
 .rezerwuj-single .grid .container .wrapper .levels .descript {
 	padding-left: 30px;
 	font-size: 16px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	line-height: 2.1;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -3946,13 +3947,13 @@ REZERWUJ-SINGLE
 
 .rezerwuj-single .grid .container .wrapper .details .label .inner .title {
 	padding: 5px 0;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 16px;
 }
 
 .rezerwuj-single .grid .container .wrapper .details .label .inner .person {
 	padding: 5px 0;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 12px;
 	text-transform: uppercase;
 	color: var(--color-summer);
@@ -3974,7 +3975,7 @@ REZERWUJ-SINGLE
 }
 
 .rezerwuj-single .grid .container .wrapper .details .personal .item label {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	text-transform: uppercase;
 	margin-bottom: 12px;
@@ -3986,7 +3987,7 @@ REZERWUJ-SINGLE
 	height: 47px;
 	padding-left: 15px;
 	border: 1px solid #ebebeb;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 14px;
 	transition: .3s ease-out;
 }
@@ -3999,7 +4000,7 @@ REZERWUJ-SINGLE
 	height: 47px;
 	padding-left: 15px;
 	border: 1px solid #ebebeb;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 14px;
 	background-color: #fff;
 	position: relative;
@@ -4012,7 +4013,7 @@ REZERWUJ-SINGLE
 }
 
 .rezerwuj-single .grid .container .wrapper .details .personal .item .lev .lev-header .text {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 }
 
@@ -4034,7 +4035,7 @@ REZERWUJ-SINGLE
 .rezerwuj-single .grid .container .wrapper .details .personal .item .lev .options .option {
 	height: 47px;
 	border-top: 1px solid #ebebeb;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	padding-left: 15px;
 	background-color: #fff;
@@ -4048,7 +4049,7 @@ REZERWUJ-SINGLE
 
 .rezerwuj-single .grid .container .wrapper .details .personal .term p,
 .rezerwuj-single .grid .container .wrapper .details .personal .term .date {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	text-transform: uppercase;
 }
@@ -4058,7 +4059,7 @@ REZERWUJ-SINGLE
 }
 
 .rezerwuj-single .grid .container .wrapper .details .personal .term .date {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	text-transform: uppercase;
 	background-color: #dadada;
@@ -4074,7 +4075,7 @@ REZERWUJ-SINGLE
 }
 
 .rezerwuj-single .grid .container .wrapper .details .personal .area label {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	text-transform: uppercase;
 	margin-bottom: 12px;
@@ -4086,7 +4087,7 @@ REZERWUJ-SINGLE
 	resize: none;
 	border: 1px solid #ebebeb;
 	padding: 15px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	font-size: 14px;
 	transition: .3s ease-out;
 }
@@ -4096,7 +4097,7 @@ REZERWUJ-SINGLE
 }
 
 .rezerwuj-single .grid .container .wrapper .details .personal .item input.invalid {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: #fff;
 	background-color: #f72525;
 	background-image: url(../img/icons/invalid.png);
@@ -4105,7 +4106,7 @@ REZERWUJ-SINGLE
 }
 
 .rezerwuj-single .grid .container .wrapper .details .personal .item input.valid {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: #fff;
 	background-color: var(--color-summer);
 }
@@ -4130,7 +4131,7 @@ REZERWUJ-SINGLE
 	position: relative;
 	padding-left: 66px;
 	cursor: pointer;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	text-transform: uppercase;
 	max-width: 630px;
@@ -4181,7 +4182,7 @@ REZERWUJ-SINGLE
 }
 
 .rezerwuj-single .grid .container .wrapper .details .personal .sizes .element label {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	text-transform: uppercase;
 	margin-bottom: 12px;
@@ -4201,7 +4202,7 @@ REZERWUJ-SINGLE
 }
 
 .rezerwuj-single .grid .container .wrapper .details .personal .sizes .element .box-head p {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	line-height: 1.5;
 }
@@ -4230,7 +4231,7 @@ REZERWUJ-SINGLE
 
 .rezerwuj-single .grid .container .wrapper .details .personal .sizes .element .box .options .option {
 	height: 36px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	line-height: 1.5;
 	background-color: #fff;
@@ -4248,13 +4249,13 @@ REZERWUJ-SINGLE
 .rezerwuj-single .grid .container .wrapper .details .personal .check2 [type="checkbox"]:not(:checked)+label,
 .rezerwuj-single .grid .container .wrapper .details .personal .check2 [type="checkbox"]:checked+label {
 	text-transform: initial;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	min-height: 30px;
 }
 
 .rezerwuj-single .grid .container .wrapper .details .personal .check2 a {
 	font-size: 11px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	text-decoration: underline #ebebeb;
 	padding-left: 14px;
 	padding-top: 4px;
@@ -4272,7 +4273,7 @@ REZERWUJ-SINGLE
 	height: 49px;
 	width: 201px;
 	background-color: var(--color-summer);
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	text-transform: uppercase;
 	border: 0;
@@ -4293,7 +4294,7 @@ REZERWUJ-SINGLE
 	outline: 0;
 	font-size: 14px;
 	text-transform: uppercase;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	cursor: pointer;
 	transition: .3s ease-in;
 }
@@ -4322,7 +4323,7 @@ REZERWUJ-SINGLE
 }
 
 .rezerwuj-single .grid .container .wrapper .details .personal .radio-row label {
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	font-size: 14px;
 	text-transform: uppercase;
 	margin-bottom: 12px;
@@ -4497,7 +4498,7 @@ MEDIA
 		max-width: 172px;
 	}
 	.contact-bar .container .buttons .btn {
-		margin: 30px;
+		margin: 10px;
 	}
 }
 
@@ -4904,7 +4905,7 @@ MEDIA
 		border-right: 1px solid #EBEBEB;
 		border-left: 1px solid #EBEBEB;
 		height: 100%;
-		font-family: var(--font-bold);
+		font-family: var(--font-medium);
 		font-size: 18px;
 		color: var(--color-summer);
 		text-align: center;
@@ -4916,7 +4917,7 @@ MEDIA
 		text-shadow: #fff 2px 2px 2px, #fff 2px -2px 2px, #fff -2px 2px 2px, #fff -2px -2px 2px;
 	}
 	header nav .nav-end .season {
-		font-family: var(--font-bold);
+		font-family: var(--font-medium);
 		text-align: center;
 		width: 50%;
 		font-size: 18px;
@@ -5201,7 +5202,7 @@ CZYSCIEC   --------------------   --------------------
 	width: 100%;
 	max-width: 920px;
 	font-size: 15px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	color: #fff;
 	text-transform: uppercase;
 }
@@ -5312,7 +5313,7 @@ CZYSCIEC   --------------------   --------------------
 	font-size: 15px;
 	left: 50%;
 	transform: translateX(-50%);
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	text-align: center;
 }
 
@@ -5335,7 +5336,7 @@ body.lato header nav .menu>ul>li>a:hover {
 body.lato header nav .menu>ul>li>a {
 	padding: 16px 0px;
 	text-transform: uppercase;
-	font-family: var(--font-bold);
+	/* font-family: var(--font-medium); */
 	transition: color .25s linear;
 	position: relative;
 	font-size: 16px;
@@ -5411,8 +5412,8 @@ body.lato .contact-bar .container .buttons .btn {
 }
 
 body.lato .contact-bar .container .buttons .btn:hover {
-	background-color: var(--color-winter);
-	color: #fff;
+	/* background-color: var(--color-winter);
+	color: #fff; */
 }
 
 body.lato .contact-bar .container .buttons .btn:first-of-type:hover {
@@ -5599,7 +5600,7 @@ body.lato .alpy .grid .container .intro .col2 .images .text p {
 	font-size: 15px;
 	color: #000;
 	line-height: 2;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 }
 
 body.lato .alpy .grid .container .normal {
@@ -5613,7 +5614,7 @@ body.lato .alpy .grid .container .normal {
 body.lato .alpy .grid .container .normal h3 {
 	text-transform: uppercase;
 	font-size: 32px;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	line-height: 2;
 	padding-bottom: 30px;
 }
@@ -5622,7 +5623,7 @@ body.lato .alpy .grid .container .normal p {
 	font-size: 15px;
 	color: #000;
 	line-height: 2;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 }
 
 body.lato .alpy .grid .container .normal p.text-right {
@@ -5691,7 +5692,7 @@ body.lato .table-kajak .th {
 	background-color: #2D2D2D;
 	font-size: 18px;
 	color: #fff;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 	text-transform: uppercase;
 	text-align: center;
 }
@@ -5716,7 +5717,7 @@ body.lato .table-kajak .row .desc {
 
 body.lato .table-kajak .row .desc p {
 	font-size: 15px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 2;
 	padding: 20px;
 	max-width: 890px;
@@ -5866,7 +5867,7 @@ body.lato .reasons {
 
 .bald-list h3 {
 	font-size: 18px;
-	font-family: var(--font-regular);
+	font-family: var(--font-light);
 	padding-bottom: 30px;
 	line-height: 1.5;
 }
@@ -5874,7 +5875,7 @@ body.lato .reasons {
 .bald-list h3 span {
 	color: var(--color-winter);
 	text-transform: uppercase;
-	font-family: var(--font-bold);
+	font-family: var(--font-medium);
 }
 
 .bald-list ul {
@@ -5884,7 +5885,7 @@ body.lato .reasons {
 
 .bald-list ul li {
 	font-size: 15px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 2;
 	position: relative;
 	margin-left: 20px;
@@ -5991,7 +5992,7 @@ body.lato .mamucik .grid .container .intro .col1 .box .content .simple-list ul {
 	vertical-align: middle;
 	margin-right: 15px;
 	font-size: 14px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 1.5;
 	margin-right: 20px;
 }
@@ -6008,7 +6009,7 @@ body.lato .mamucik .grid .container .intro .col1 .box .content .simple-list ul {
 	vertical-align: middle;
 	margin-right: 15px;
 	font-size: 14px;
-	font-family: var(--font-medium);
+	font-family: var(--font-light);
 	line-height: 1.5;
 }
 

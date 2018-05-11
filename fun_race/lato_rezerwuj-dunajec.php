@@ -56,18 +56,8 @@
     <div class="grid">
         <div class="container padding">
            <div class="wrapper flex flex-column flex-row-dm flex-justify-between flex-items-start">
-               <div class="levels">
-                   <div class="title flex flex-items-center">
-                       Poziom uczestnika
-                   </div>
-                   <div class="bar flex flex-items-center">Początkujący</div>
-                   <div class="descript">Sed nec massa in dolor aliquet bibendum</div>
-                   <div class="bar flex flex-items-center">Średnio-zaawansowany</div>
-                   <div class="descript">Nam hendrerit, sem id volutpat fringilla, arcu eros gravida ante, quis volutpat est est a leo. Phasellus rhoncus eget turpis id pretium. </div>
-                   <div class="bar flex flex-items-center">Zaawansowany</div>
-                   <div class="descript">Suspendisse rhoncus augue at lobortis scelerisque. Sed in neque volutpat, iaculis quam sed, rutrum tortor.</div>
-               </div>
-               <div class="details">
+               <?php get_template_part('template/rezerwuj-panel'); ?>
+			   <div class="details">
                    <div class="row row1 flex flex-column flex-row-mm flex-justify-between">
                        <div class="label flex flex-items-center">
                            <div class="inner">
@@ -260,6 +250,6 @@
 
 
 <!--PARTNERS-->
-<?php get_template_part("template/partners"); ?>
+<?php get_template_part("template/partners-full"); ?>
 <!-- FOOTER -->
 <?php get_footer(); ?>

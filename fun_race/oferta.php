@@ -28,6 +28,6 @@
 	<!--CONTACT BAR-->
 	<?php get_template_part("template/contact-bar"); ?>
 	<!--PARTNERS-->
-	<?php get_template_part("template/partners"); ?>
+	<?php get_template_part("template/partners-full"); ?>
 	<!-- FOOTER -->
 	<?php get_footer(); ?>

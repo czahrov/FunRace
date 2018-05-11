@@ -8,7 +8,7 @@
 			<!--
 			<a href="#" class="box yt" target='_blank'><i class="fa fa-youtube" aria-hidden="true"></i></a>
 			-->
-			<a href="https://www.instagram.com/explore/tags/funrace/" class="box instagram" target='_blank'><i class="fa fa-instagram" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com/funrace.pl/" class="box instagram" target='_blank'><i class="fa fa-instagram" aria-hidden="true"></i></a>
 			<a href="<?php echo home_url( sprintf( '%s/kontakt', getSeason() ) ); ?>" class="box letter"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
 		</div>
 	</div>

@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: lato rezerwuj-rafting
+	Template Name: lato rezerwuj-kajaki
 */
 
 if( !empty( $_POST ) ){
@@ -16,7 +16,7 @@ if( !empty( $_POST ) ){
 		$mail->addAddress( $formularz['Email_rezerwującego'] );
 		// $mail->addAddress( "biuro@funrace.pl" );
 	}
-	$mail->Subject = "Rezerwacja raftingu";
+	$mail->Subject = "Rezerwacja spływu kajakiem";
 	$mail->Body = sprintf(
 'Dane organizatora
 ---
@@ -37,9 +37,10 @@ Liczba uczestników
 Dorośli: %u
 Dzieci: %u
 
-Dodatkowy sprzęt
+Wybrany sprzęt
 ---
-%s
+Pakiet spływu: %s
+Rodzaj kajaka: %s
 
 Wiadomość
 ---
@@ -64,7 +65,8 @@ Mail wygenerowany automatycznie na stronie %s',
 		$formularz['Dorośli'],
 		$formularz['Dzieci'],
 		
-		implode( ", ", $formularz['Dodatkowe_opcje'] ),
+		$formularz['pakiet_spływu'],
+		$formularz['kajak'],
 		
 		$formularz['wiadomosc'],
 		
@@ -142,7 +144,7 @@ get_header();
 				</div>
 				<?php endif; ?>
 				<form method='post' class="wrapper flex flex-column flex-row-dm flex-justify-between flex-items-start">
-					<?php get_template_part("template/rezerwuj-panel"); ?>
+					<?php get_template_part('template/rezerwuj-panel'); ?>
 					<div class="details">
 						<div class="row rezerwujacy row1 flex flex-column flex-row-mm flex-justify-between">
 							<div class="label flex flex-items-center">
@@ -174,7 +176,7 @@ get_header();
 								</div>
 							</div>
 						</div>
-						<div class="row rezerwujacy row1 flex flex-column flex-row-mm flex-justify-between">
+						<div class="row data row1 flex flex-column flex-row-mm flex-justify-between">
 							<div class="label flex flex-items-center">
 								<div class="inner">
 									<div class="title">Data i trasa</div>
@@ -200,6 +202,8 @@ get_header();
 										<label for="">Trasa spływu</label>
 										<select name='trasa' required>
 											<option>Sromowce Niżne - Szczawnica</option>
+											<option>Niedzica - Szczawnica</option>
+											<option value='Sromowce Niżne - Krościenko n/Dunajcem'>Sromowce Niżne - Krościenko n/Dunajcem (trasa dostępna wyłącznie o 13:30)</option>
 											
 										</select>
 									</div>
@@ -233,19 +237,31 @@ get_header();
 						<div class="row dodatki row1 flex flex-column flex-row-mm flex-justify-between">
 							<div class="label flex flex-items-center">
 								<div class="inner">
-									<div class="title">Wypożycz dodatkowy</div>
+									<div class="title">Skompletuj swój</div>
 									<div class="person">sprzęt</div>
 								</div>
 							</div>
 							<div class="personal personal-parent">
 								<div class="flex flex-wrap">
-									<div class="check-row polityka check2 flex">
-										<input type="checkbox" id="gopro" name="Dodatkowe opcje[]" value='kamera GoPro'>
-										<label for="gopro">Wypożyczenie kamera GoPro</label>
+									<div class="item pakiet flex flex-column base1 base2-mm">
+										<label for="">Pakiet spływu</label>
+										<select name='pakiet spływu' required>
+											<option>kajak 1 osobowy</option>
+											<option>kajak 1 osobowy + przejazd busem</option>
+											<option>kajak 2 osobowy</option>
+											<option>kajak 2 osobowy + przejazd busem</option>
+											<option>kajak 2 osobowy + przejazd rowerem</option>
+											<option>pakiet rodzinny</option>
+											
+										</select>
 									</div>
-									<div class="check-row polityka check2 flex">
-										<input type="checkbox" id="pianka" name="Dodatkowe opcje[]" value='pianka neoprenowa'>
-										<label for="pianka">Wypożyczenie pianki neoprenowej ( dostępne rozmiary: M, L, XL )</label>
+									<div class="item kajak flex flex-column base1 base2-mm">
+										<label for="">Rodzaj kajaka</label>
+										<select name='kajak' required>
+											<option>Pneumatyczny (pompowany)</option>
+											<option>Polietylenowy (plastikowy)</option>
+											
+										</select>
 									</div>
 									
 								</div>

@@ -538,12 +538,38 @@ $(function () {
 	// rezerwacja
 	(function( form, addUser, zgody, personal ){
 		
-		var person_proto = personal.children( '.person' ).first().clone( true );
+		var person_proto = personal.find( '.person:first' ).clone( true );
 		person_proto.find( 'input' ).attr( 'required', null );
 		
 		addUser.click( function( e ){
 			e.preventDefault();
-			$( this ).parent().before( person_proto.clone( true ) );
+			
+			$( this )
+			.parent()
+			.prevAll( '.person' )
+			.children( '.body' )
+			.slideUp();
+			
+			$( this )
+			.parent()
+			.before(
+				person_proto
+				.clone( true )
+				
+			);
+			
+		} );
+		
+		personal.on( 'click', '.person > .head', function( e ){
+			$(this)
+			.siblings( '.body' )
+			.slideToggle();
+			
+			$(this)
+			.parent()
+			.siblings( '.person' )
+			.children( '.body' )
+			.slideUp();
 			
 		} );
 		

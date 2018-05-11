@@ -10,52 +10,8 @@
     <?php get_template_part("template/menu"); ?>	
 		
 	<?php banner(); ?>
-		<div class="nav-act">
-		<div class="grid">
-		    <div class="container">
-		        <div class="bar flex flex-column flex-row-mm">
-		            <div class="select">
-		                <div class="select-head flex flex-items-center flex-justify-center flex-justify-start-mm">
-		                    <div class="title">Akademia Mamucik</div>
-		                    <div class="icon">
-		                        <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_small_white.png" alt="arrow">
-		                    </div>
-		                </div>
-		                <div class="select-options">
-		                    <a href="<?php echo home_url('zima/rezerwuj/rezerwuj-mamucik'); ?>" class="option flex-justify-center flex-justify-start-mm">kurs świąteczny dla dzieci</a>
-		                    <a href="<?php echo home_url('zima/rezerwuj/rezerwuj-mamucik'); ?>" class="option flex-justify-center flex-justify-start-mm">kurs feryjny dla dzieci</a>
-		                    <a href="<?php echo home_url('zima/rezerwuj/rezerwuj-mamucik'); ?>" class="option flex-justify-center flex-justify-start-mm">kurs mini dla dzieci</a>
-		                    <a href="<?php echo home_url('zima/rezerwuj/rezerwuj-mamucik'); ?>" class="option flex-justify-center flex-justify-start-mm">kurs snowboardowy dla dzieci</a>
-		                </div>
-		            </div>
-		            <div class="select">
-		                  <div class="select-head flex flex-items-center flex-justify-center"> 
-                              <div class="title">Szkolenia indywidualne</div>
-                              <div class="icon">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_small_white.png" alt="arrow">
-                                </div>
-		                  </div>
-		               <div class="select-options">
-		                    <a href="<?php echo home_url('zima/rezerwuj/rezerwuj-indywidualne'); ?>" class="option flex-justify-center">Narty</a>
-		                    <a href="<?php echo home_url('zima/rezerwuj/rezerwuj-indywidualne'); ?>" class="option flex-justify-center">Snowboard</a>
-		                </div>
-		            </div>
-	                   <div class="select">
-		                  <div class="select-head flex flex-items-center flex-justify-center"> 
-                              <div class="title">Szkolenia grupowe</div>
-                              <div class="icon">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/arrow_small_white.png" alt="arrow">
-                                </div>
-		                  </div>
-		               <div class="select-options">
-                            <a href="<?php echo home_url('zima/rezerwuj/rezerwuj-grupowe'); ?>" class="option flex-justify-center">Narty</a>
-		                    <a href="<?php echo home_url('zima/rezerwuj/rezerwuj-grupowe'); ?>" class="option flex-justify-center">Snowboard</a>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-		</div>
+	<?php rezerwujMenu( getSeason() ); ?>
+		
  </header>
  
  
@@ -86,6 +42,6 @@
 
 
 <!--PARTNERS-->
-<?php get_template_part("template/partners"); ?>
+<?php get_template_part("template/partners-full"); ?>
 <!-- FOOTER -->
 <?php get_footer(); ?>

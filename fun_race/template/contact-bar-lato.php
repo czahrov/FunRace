@@ -7,7 +7,7 @@
                 <li>Skontaktuj się z nami</li>
             </ul>
         </div>
-        <div class="buttons flex flex-column flex-items-center flex-row-ds flex-wrap-ds flex-justify-center-ds">
+        <div class="buttons flex flex-column flex-items-center flex-row-ds flex-justify-center-ds">
 			<?php dynamic_sidebar( 'oferta' ); ?>
             
         </div>

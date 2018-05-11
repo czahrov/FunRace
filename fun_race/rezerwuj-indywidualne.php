@@ -55,17 +55,7 @@
     <div class="grid">
         <div class="container padding">
            <div class="wrapper flex flex-column flex-row-dm flex-justify-between flex-items-start">
-               <div class="levels">
-                   <div class="title flex flex-items-center">
-                       Poziom uczestnika
-                   </div>
-                   <div class="bar flex flex-items-center">Początkujący</div>
-                   <div class="descript">Rozpoczyna dopiero naukę jazdy na nartach</div>
-                   <div class="bar flex flex-items-center">Średnio-zaawansowany</div>
-                   <div class="descript">Potrafi skręcać pługiem, hamować na żądanie.<br> Kontroluje prędkość. Zjeżdża z tras<br>niebieskich.czerwonych. Saamodzielnie korzysta z wyciągów. Min. dwa sezony na nartach.</div>
-                   <div class="bar flex flex-items-center">Zaawansowany</div>
-                   <div class="descript">Ustawia narty do układu równoległego. Potrafi skręcać, hamować na żądanie i przed przeszkodą, kontroluje prędkość. Zjeżdża z tras <br> czerwonych/czarnych. Samodzielnie korzysta z wyciągów. Trzy i > sezonów na nartach.</div>
-               </div>
+				<?php get_template_part('template/rezerwuj-panel'); ?>
                <div class="details">
                    <div class="row row1 flex flex-column flex-row-mm flex-justify-between">
                        <div class="label flex flex-items-center">
@@ -253,6 +243,6 @@
 
 
 <!--PARTNERS-->
-<?php get_template_part("template/partners"); ?>
+<?php get_template_part("template/partners-full"); ?>
 <!-- FOOTER -->
 <?php get_footer(); ?>

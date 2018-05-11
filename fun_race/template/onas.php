@@ -1,7 +1,7 @@
 <?php
-	$licence_root = get_page_by_path( sprintf( '%s/o-nas/licencje', getSeason() ) );
+	$licencje_root = get_page_by_path( sprintf( '%s/o-nas/licencje', getSeason() ) );
 	$licencje = get_pages( array(
-		'parent' => $licence_root->ID,
+		'parent' => $licencje_root->ID,
 		'sort_order' => 'ASC',
 		'sort_column' => 'menu_order, post_title',
 		
@@ -19,14 +19,14 @@
 
 <div class="actual grid">
 	<div class="container flex flex-column flex-row-mm flex-items-start">
-		<?php if( $licence_root !== null and !empty( $licence ) ): ?>
+		<?php if( $licencje_root !== null and !empty( $licencje ) ): ?>
 		<div class="side no-shrink">
 			<?php foreach( $licencje as $item ): ?>
-			<a href="<?php echo wp_get_attachment_url( get_post_meta( $item->ID, 'dokument', true ) ); ?>" class="box flex flex-column flex-justify-center" target="_blank">
+			<a href="<?php echo wp_get_attachment_url( get_post_meta( $item->ID, 'dokument', true ) ); ?>" class="box theme-bg flex flex-column flex-justify-center" target="_blank">
 			   <div class="content">
-					<div class="licence"><?php echo $item->post_title; ?></div>
-					<div class="tag"><?php echo get_post_meta( $item->ID, 'subtitle', true ); ?></div>
-					<div class="arrow flex flex-justify-end"></div>
+					<div class="licencje"><?php echo $item->post_title; ?></div>
+					<div class="tag theme-color"><?php echo get_post_meta( $item->ID, 'subtitle', true ); ?></div>
+					<div class="arrow flex flex-justify-end" style="background-image: url(<?php printf( '%s/img/arrow_%s.png', get_template_directory_uri(), getSeason() === 'zima'?( 'orange' ):( 'blue' ) ); ?>);"></div>
 				</div>
 			</a>
 			<?php endforeach; ?>

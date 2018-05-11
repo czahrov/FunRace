@@ -1,4 +1,4 @@
-<div class="reasons grid">
+<div class="reasons grid" style='background-image:url( <?php echo wp_get_attachment_image_url( get_post_meta( get_post()->ID, 'tło', true ), 'full' ); ?> );'>
 	<div class="cover"></div>
 	<div class="container">
 		<h2>Sprawdź dlaczego warto <span>wybrać FUNRACE</span></h2>
