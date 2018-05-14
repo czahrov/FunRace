@@ -56,6 +56,7 @@ echo <<<EOT
 				<label for="">Trasa spływu</label>
 				<select name='trasa' required>
 					<option>Sromowce Niżne - Szczawnica</option>
+					<option>Sromowce Niżne - Szczawnica (wycieczka z Zakopanego)</option>
 					<option>Niedzica - Szczawnica</option>
 					<option value='Sromowce Niżne - Krościenko n/Dunajcem'>Sromowce Niżne - Krościenko n/Dunajcem (trasa dostępna wyłącznie o 13:30)</option>
 					

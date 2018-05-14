@@ -455,6 +455,12 @@ add_action( 'body_hook', function( $arg ){
 	printf( " %s ", get_post( $postID )->post_name );
 } );
 
+// dodawanie slugu strony do klasy body
+add_action( 'body_hook', function( $arg ){
+	printf( ' %s', get_post()->post_name );
+	
+} );
+
 // sprawdza czy dana strona jest podstroną lata, czy zimy
 function getSeason(){
 	// lato - id 4

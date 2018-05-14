@@ -445,31 +445,6 @@ body header nav .menu .dropdown .drop-container .item a:hover {
   padding: initial;
   font-size: 1em;
 }
-#oferta-single .single .container .content ul {
-  list-style: none;
-  padding: 30px 0;
-}
-#oferta-single .single .container .content ul li {
-  position: relative;
-  margin-bottom: 10px;
-  padding-left: 30px;
-  line-height: 2em;
-}
-#oferta-single .single .container .content ul li h1, #oferta-single .single .container .content ul li h2, #oferta-single .single .container .content ul li h3, #oferta-single .single .container .content ul li h4, #oferta-single .single .container .content ul li h5, #oferta-single .single .container .content ul li h6 {
-  padding-top: 10px;
-}
-#oferta-single .single .container .content ul li::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 0;
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-}
-#oferta-single .single .container .content ul ul {
-  padding: 0;
-}
 #oferta-single .single .kafelki {
   margin: 50px 0;
 }
@@ -666,6 +641,27 @@ body header nav .menu .dropdown .drop-container .item a:hover {
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
 }
+#oferta-single .single .zakladki .tabs .item.harmonogram ul {
+  list-style: none;
+}
+#oferta-single .single .zakladki .tabs .item.harmonogram ul li {
+  position: relative;
+  padding-left: 40px !important;
+  margin: 20px 0;
+}
+#oferta-single .single .zakladki .tabs .item.harmonogram ul li::before {
+  content: '';
+  position: absolute;
+  width: 30px !important;
+  height: 30px !important;
+  top: 0;
+  left: 0;
+  border: none !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../img/icons/czas.png);
+}
 #oferta-single .single .galeria .item {
   position: relative;
   display: block;
@@ -689,65 +685,6 @@ body header nav .menu .dropdown .drop-container .item a:hover {
   width: 100%;
   max-height: 100%;
   height: auto;
-}
-#oferta-single .single table {
-  width: 100%;
-  margin-bottom: 20px;
-}
-#oferta-single .single table tr {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-#oferta-single .single table tr td {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  padding: 0 5px;
-  height: 80px;
-  font-size: 28px;
-  font-family: var(--font-sec-black);
-  border: solid #ebebeb;
-  border-width: 0 1px 0 1px;
-}
-#oferta-single .single table thead tr td {
-  height: 60px;
-}
-#oferta-single .single table thead tr td:not(:first-child) {
-  background-color: #2d2d2d;
-  color: #fff;
-  font-size: 14px;
-  font-family: var(--font-medium);
-  border: solid #ebebeb;
-  border-width: 0 0 1px 1px;
-}
-#oferta-single .single table tbody tr td:first-child {
-  background-color: #2d2d2d;
-  color: #fff;
-  font-size: 14px;
-  font-family: var(--font-medium);
-}
-#oferta-single .single table tbody tr td:not(:first-child)::after {
-  content: 'zł';
-}
-@media (max-width: 1023px) {
-  #oferta-single .single table.std {
-    display: none;
-  }
-}
-@media (min-width: 1024px) {
-  #oferta-single .single table.mobile {
-    display: none;
-  }
 }
 #oferta-single .single .su-tabs {
   padding: 0;
@@ -815,6 +752,179 @@ body header nav .menu .dropdown .drop-container .item a:hover {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../img/icons/czas.png);
+}
+#oferta-single .single ul {
+  list-style: none;
+  padding: 30px 0;
+}
+#oferta-single .single ul li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  line-height: 2em;
+}
+#oferta-single .single ul li h1, #oferta-single .single ul li h2, #oferta-single .single ul li h3, #oferta-single .single ul li h4, #oferta-single .single ul li h5, #oferta-single .single ul li h6 {
+  padding-top: 10px;
+}
+#oferta-single .single ul li::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+}
+#oferta-single .single ul ul {
+  padding: 0;
+}
+#oferta-single.wypozyczalnia .single table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#oferta-single.wypozyczalnia .single table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#oferta-single.wypozyczalnia .single table tr td {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 0 5px;
+  height: 80px;
+  font-size: 28px;
+  font-family: var(--font-sec-black);
+  border: solid #ebebeb;
+  border-width: 0 1px 0 1px;
+}
+#oferta-single.wypozyczalnia .single table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#oferta-single.wypozyczalnia .single table tr td {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 0 5px;
+  height: 80px;
+  font-size: 28px;
+  font-family: var(--font-sec-black);
+  border: solid #ebebeb;
+  border-width: 0 1px 0 1px;
+}
+#oferta-single.wypozyczalnia .single table thead tr td {
+  height: 60px;
+}
+#oferta-single.wypozyczalnia .single table thead tr td:not(:first-child) {
+  background-color: #2d2d2d;
+  color: #fff;
+  font-size: 14px;
+  font-family: var(--font-medium);
+  border: solid #ebebeb;
+  border-width: 0 0 1px 1px;
+}
+#oferta-single.wypozyczalnia .single table tbody tr td:first-child {
+  background-color: #2d2d2d;
+  color: #fff;
+  font-size: 14px;
+  font-family: var(--font-medium);
+}
+#oferta-single.wypozyczalnia .single table tbody tr td:not(:first-child)::after {
+  content: 'zł';
+}
+@media (max-width: 1023px) {
+  #oferta-single.wypozyczalnia .single table.std {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  #oferta-single.wypozyczalnia .single table.mobile {
+    display: none;
+  }
+}
+#oferta-single.wypozyczalnia-kajakow table {
+  width: 100%;
+}
+#oferta-single.wypozyczalnia-kajakow table img {
+  width: initial;
+  max-width: 100%;
+}
+#oferta-single.wypozyczalnia-kajakow table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#oferta-single.wypozyczalnia-kajakow table tr td {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+#oferta-single.wypozyczalnia-kajakow table thead td {
+  background-color: #2d2d2d;
+  color: #fff;
+  font-size: 14px;
+  font-family: var(--font-medium);
+  line-height: 60px;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#oferta-single.wypozyczalnia-kajakow table tbody tr {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+#oferta-single.wypozyczalnia-kajakow table tbody tr td {
+  padding: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#oferta-single.wypozyczalnia-kajakow table tbody tr td p {
+  line-height: 30px;
+  font-size: 15px;
+  font-family: var(--font-light);
+}
+#oferta-single.wypozyczalnia-kajakow table tbody tr td:nth-child(1) {
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
+}
+#oferta-single.wypozyczalnia-kajakow table tbody tr td:nth-child(2) {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+@media (min-width: 768px) {
+  #oferta-single.wypozyczalnia-kajakow table tbody tr {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 #kontakt .notify {

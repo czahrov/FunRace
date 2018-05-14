@@ -922,35 +922,47 @@ body{
 #oferta-single
 {
 	
-	.single{
+	$dark: #2d2d2d;
+	$light: #fff;
+	$border: #ebebeb;
+	
+	@mixin header(){
+		background-color: $dark;
+		color: $light;
+		font-size: 14px;
+		font-family: var(--font-medium);
 		
-		@mixin ul_zegar(){
-			list-style: none;
+	}
+	
+	@mixin ul_zegar(){
+		list-style: none;
+		
+		li{
+			position: relative;
+			padding-left: 40px !important;
+			margin: 20px 0;
 			
-			li{
-				position: relative;
-				padding-left: 40px !important;
-				margin: 20px 0;
-				
-				&::before{
-					content: '';
-					position: absolute;
-					width: 30px !important;
-					height: 30px !important;
-					top: 0;
-					left: 0;
-					border: none !important;
-					background:{
-						position: center;
-						repeat: no-repeat;
-						size: contain;
-						image: url( ../img/icons/czas.png );
-					};
-					
-				}
+			&::before{
+				content: '';
+				position: absolute;
+				width: 30px !important;
+				height: 30px !important;
+				top: 0;
+				left: 0;
+				border: none !important;
+				background:{
+					position: center;
+					repeat: no-repeat;
+					size: contain;
+					image: url( ../img/icons/czas.png );
+				};
 				
 			}
+			
 		}
+	}
+	
+	.single{
 		
 		.container{
 			
@@ -980,41 +992,6 @@ body{
 				p{
 					padding: initial;
 					font-size: 1em;
-					
-				}
-				
-				ul{
-					list-style: none;
-					padding: 30px 0;
-					
-					li{
-						position: relative;
-						margin-bottom: 10px;
-						padding-left: 30px;
-						line-height: 2em;
-						
-						h1, h2, h3, h4, h5, h6{
-							padding-top: 10px;
-							
-						}
-						
-						&::before{
-							content: '';
-							position: absolute;
-							top: 10px;
-							left: 0;
-							height: 12px;
-							width: 12px;
-							border-radius: 50%;
-							
-						}
-						
-					}
-					
-					ul{
-						padding: 0;
-						
-					}
 					
 				}
 				
@@ -1308,6 +1285,15 @@ body{
 						
 					}
 					
+					&.harmonogram{
+						
+						ul{
+							@include ul_zegar();
+							
+						}
+						
+					}
+					
 				}
 				
 			}
@@ -1347,107 +1333,6 @@ body{
 			width: 100%;
 			max-height: 100%;
 			height: auto;
-			
-		}
-		
-		table{
-			$dark: #2d2d2d;
-			$light: #fff;
-			$border: #ebebeb;
-			
-			@mixin header(){
-				background-color: $dark;
-				color: $light;
-				font-size: 14px;
-				font-family: var(--font-medium);
-				
-			}
-			
-			width: 100%;
-			margin-bottom: 20px;
-			
-			tr{
-				display: flex;
-				
-				td{
-					display: flex;
-					flex-basis: 100%;
-					align-items: center;
-					justify-content: center;
-					text-align: center;
-					padding: 0 5px;
-					height: 80px;
-					font-size: 28px;
-					font-family: var(--font-sec-black);
-					border: solid $border;
-					border-width: 0 1px 0 1px;
-					
-					&:first-child{
-						
-						
-					}
-					
-				}
-				
-			}
-			
-			thead{
-				
-				tr{
-					
-					td{
-						height: 60px;
-						
-						&:not(:first-child){
-							@include header();							
-							border: solid $border;
-							border-width: 0 0 1px 1px;
-							
-						}
-						
-					}
-					
-				}
-				
-			}
-			
-			tbody{
-				
-				tr{
-					
-					td{
-						
-						&:first-child{
-							@include header();
-							
-						}
-						
-						&:not(:first-child)::after{
-							content: 'zł';
-							
-						}
-						
-					}
-					
-				}
-				
-			}
-			
-			&.std{
-				@media( max-width: 1023px ){
-					display: none;
-					
-				}
-				
-			}
-			
-			&.mobile{
-				@media( min-width: 1024px ){
-					display: none;
-					
-				}
-				
-			}
 			
 		}
 		
@@ -1499,6 +1384,244 @@ body{
 		
 		ul.zegar{
 			@include ul_zegar();
+			
+		}
+		
+		ul{
+			list-style: none;
+			padding: 30px 0;
+			
+			li{
+				position: relative;
+				margin-bottom: 10px;
+				padding-left: 30px;
+				line-height: 2em;
+				
+				h1, h2, h3, h4, h5, h6{
+					padding-top: 10px;
+					
+				}
+				
+				&::before{
+					content: '';
+					position: absolute;
+					top: 10px;
+					left: 0;
+					height: 12px;
+					width: 12px;
+					border-radius: 50%;
+					
+				}
+				
+			}
+			
+			ul{
+				padding: 0;
+				
+			}
+			
+		}
+		
+	}
+	
+	&.wypozyczalnia{
+		
+		.single{
+			
+			table{
+				width: 100%;
+				margin-bottom: 20px;
+				
+				tr{
+					display: flex;
+					
+					td{
+						display: flex;
+						flex-basis: 100%;
+						align-items: center;
+						justify-content: center;
+						text-align: center;
+						padding: 0 5px;
+						height: 80px;
+						font-size: 28px;
+						font-family: var(--font-sec-black);
+						border: solid $border;
+						border-width: 0 1px 0 1px;
+						
+						&:first-child{
+							
+							
+						}
+						
+					}
+					
+				}
+				
+				
+				
+				tr{
+					display: flex;
+					
+					td{
+						display: flex;
+						flex-basis: 100%;
+						align-items: center;
+						justify-content: center;
+						text-align: center;
+						padding: 0 5px;
+						height: 80px;
+						font-size: 28px;
+						font-family: var(--font-sec-black);
+						border: solid $border;
+						border-width: 0 1px 0 1px;
+						
+						&:first-child{
+							
+							
+						}
+						
+					}
+					
+				}
+				
+				thead{
+					
+					tr{
+						
+						td{
+							height: 60px;
+							
+							&:not(:first-child){
+								@include header();							
+								border: solid $border;
+								border-width: 0 0 1px 1px;
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+				tbody{
+					
+					tr{
+						
+						td{
+							
+							&:first-child{
+								@include header();
+								
+							}
+							
+							&:not(:first-child)::after{
+								content: 'zł';
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+				&.std{
+					@media( max-width: 1023px ){
+						display: none;
+						
+					}
+					
+				}
+				
+				&.mobile{
+					@media( min-width: 1024px ){
+						display: none;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	&.wypozyczalnia-kajakow{
+		
+		table{
+			width: 100%;
+			
+			img{
+				width: initial;
+				max-width: 100%;
+				
+			}
+			
+			tr{
+				display: flex;
+				
+				td{
+					flex-basis: 100%;
+					
+				}
+				
+			}
+			
+			thead{
+				
+				td{
+					@include header();
+					line-height: 60px;
+					font-size: 18px;
+					text-align: center;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					
+				}
+				
+			}
+			
+			tbody{
+				
+				tr{
+					align-items: center;
+					flex-direction: column;
+					
+					td{
+						padding: 20px;
+						align-items: center;
+						
+						p{
+							line-height: 30px;
+							font-size: 15px;
+							font-family: var(--font-light);
+							
+						}
+						
+						&:nth-child(1){
+							flex-basis: 33%;
+							
+						}
+						
+						&:nth-child(2){
+							flex-grow: 1;
+							
+						}
+						
+						
+					}
+					
+					@media(min-width:768px){
+						flex-direction: row;
+						
+					}
+					
+					
+				}
+				
+			}
 			
 		}
 		
@@ -1835,7 +1958,8 @@ body{
 	
 }
 
-#rezerwuj{
+#rezerwuj
+{
 	
 	form{
 		

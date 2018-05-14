@@ -6,13 +6,18 @@
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'opis_oferty', true ) ),
 			
 		),
-		'program_kursu' => array(
-			'title' => 'Program kursu',
+		'jak_dojechac' => array(
+			'title' => 'Jak dojechać',
+			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'jak_dojechać', true ) ),
+			
+		),
+		'harmonogram' => array(
+			'title' => 'Harmonogram',
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'program_kursu', true ) ),
 			
 		),
 		'dlaczego_kurs' => array(
-			'title' => 'Dlaczego ten kurs',
+			'title' => 'Dlaczego ta oferta',
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'dlaczego_kurs', true ) ),
 			
 		),
@@ -24,6 +29,21 @@
 		'informacje' => array(
 			'title' => 'Informacje',
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'informacje', true ) ),
+			
+		),
+		'faq' => array(
+			'title' => 'FAQ',
+			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'faq', true ) ),
+			
+		),
+		'informacje' => array(
+			'title' => 'FAQ',
+			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'informacje', true ) ),
+			
+		),
+		'regulamin' => array(
+			'title' => 'Regulamin',
+			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'regulamin', true ) ),
 			
 		),
 		
@@ -53,15 +73,14 @@
 	<div class='head flex flex-wrap theme-border'>
 		<?php
 			$count = 0;
-			foreach( $data as $name => $item ):
+			foreach( $data as $name => $item ): if( !empty( $item['content'] ) ):
 		?>
 		<div class='item theme-bg theme-border base1 base0-ml grow-mm flex flex-items-center flex-justify-center<?php if( $count === 0 ) echo " active"; ?>'>
-			<?php
-				echo !empty( $item['content'] )?( $item['title'] ):( '' );
-			?>
+			<?php echo $item['title']; ?>
 		</div>
 		<?php
 			$count++;
+			endif;
 			endforeach;
 		?>
 		
@@ -69,18 +88,19 @@
 	<div class='tabs flex flex-column'>
 		<?php
 			$count = 0;
-			foreach( $data as $name => $item ):
+			foreach( $data as $name => $item ): if( !empty( $item['content'] ) ):
 		?>
 		<div class='item theme-border<?php
 			echo " {$name}";
 			echo $count === 0?( ' active' ):( '' );
 			?>'>
 			<?php
-				echo !empty( $item['content'] )?( $item['content'] ):( '' );
+				echo $item['content'];
 			?>
 		</div>
 		<?php
 			$count++;
+			endif;
 			endforeach;
 		?>
 	</div>
