@@ -536,10 +536,11 @@ $(function () {
 	);
 	
 	// rezerwacja
-	(function( form, addUser, zgody, personal ){
+	(function( form, addUser, zgody, personal, submit_btn ){
+		form.find('.optional').hide();
 		
 		var person_proto = personal.find( '.person:first' ).clone( true );
-		person_proto.find( 'input' ).attr( 'required', null );
+		// person_proto.find( 'input' ).attr( 'required', null );
 		
 		addUser.click( function( e ){
 			e.preventDefault();
@@ -573,6 +574,19 @@ $(function () {
 			
 		} );
 		
+		personal.on( 'click', '.person > .head > .del', function( e ){
+			e.stopPropagation();
+			
+			$(this)
+			.closest( '.person' )
+			.fadeOut( 'fast', function(){
+				$(this)
+				.remove();
+				
+			} );
+			
+		} );
+		
 		zgody
 		.on({
 			invalid: function( e ){
@@ -592,12 +606,35 @@ $(function () {
 			
 		});
 		
+		form
+		.on( 'click', 'label.promo', function( e ){
+			$(this).siblings('input.promo').click();
+			
+			if( $(this).siblings('input.promo').prop('checked') === true ){
+				$(this).parent().siblings('.dimms').slideDown();
+			}
+			else{
+				$(this).parent().siblings('.dimms').slideUp();
+				
+			}
+			
+		} )
+		.on( 'submit', function( e ){
+			if( !/g-recaptcha-response=[^&]+/.test( form.serialize() ) ){
+				e.preventDefault();
+				window.alert( 'Potwierdź że nie jesteś robotem' );
+				
+			}
+			
+		} );
+		
 	})
 	(
 		$( '.rezerwuj-single form' ),
 		$( '.rezerwuj-single form .add' ),
 		$( '.rezerwuj-single form .zgody input' ),
-		$( '.rezerwuj-single form .personal' )
+		$( '.rezerwuj-single form .personal' ),
+		$( '.rezerwuj-single form' ).find( '[type="submit"]' )
 		
 	);
 	

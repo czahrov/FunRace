@@ -2,6 +2,7 @@
 add_theme_support('post-thumbnails');
 add_theme_support('widgets');
 
+define( 'DEVELOP', true );
 define( 'DMODE', isset( $_COOKIE[ 'sprytne' ] ) );
 
 include __DIR__ . "/php/PHPMailer/PHPMailerAutoload.php";

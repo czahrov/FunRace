@@ -16,6 +16,7 @@
 	wp_enqueue_style( "style", get_template_directory_uri() . "/style{$infix}.css", array(), $buster );
 	wp_enqueue_style( "override", get_template_directory_uri() . "/css/override{$infix}.css", array(), $buster );
 	
+    wp_enqueue_script( "google_repatcha", "https://www.google.com/recaptcha/api.js", array(), false, false );
     wp_enqueue_script( "google_maps", "https://maps.googleapis.com/maps/api/js?key=AIzaSyC7wAbhUOIL7TmcbI5B441KDINDoQW2H4I", array(), false, false );
 	wp_enqueue_script( "jQ", get_template_directory_uri() . "/js/jquery.js", array(), false, true );
 	wp_enqueue_script( "jQ_touchSwipe", get_template_directory_uri() . "/js/jquery.touchSwipe.min.js", array( 'jQ' ), false, true );

@@ -28,27 +28,36 @@ Uczestnik: %u
 	Imię: %s
 	Nazwisko: %s
 	Data urodzenia (rrrr-mm-dd): %s
-	Długość stopy: %u cm
-	Wzrost: %u cm
-	Waga: %u kg
-	Poziom umiejętności: %u
-	Opis umiejętności:
-	%s
-
 	Choroby i dolegliwości:
 	%s
+	
+	Poziom umiejętności: %u
+	Dodatkowy opis umiejętności:
+	%s
+	
+	Uczestnik korzysta z wypożyczalni: %s
+	%s
+
 	
 ',
 				$i + 1,
 				$formularz['uczestnik_imię'][$i],
 				$formularz['uczestnik_nazwisko'][$i],
 				$formularz['uczestnik_urodziny'][$i],
-				$formularz['uczestnik_stopa'][$i],
-				$formularz['uczestnik_wzrost'][$i],
-				$formularz['uczestnik_waga'][$i],
+				$formularz['uczestnik_zdrowie'][$i],
 				$formularz['uczestnik_poziom'][$i],
 				$formularz['uczestnik_opis'][$i],
-				$formularz['uczestnik_zdrowie'][$i]
+				$formularz['uczestnik_wypożyczalnia'][$i] === 'on'?('tak'):('nie'),
+				$formularz['uczestnik_wypożyczalnia'][$i] === 'on'?( sprintf(
+					'Długość stopy: %u cm
+	Wzrost: %u cm
+	Waga: %u kg',
+				$formularz['uczestnik_stopa'][$i],
+				$formularz['uczestnik_wzrost'][$i],
+				$formularz['uczestnik_waga'][$i]
+					
+				) ):('')
+				
 				
 			);
 			
@@ -110,7 +119,7 @@ Mail wygenerowany automatycznie na stronie %s',
 			print_r( $mail->Body );
 			echo "-->";
 			$sended = true;
-			$sended = $mail->send();
+			// $sended = $mail->send();
 			
 		}
 		else{
@@ -229,52 +238,61 @@ Mail wygenerowany automatycznie na stronie %s',
 							<div class="personal personal-parent">
 								<div class="flex flex-wrap">
 									<div class='person base1'>
-										<div class='head base1'>Uczestnik</div>
+										<div class='head base1'>
+											Uczestnik
+											<div class='del fa fa-times'></div>
+										</div>
 										<div class='body base1 flex flex-wrap'>
-											<div class="item flex flex-column base1 base2-mm">
+											<div class="item imie flex flex-column base1 base2-mm">
 												<label for="">Imię</label>
-												<input type="text" id="" name="uczestnik imię[]">
+												<input type="text" id="" name="uczestnik imię[]" required>
 											</div>
-											<div class="item flex flex-column base1 base2-mm">
+											<div class="item nazwisko flex flex-column base1 base2-mm">
 												<label for="">Nazwisko</label>
-												<input type="text" id="" name="uczestnik nazwisko[]">
+												<input type="text" id="" name="uczestnik nazwisko[]" required>
 											</div>
-											<div class="item flex flex-column base1 base2-mm">
+											<div class="item urodziny flex flex-column base1 base2-mm">
 												<label for="">Data Urodzenia</label>
-												<input type="date" id="" name="uczestnik urodziny[]" >
+												<input type="date" id="" name="uczestnik urodziny[]" required>
 											</div>
-											<div class="item flex flex-column base1 base2-mm">
+											<div class="item poziom flex flex-column base1 base2-mm">
 												<label for="">Poziom dziecka</label>
-												<select name='uczestnik poziom[]'>
+												<select name='uczestnik poziom[]' required>
 													<option>Poziom 0</option>
 													<option>Poziom 1</option>
 													<option>Poziom 2</option>
 												</select>
 											</div>
-											<div class="area flex flex-column">
+											<div class="area zdrowie flex flex-column">
+												<label for="">Czy u dziecka występują alergie, przewlekłe choroby lub zażywa leki?</label>
+												<textarea name="uczestnik zdrowie[]" id="" required></textarea>
+											</div>
+											<div class="area opis flex flex-column">
 												<label for="">Dodatkowy opis posiadanych umiejętności</label>
 												<textarea name="uczestnik opis[]" id=""></textarea>
 											</div>
-											<div class="area flex flex-column">
-												<label for="">Czy u dziecka występują alergie, przewlekłe choroby lub zażywa leki?</label>
-												<textarea name="uczestnik zdrowie[]" id=""></textarea>
+											<div class="check-row flex">
+												<input type="checkbox" id="" class='promo' name="uczestnik wypożyczalnia[]">
+												<label for="" class='promo'>Czy uczestnicy kursu będą korzystać z promocyjnego pakietu sprzętu narciarskiego z wypożyczalni FUN&amp;RACE?</label>
 											</div>
-											<div class="item flex flex-column base1 base2-mm">
-												<label for="">Długość stopy (cm)</label>
-												<input type="number" id="" name="uczestnik stopa[]" >
-											</div>
-											<div class="item flex flex-column base1 base2-mm">
-												<label for="">Wzrost (cm)</label>
-												<input type="number" id="" name="uczestnik wzrost[]" >
-											</div>
-											<div class="item flex flex-column base1 base2-mm">
-												<label for="">Waga (kg)</label>
-												<select name="uczestnik waga[]">
-													<option>&lt;30</option>
-													<option>30-34</option>
-													<option>35-39</option>
-													<option>40-44</option>
-												</select>
+											<div class='dimms flex optional'>
+												<div class="item flex flex-column base1 base2-mm">
+													<label for="">Długość stopy (cm)</label>
+													<input type="number" id="" name="uczestnik stopa[]">
+												</div>
+												<div class="item flex flex-column base1 base2-mm">
+													<label for="">Wzrost (cm)</label>
+													<input type="number" id="" name="uczestnik wzrost[]">
+												</div>
+												<div class="item flex flex-column base1 base2-mm">
+													<label for="">Waga (kg)</label>
+													<select name="uczestnik waga[]">
+														<option>&lt;30</option>
+														<option>30-34</option>
+														<option>35-39</option>
+														<option>40-44</option>
+													</select>
+												</div>
 											</div>
 											
 										</div>
@@ -314,10 +332,6 @@ Mail wygenerowany automatycznie na stronie %s',
 							</div>
 							<div class="personal personal-parent">
 								<div class="zgody flex flex-wrap">
-									<div class="check-row flex">
-										<input type="checkbox" id="promo" name="wypożyczalnia">
-										<label for="promo">Czy uczestnicy kursu będą korzystać z promocyjnego pakietu sprzętu narciarskiego z wypożyczalni FUN&amp;RACE?</label>
-									</div>
 									<div class="check-row check2 flex">
 										<input type="checkbox" id="statute" name="regulamin" required>
 										<label for="statute">Akceptuję regulamin</label>

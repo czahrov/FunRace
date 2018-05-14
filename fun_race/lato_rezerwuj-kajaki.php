@@ -277,7 +277,7 @@ get_header();
 							</div>
 							<div class="personal personal-user">
 								<div class="person flex flex-wrap">
-									<div class="item wiadomosc flex flex-column base1">
+									<div class="item area wiadomosc flex flex-column base1">
 										<label for="">Wiadomość</label>
 										<textarea name='wiadomosc' style='height:200px;'></textarea>
 									</div>

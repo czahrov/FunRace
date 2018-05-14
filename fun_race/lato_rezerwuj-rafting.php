@@ -80,7 +80,7 @@ Mail wygenerowany automatycznie na stronie %s',
 		print_r( $mail->Body );
 		echo "-->";
 		$sended = true;
-		$sended = $mail->send();
+		// $sended = $mail->send();
 		
 	}
 	else{
@@ -243,9 +243,15 @@ get_header();
 										<input type="checkbox" id="gopro" name="Dodatkowe opcje[]" value='kamera GoPro'>
 										<label for="gopro">Wypożyczenie kamera GoPro</label>
 									</div>
-									<div class="check-row polityka check2 flex">
-										<input type="checkbox" id="pianka" name="Dodatkowe opcje[]" value='pianka neoprenowa'>
+									<div class="flex flex-wrap">
 										<label for="pianka">Wypożyczenie pianki neoprenowej ( dostępne rozmiary: M, L, XL )</label>
+										<select id='pianka' name='Dodatkowe opcje[]'>
+											<option value=''></option>
+											<option value='Pianka neoprenowa M'>rozmiar M</option>
+											<option value='Pianka neoprenowa L'>rozmiar L</option>
+											<option value='Pianka neoprenowa XL'>rozmiar XL</option>
+										</select>
+										
 									</div>
 									
 								</div>
@@ -261,7 +267,7 @@ get_header();
 							</div>
 							<div class="personal personal-user">
 								<div class="person flex flex-wrap">
-									<div class="item wiadomosc flex flex-column base1">
+									<div class="item area wiadomosc flex flex-column base1">
 										<label for="">Wiadomość</label>
 										<textarea name='wiadomosc' style='height:200px;'></textarea>
 									</div>
