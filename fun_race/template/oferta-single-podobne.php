@@ -4,6 +4,8 @@
 	$siblings = get_pages( array(
 		'parent' => get_post()->post_parent,
 		'exclude' => get_post()->ID,
+		'sort_column' => 'menu_order, post_title',
+		'sort_order' => 'ASC',
 		
 	) );
 	

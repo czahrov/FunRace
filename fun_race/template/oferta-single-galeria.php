@@ -11,7 +11,7 @@
 <div class='galeria flex flex-wrap flex-items-center'>
 	<?php foreach( $match[1] as $ids ): ?>
 	<?php foreach( explode( ",", $ids ) as $id ): ?>
-	<div class='item base1 base2-mm base3-ml base4-ds base5-dm base6-dl' style="background-image:url( <?php echo wp_get_attachment_image_url( $id, 'medium' ); ?> );">
+	<div class='item base1 base2-mm base3-ml base4-ds base5-dm base6-dl' style="background-image:url( <?php echo wp_get_attachment_image_url( $id, 'large' ); ?> );">
 		<a class='hitbox' href="<?php echo wp_get_attachment_url( $id ); ?>" target="_blank"></a>
 		
 	</div>

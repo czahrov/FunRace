@@ -36,11 +36,6 @@
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'faq', true ) ),
 			
 		),
-		'informacje' => array(
-			'title' => 'FAQ',
-			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'informacje', true ) ),
-			
-		),
 		'regulamin' => array(
 			'title' => 'Regulamin',
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'regulamin', true ) ),

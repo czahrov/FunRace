@@ -15,7 +15,9 @@
 			bottom: 0;
 			width: 50%;
 			background:{
-				size: cover
+				size: cover;
+				repeat: no-repeat;
+				position: center;
 			};
 			
 			&.skier{
@@ -512,7 +514,12 @@ body{
 		}
 		
 		.theme-border{
-			border-color: $theme-color;
+			
+			&, & *{
+				border-color: $theme-color;
+				
+			}
+			
 		}
 		
 		header{
@@ -660,7 +667,12 @@ body{
 		}
 		
 		.theme-border{
-			border-color: $theme-color;
+			
+			&, & *{
+				border-color: $theme-color;
+				
+			}
+			
 		}
 		
 		header{
@@ -1089,6 +1101,11 @@ body{
 					
 				}
 				
+				@media(min-width: 1024px){
+					padding-right: 20px;
+					
+				}
+				
 			}
 			
 			& > .info{
@@ -1431,6 +1448,7 @@ body{
 			table{
 				width: 100%;
 				margin-bottom: 20px;
+				border-collapse: collapse;
 				
 				tr{
 					display: flex;
@@ -1552,6 +1570,7 @@ body{
 		
 		table{
 			width: 100%;
+			border-collapse: collapse;
 			
 			img{
 				width: initial;
@@ -1618,6 +1637,380 @@ body{
 						
 					}
 					
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	&.szkolenia-grupowe{
+		
+		table{
+			width: 100%;
+			border-collapse: collapse;
+			
+			tr{
+				border-bottom: solid 1px $border;
+				
+				td{
+					line-height: 60px;
+					text-align: center;
+					
+				}
+				
+			}
+			
+			thead{
+				
+				tr{
+					
+					td{
+						background-color: $dark;
+						color: $light;
+						font-family: var(--font-medium);
+						text-transform: uppercase;
+						
+					}
+					
+				}
+				
+			}
+			
+			tbody{
+				
+				tr{
+					
+					td{
+						font-family: var(--font-sec-black);
+						
+					}
+					
+				}
+				
+			}
+			
+			&.mobile{
+				
+				thead{
+					
+					tr{
+						
+						td{
+							
+						}
+						
+					}
+					
+				}
+				
+				tbody{
+					
+					tr{
+						
+						td{
+							width: 33%;
+							border: solid $border;
+							border-width: 0 1px 1px 0;
+							
+						}
+						
+						&:nth-child(2n){
+							
+							td:not([rowspan]){
+								background-color: $border;
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+				@media(min-width:1024px){
+					display: none;
+					
+				}
+				
+			}
+			
+			&.std{
+				
+				tr{
+					display: flex;
+					
+					td{
+						flex-basis: 100%;
+						
+					}
+					
+				}
+				
+				tbody{
+					
+					tr{
+						
+						td{
+							
+						}
+						
+						&:nth-child(2n+3){
+							background-color: $border;
+							
+						}
+						
+						&:first-child td,
+						& td:first-child{
+							opacity: 0.6;
+							
+						}
+						
+					}
+					
+				}
+				
+				@media(max-width:1023px){
+					display: none;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	&.szkolenia-head{
+		
+		table{
+			width: 100%;
+			border-collapse: collapse;
+			
+			tr{
+				display: flex;
+				
+				td{
+					flex-basis: 100%;
+					line-height: 60px;
+					text-align: center;
+					border: solid $border;
+					border-width: 0 1px 1px 0;
+					border-collapse: collapse;
+					
+				}
+				
+			}
+			
+			thead{
+				
+				tr{
+					
+					td{
+						background-color: $dark;
+						color: $light;
+						text-transform: uppercase;
+						font-family: var(--font-medium);
+						font-size: 18px;
+						
+					}
+					
+				}
+				
+			}
+			
+			tbody{
+				
+				tr{
+					
+					td{
+						font-family: var(--font-sec-black);
+						
+					}
+					
+					&:nth-child(2n){
+						
+						td:not(:first-child){
+							background-color: $border;
+							
+						}
+						
+					}
+					
+					&:first-child,
+					& td:first-child{
+						opacity: 0.6;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+
+	&.szkolenia-indywidualne{
+		
+		table{
+			width: 100%;
+			border-collapse: collapse;
+			
+			tr{
+				border-bottom: solid 1px $border;
+				
+				td{
+					line-height: 60px;
+					text-align: center;
+					
+				}
+				
+			}
+			
+			thead{
+				
+				tr{
+					
+					td{
+						background-color: $dark;
+						color: $light;
+						font-family: var(--font-medium);
+						text-transform: uppercase;
+						
+					}
+					
+				}
+				
+			}
+			
+			tbody{
+				
+				tr{
+					
+					td{
+						font-family: var(--font-sec-black);
+						
+					}
+					
+				}
+				
+			}
+			
+			&.mobile{
+				
+				thead{
+					
+					tr{
+						
+						td{
+							
+						}
+						
+					}
+					
+				}
+				
+				tbody{
+					
+					tr{
+						
+						td{
+							width: 33%;
+							border: solid $border;
+							border-width: 0 1px 1px 0;
+							
+						}
+						
+						&:nth-child(2n){
+							
+							td:not([rowspan]){
+								background-color: $border;
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+				@media(min-width:1024px){
+					display: none;
+					
+				}
+				
+			}
+			
+			&.std{
+				
+				tr{
+					display: flex;
+					
+					td{
+						flex-basis: 100%;
+						
+					}
+					
+				}
+				
+				tbody{
+					
+					tr{
+						
+						td{
+							
+						}
+						
+						&:nth-child(2n+3){
+							background-color: $border;
+							
+						}
+						
+						&:first-child td,
+						& td:first-child{
+							opacity: 0.6;
+							
+						}
+						
+					}
+					
+				}
+				
+				@media(max-width:1023px){
+					display: none;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	&.stubai-austria{
+		
+		table{
+			width: 100%;
+			border-collapse: collapse;
+			
+			tr{
+				display: flex;
+				
+				td{
+					flex-basis: 100%;
+					padding: 0 10px;
+					line-height: 60px;
+					font-size: 16px;
+					text-align: center;
+					border-bottom: solid 1px $border;
+					
+				}
+				
+				&:nth-child(2n+1){
+					background-color: $border;
 					
 				}
 				

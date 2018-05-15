@@ -16,6 +16,11 @@
 			'icon' => 'lokalizacja.png',
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'miejsce', true ) ),
 		),
+		'rodzaj_szkolenia' => array(
+			'name' => 'Rodzaj szkolenia',
+			'icon' => 'rodzaj.png',
+			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'rodzaj_szkolenia', true ) ),
+		),
 		'trasa' => array(
 			'name' => 'Trasa',
 			'icon' => 'lokalizacja.png',

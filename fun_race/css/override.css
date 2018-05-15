@@ -12,6 +12,8 @@
   bottom: 0;
   width: 50%;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 #intro .intro-poster .img.skier {
   left: 0;
@@ -308,7 +310,7 @@ body.lato .theme-color {
 body.lato .theme-bg {
   background-color: var(--color-winter);
 }
-body.lato .theme-border {
+body.lato .theme-border, body.lato .theme-border * {
   border-color: var(--color-winter);
 }
 body.lato header nav .menu .dropdown .drop-container .item a:hover {
@@ -346,7 +348,7 @@ body.zima .theme-color {
 body.zima .theme-bg {
   background-color: var(--color-summer);
 }
-body.zima .theme-border {
+body.zima .theme-border, body.zima .theme-border * {
   border-color: var(--color-summer);
 }
 body.zima header nav .menu .dropdown .drop-container .item a:hover {
@@ -505,6 +507,11 @@ body header nav .menu .dropdown .drop-container .item a:hover {
 }
 #oferta-single .single .kafelki .item:hover .hitbox {
   opacity: 1;
+}
+@media (min-width: 1024px) {
+  #oferta-single .single .tabela > .img {
+    padding-right: 20px;
+  }
 }
 #oferta-single .single .tabela > .info .bar .head {
   padding: 0 20px;
@@ -781,6 +788,7 @@ body header nav .menu .dropdown .drop-container .item a:hover {
 #oferta-single.wypozyczalnia .single table {
   width: 100%;
   margin-bottom: 20px;
+  border-collapse: collapse;
 }
 #oferta-single.wypozyczalnia .single table tr {
   display: -webkit-box;
@@ -864,6 +872,7 @@ body header nav .menu .dropdown .drop-container .item a:hover {
 }
 #oferta-single.wypozyczalnia-kajakow table {
   width: 100%;
+  border-collapse: collapse;
 }
 #oferta-single.wypozyczalnia-kajakow table img {
   width: initial;
@@ -925,6 +934,167 @@ body header nav .menu .dropdown .drop-container .item a:hover {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+}
+#oferta-single.szkolenia-grupowe table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#oferta-single.szkolenia-grupowe table tr {
+  border-bottom: solid 1px #ebebeb;
+}
+#oferta-single.szkolenia-grupowe table tr td {
+  line-height: 60px;
+  text-align: center;
+}
+#oferta-single.szkolenia-grupowe table thead tr td {
+  background-color: #2d2d2d;
+  color: #fff;
+  font-family: var(--font-medium);
+  text-transform: uppercase;
+}
+#oferta-single.szkolenia-grupowe table tbody tr td {
+  font-family: var(--font-sec-black);
+}
+#oferta-single.szkolenia-grupowe table.mobile tbody tr td {
+  width: 33%;
+  border: solid #ebebeb;
+  border-width: 0 1px 1px 0;
+}
+#oferta-single.szkolenia-grupowe table.mobile tbody tr:nth-child(2n) td:not([rowspan]) {
+  background-color: #ebebeb;
+}
+@media (min-width: 1024px) {
+  #oferta-single.szkolenia-grupowe table.mobile {
+    display: none;
+  }
+}
+#oferta-single.szkolenia-grupowe table.std tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#oferta-single.szkolenia-grupowe table.std tr td {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+#oferta-single.szkolenia-grupowe table.std tbody tr:nth-child(2n+3) {
+  background-color: #ebebeb;
+}
+#oferta-single.szkolenia-grupowe table.std tbody tr:first-child td, #oferta-single.szkolenia-grupowe table.std tbody tr td:first-child {
+  opacity: 0.6;
+}
+@media (max-width: 1023px) {
+  #oferta-single.szkolenia-grupowe table.std {
+    display: none;
+  }
+}
+#oferta-single.szkolenia-head table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#oferta-single.szkolenia-head table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#oferta-single.szkolenia-head table tr td {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  line-height: 60px;
+  text-align: center;
+  border: solid #ebebeb;
+  border-width: 0 1px 1px 0;
+  border-collapse: collapse;
+}
+#oferta-single.szkolenia-head table thead tr td {
+  background-color: #2d2d2d;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: var(--font-medium);
+  font-size: 18px;
+}
+#oferta-single.szkolenia-head table tbody tr td {
+  font-family: var(--font-sec-black);
+}
+#oferta-single.szkolenia-head table tbody tr:nth-child(2n) td:not(:first-child) {
+  background-color: #ebebeb;
+}
+#oferta-single.szkolenia-head table tbody tr:first-child, #oferta-single.szkolenia-head table tbody tr td:first-child {
+  opacity: 0.6;
+}
+#oferta-single.szkolenia-indywidualne table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#oferta-single.szkolenia-indywidualne table tr {
+  border-bottom: solid 1px #ebebeb;
+}
+#oferta-single.szkolenia-indywidualne table tr td {
+  line-height: 60px;
+  text-align: center;
+}
+#oferta-single.szkolenia-indywidualne table thead tr td {
+  background-color: #2d2d2d;
+  color: #fff;
+  font-family: var(--font-medium);
+  text-transform: uppercase;
+}
+#oferta-single.szkolenia-indywidualne table tbody tr td {
+  font-family: var(--font-sec-black);
+}
+#oferta-single.szkolenia-indywidualne table.mobile tbody tr td {
+  width: 33%;
+  border: solid #ebebeb;
+  border-width: 0 1px 1px 0;
+}
+#oferta-single.szkolenia-indywidualne table.mobile tbody tr:nth-child(2n) td:not([rowspan]) {
+  background-color: #ebebeb;
+}
+@media (min-width: 1024px) {
+  #oferta-single.szkolenia-indywidualne table.mobile {
+    display: none;
+  }
+}
+#oferta-single.szkolenia-indywidualne table.std tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#oferta-single.szkolenia-indywidualne table.std tr td {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+#oferta-single.szkolenia-indywidualne table.std tbody tr:nth-child(2n+3) {
+  background-color: #ebebeb;
+}
+#oferta-single.szkolenia-indywidualne table.std tbody tr:first-child td, #oferta-single.szkolenia-indywidualne table.std tbody tr td:first-child {
+  opacity: 0.6;
+}
+@media (max-width: 1023px) {
+  #oferta-single.szkolenia-indywidualne table.std {
+    display: none;
+  }
+}
+#oferta-single.stubai-austria table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#oferta-single.stubai-austria table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#oferta-single.stubai-austria table tr td {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 10px;
+  line-height: 60px;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: solid 1px #ebebeb;
+}
+#oferta-single.stubai-austria table tr:nth-child(2n+1) {
+  background-color: #ebebeb;
 }
 
 #kontakt .notify {
