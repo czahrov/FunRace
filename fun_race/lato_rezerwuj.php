@@ -7,7 +7,7 @@
 	?>
 <body id="rezerwuj" class='<?php do_action( 'body_hook' ); ?>'>
 	<header>
-		<?php get_template_part("template/menu-lato"); ?>	
+		<?php get_template_part("template/menu"); ?>	
 		<?php banner(); ?>
 		<?php rezerwujMenu( getSeason() ); ?>
 		

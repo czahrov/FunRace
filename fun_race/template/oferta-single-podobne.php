@@ -13,10 +13,23 @@
 ?>
 <div class="kafelki flex flex-justify-center flex-wrap">
 	<h2 class='title base1'>
-		Kursy podobne do 
-		<span class='theme-color'>
-			<?php echo get_post()->post_title; ?>
-		</span>
+		<?php
+			switch( get_post( get_post()->post_parent )->post_name ){
+				case 'splywy-kajakowe':
+					echo "Sprawdź pozostałe trasy <span class='theme-color'>spływów kajakowych</span>";
+					
+				break;
+				case 'rafting':
+					echo "Sprawdź pozostałe oferty <span class='theme-color'>Raftingu</span>";
+				break;
+				case 'szkola-kajakarstwa-gorskiego':
+					echo "Sprawdź pozostałe oferty <span class='theme-color'>kajakarstwa górskiego</span>";
+				break;
+				default:
+					echo "Sprawdź pozostałe oferty";
+			}
+			
+		?>
 	</h2>
 	<?php foreach( $siblings as $sib ): ?>
 	<div class="item base1 base2-mm base3-ds base4-dm" style='background-image:url( <?php echo get_the_post_thumbnail_url( $sib->ID, 'large' ); ?> );'>

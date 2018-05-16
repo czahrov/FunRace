@@ -10,10 +10,28 @@
 ?>
 <div class="kafelki flex flex-justify-center flex-wrap">
 	<h2 class='title base1'>
-		Kursy
-		<span class='theme-color'>
-			<?php echo get_post()->post_title; ?>
-		</span>
+		<?php
+			switch( get_post()->post_name ){
+				case 'splywy-kajakowe':
+					echo "Trasy spływów kajakowych <div class='theme-color'>- Wybierz trasę aby zapoznać się ze szczegółami -</div>";
+					
+				break;
+				case 'rafting':
+					echo "Rafting - spływy pontonowe <div class='theme-color'>- Wybierz ofertę aby zapoznać się ze szczegółami -</div>";
+				break;
+				case 'szkola-kajakarstwa-gorskiego':
+					echo "Kursy <span class='theme-color'>kajakarstwa górskiego</span>";
+				break;
+				default:
+					printf(
+						'Kursy <span class="theme-color">%s</span>',
+						get_post()->post_title
+						
+					);
+			}
+			
+		?>
+		
 	</h2>
 	<?php foreach( $oferty as $oferta ): ?>
 	<div class="item base1 base2-mm base3-ds base4-dm" style='background-image:url( <?php echo get_the_post_thumbnail_url( $oferta->ID, 'large' ); ?> );'>

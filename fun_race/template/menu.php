@@ -59,7 +59,7 @@
 	</div>
 	<div class="nav-end hide flex-dm no-shrink">
 		<a href="<?php echo home_url("{$season}/rezerwuj"); ?>" class="booking flex flex-items-center flex-justify-center">Rezerwuj online</a>
-		<a href="<?php echo home_url("{$invert}"); ?>" class="season flex flex-column-dm flex-items-center flex-justify-center winter">
+		<a href="<?php echo home_url("{$invert}"); ?>" class="season theme-bg invert flex flex-column-dm flex-items-center flex-justify-center winter">
 			<span class="nana">Oferta</span>
 			<span class="year">
 				<?php echo $invert; ?>

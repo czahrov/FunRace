@@ -210,7 +210,7 @@ header nav .nav-end .season span img {
 
 header nav .nav-end .season.winter {
 	color: #fff;
-	background-color: var(--color-winter);
+	/* background-color: var(--color-winter); */
 }
 
 .white-space {
@@ -4930,7 +4930,7 @@ MEDIA
 	}
 	header nav .nav-end .season.winter {
 		color: #fff;
-		background-color: var(--color-summer);
+		/* background-color: var(--color-summer); */
 	}
 	header nav #offer:hover .dropdown {
 		display: flex;
@@ -5366,7 +5366,7 @@ body.lato header nav .nav-end .booking {
 }
 
 body.lato header nav .nav-end .season.winter {
-	background-color: var(--color-summer);
+	/* background-color: var(--color-summer); */
 }
 
 body.lato header .poster .content h2 span {
@@ -5968,7 +5968,7 @@ body.lato .mamucik .grid .container .intro .col1 .box .content .simple-list ul {
 		background-color: #fff;
 	}
 	body.lato header nav .nav-end .season.winter{
-		background-color: var(--color-winter);
+		/* background-color: var(--color-winter); */
 	}
 	body.lato .alpy .grid .container .normal {
 		//padding-left: 100px;

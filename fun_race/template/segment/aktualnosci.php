@@ -29,8 +29,7 @@
 					<div class="cover" style="background-image: url(<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>);"></div>
 					<a href="<?php
 							printf(
-								'%s?item=%u',
-								home_url( sprintf( '%s/aktualnosci', getSeason() ) ),
+								'aktualnosci?item=%u',
 								$post->ID
 							);
 							

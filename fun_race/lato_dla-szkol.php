@@ -6,7 +6,7 @@
 ?>
 <body id="szkola" class='<?php do_action( 'body_hook' ); ?>'>
  <header>
-    <?php get_template_part("template/menu-lato"); ?>	
+    <?php get_template_part("template/menu"); ?>	
 	<?php banner(); ?>
  </header>
 
@@ -170,7 +170,7 @@
 
 
 <!-- CONTACT BAR-->
-<?php get_template_part("template/contact-bar-lato"); ?>
+<?php get_template_part("template/contact-bar"); ?>
 <!-- NEWSLETTER -->
 <?php get_template_part("template/partners-full"); ?>
 <!-- FOOTER -->

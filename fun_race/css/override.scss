@@ -37,6 +37,7 @@
 			padding: 0;
 			max-height: 400px;
 			max-width: 20vw;
+			min-width: 150px;
 			
 		}
 		
@@ -69,7 +70,9 @@
 		
 		& > .wheel{
 			width: 25vw;
+			min-width: 200px;
 			height: 25vw;
+			min-height: 200px;
 			background-color: rgba( 255, 255, 255, 1 );
 			
 		}
@@ -78,19 +81,28 @@
 			
 			&:nth-child(2){
 				width: 30vw;
+				min-width: 230px;
 				height: 30vw;
+				min-height: 230px;
+				opacity: 1;
 				
 			}
 			
 			&:nth-child(3){
 				width: 40vw;
+				min-width: 270px;
 				height: 40vw;
+				min-height: 270px;
+				opacity: 0.75;
 				
 			}
 			
 			&:nth-child(4){
 				width: 50vw;
+				min-width: 300px;
 				height: 50vw;
+				min-height: 300px;
+				opacity: 0.5;
 				
 			}
 			
@@ -138,17 +150,15 @@
 	.pagin{
 		position: absolute;
 		margin: 30px 0;
-		left: 50%;
 		bottom: 0;
-		transform: translate(-50%,0);
 		z-index: 5;
 		
 		.item{
 			display: inline-block;
 			margin: 0 10px;
 			padding: 4px;
-			width: 40px;
-			height: 40px;
+			width: 30px;
+			height: 30px;
 			border:{
 				style: solid;
 				width: 4px;
@@ -300,7 +310,7 @@ footer{
 	*{
 		font-size: 18px;
 		line-height: 36px;
-		font-family: var(--font-medium);
+		font-family: var(--font-light);
 		
 	}
 	
@@ -309,6 +319,11 @@ footer{
 			left: 20px;
 			right: 20px;
 		};
+		
+	}
+	
+	table{
+		width: 100%;
 		
 	}
 	
@@ -504,13 +519,26 @@ body{
 	
 	&.lato{
 		$theme-color: var(--color-winter);
+		$theme-color-invert: var(--color-summer);
 		
 		.theme-color{
 			color: $theme-color;
+			
+			&.invert{
+				color: $theme-color-invert;
+				
+			}
+			
 		}
 		
 		.theme-bg{
 			background-color: $theme-color;
+			
+			&.invert{
+				background-color: $theme-color-invert;
+				
+			}
+			
 		}
 		
 		.theme-border{
@@ -519,6 +547,16 @@ body{
 				border-color: $theme-color;
 				
 			}
+			
+			&.invert{
+				
+				&, & *{
+					border-color: $theme-color-invert;
+					
+				}
+				
+			}
+			
 			
 		}
 		
@@ -542,23 +580,6 @@ body{
 									}
 									
 								}
-								
-							}
-							
-						}
-						
-					}
-					
-				}
-				
-				.nav-end{
-					
-					.season{
-						
-						&.winter{
-							
-							@media( min-width: 1440px ){
-								background-color: $theme-color;
 								
 							}
 							
@@ -618,14 +639,14 @@ body{
 							
 						}
 						
-						ul{
+					}
+					
+					ul{
+						
+						li{
 							
-							li{
-								
-								&::before{
-									border: 2px solid $theme-color;
-									
-								}
+							&::before{
+								border: 2px solid $theme-color;
 								
 							}
 							
@@ -636,7 +657,6 @@ body{
 				}
 				
 				.kafelki{
-					margin: 0;
 					
 					.title{
 						
@@ -657,13 +677,26 @@ body{
 	
 	&.zima{
 		$theme-color: var(--color-summer);
+		$theme-color-invert: var(--color-winter);
 		
 		.theme-color{
 			color: $theme-color;
+			
+			&.invert{
+				color: $theme-color-invert;
+				
+			}
+			
 		}
 		
 		.theme-bg{
 			background-color: $theme-color;
+			
+			&.invert{
+				background-color: $theme-color-invert;
+				
+			}
+			
 		}
 		
 		.theme-border{
@@ -672,6 +705,16 @@ body{
 				border-color: $theme-color;
 				
 			}
+			
+			&.invert{
+				
+				&, & *{
+					border-color: $theme-color-invert;
+					
+				}
+				
+			}
+			
 			
 		}
 		
@@ -695,23 +738,6 @@ body{
 									}
 									
 								}
-								
-							}
-							
-						}
-						
-					}
-					
-				}
-				
-				.nav-end{
-					
-					.season{
-						
-						&.winter{
-							
-							@media( min-width: 1440px ){
-								background-color: $theme-color;
 								
 							}
 							
@@ -892,6 +918,7 @@ body{
 		nav{
 			
 			.menu{
+				text-transform: uppercase;
 				
 				.dropdown{
 					
@@ -920,6 +947,15 @@ body{
 						}
 						
 					}
+					
+				}
+				
+			}
+			
+			.logo{
+				
+				img{
+					max-width: 100%;
 					
 				}
 				
@@ -1138,10 +1174,6 @@ body{
 						
 						ul{
 							list-style: none;
-							
-							li{
-								
-							}
 							
 						}
 						

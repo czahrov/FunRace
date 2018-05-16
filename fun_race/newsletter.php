@@ -59,7 +59,7 @@ get_header();
 
 ?>
 <header>
-	<?php get_template_part("template/menu-lato"); ?>
+	<?php get_template_part("template/menu"); ?>
 </header>
 <?php
 	printf(
