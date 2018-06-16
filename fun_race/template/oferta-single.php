@@ -32,6 +32,7 @@
         <div class="white-space-40"></div>
 		<?php //get_template_part('template/oferta-single-opis'); ?>
 		<?php get_template_part('template/oferta-single-tabela'); ?>
+		<?php get_template_part('template/oferta-single-tekst'); ?>
 		<?php get_template_part('template/oferta-single-zakladki'); ?>
 		<?php get_template_part('template/oferta-single-galeria'); ?>
 		<?php get_template_part('template/oferta-single-kursy'); ?>

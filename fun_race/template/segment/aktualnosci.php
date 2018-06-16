@@ -48,9 +48,13 @@
 									
 								}
 								else{
-									$pattern = '/(?:\S+\s*){1,10}/';
-									preg_match( $pattern, $post->post_content, $match );
+									$content = strip_tags( $post->post_content );
+									$content = preg_replace( '/<[^>]+>/', '', $content );
+									preg_match( '/(?:\S+\s*){1,8}/', $content, $match );
 									echo $match[0] . " (...)";
+									echo "<!--";
+									print_r( $match );
+									echo "-->";
 									
 								}
 								

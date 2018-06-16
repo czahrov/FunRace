@@ -14,19 +14,28 @@
 <div class="kafelki flex flex-justify-center flex-wrap">
 	<h2 class='title base1'>
 		<?php
-			switch( get_post( get_post()->post_parent )->post_name ){
-				case 'splywy-kajakowe':
-					echo "Sprawdź pozostałe trasy <span class='theme-color'>spływów kajakowych</span>";
-					
-				break;
-				case 'rafting':
-					echo "Sprawdź pozostałe oferty <span class='theme-color'>Raftingu</span>";
-				break;
-				case 'szkola-kajakarstwa-gorskiego':
-					echo "Sprawdź pozostałe oferty <span class='theme-color'>kajakarstwa górskiego</span>";
-				break;
-				default:
-					echo "Sprawdź pozostałe oferty";
+			$oferty = get_post_meta( get_post()->ID, 'tekst_oferty', true );
+			
+			if( !empty( $oferty ) ){
+				echo apply_filters( 'the_content', $oferty );
+				
+			}
+			else{
+				switch( get_post( get_post()->post_parent )->post_name ){
+					case 'splywy-kajakowe':
+						echo "Sprawdź pozostałe trasy <span class='theme-color'>spływów kajakowych</span>";
+						
+					break;
+					case 'rafting':
+						echo "Sprawdź pozostałe oferty <span class='theme-color'>Raftingu</span>";
+					break;
+					case 'szkola-kajakarstwa-gorskiego':
+						echo "Sprawdź pozostałe oferty <span class='theme-color'>kajakarstwa górskiego</span>";
+					break;
+					default:
+						echo "Sprawdź pozostałe oferty";
+				}
+				
 			}
 			
 		?>

@@ -1,54 +1,65 @@
 <?php
-	$tel1 = get_post_meta( get_page_by_title('Stopka')->ID, 'tel1', true );
-	$tel2 = get_post_meta( get_page_by_title('Stopka')->ID, 'tel2', true );
-	$adres = get_post_meta( get_page_by_title('Stopka')->ID, 'adres', true );
-	$email = get_post_meta( get_page_by_title('Stopka')->ID, 'email', true );
-	$top = get_post_meta( get_page_by_title('Stopka')->ID, 'top', true );
-	$mid = get_post_meta( get_page_by_title('Stopka')->ID, 'mid', true );
+	$season = stripos( $_SERVER['REQUEST_URI'], '/lato/' ) !== false?( 'lato' ):( 'zima' );
+	$fields = array( 'tel1', 'tel2', 'adres', 'email', 'top', 'mid' );
+	
+	$data = array();
+	foreach( $fields as $field ){
+		$out = get_post_meta( get_page_by_path("{$season}/stopka")->ID, $field, true );
+		if( empty( $out ) ) $out = get_post_meta( get_page_by_path("stopka")->ID, $field, true );
+		
+		$data[ $field ] = $out;
+	}
+			
+	if( DMODE ){
+		echo "<!--";
+		// echo $season;
+		print_r( $data );
+		echo "-->";
+	}
 	
 ?>
 <footer>
     <div class='kontakt line_sep'>
 		<div class='inner grid flex flex-justify-center flex-justify-between-ml flex-wrap'>
-			<?php if( !empty( $tel1 ) ): ?>
+			<?php if( !empty( $data['tel1'] ) ): ?>
 			<div class="item base1 base2-mm base4-ml no-shrink flex flex-items-center flex-justify-center flex-justify-start-mm">
 				<i class="icon mobile fa fa-mobile theme-color" aria-hidden="true"></i>
-				<?php echo $tel1; ?>
+				<?php echo $data['tel1']; ?>
 			</div>
 			<?php endif; ?>
-			<?php if( !empty( $tel2 ) ): ?>
+			<?php if( !empty( $data['tel2'] ) ): ?>
 			<div class="item base1 base2-mm base4-ml no-shrink flex flex-items-center flex-justify-center flex-justify-start-mm">
 				<i class="icon phone fa fa-phone theme-color" aria-hidden="true"></i>
-				<?php echo $tel2; ?>
+				<?php echo $data['tel2']; ?>
 			</div>
 			<?php endif; ?>
-			<?php if( !empty( $adres ) ): ?>
+			<?php if( !empty( $data['adres'] ) ): ?>
 			<div class="item base1 base2-mm base4-ml no-shrink flex flex-items-center flex-justify-center flex-justify-start-mm">
 				<i class="icon marker fa fa-map-marker theme-color" aria-hidden="true"></i>
-				<?php echo $adres; ?>
+				<?php echo $data['adres']; ?>
 			</div>
 			<?php endif; ?>
-			<?php if( !empty( $email ) ): ?>
+			<?php if( !empty( $data['email'] ) ): ?>
 			<div class="item base1 base2-mm base4-ml no-shrink flex flex-items-center flex-justify-center flex-justify-start-mm">
 				<i class="icon mail fa fa-envelope theme-color" aria-hidden="true"></i>
-				<?php echo $email; ?>
+				<?php echo $data['email']; ?>
 			</div>
 			<?php endif; ?>
 			
 		</div>
 		
 	</div>
-    <?php if( !empty( $top ) ): ?>
+    <?php if( !empty( $data['top'] ) ): ?>
 	<div class='postext line_sep'>
 		<div class='inner grid'>
-			<?php echo apply_filters( 'the_content', $top ); ?>
+			<?php echo apply_filters( 'the_content', $data['top'] ); ?>
 		</div>
 	</div>
 	<?php endif; ?>
-    <?php if( !empty( $mid ) ): ?>
+    <?php if( !empty( $data['mid'] ) ): ?>
     <div class="bottom line_sep">
 		<div class="inner grid">
-			<?php echo apply_filters( 'the_content', $mid ); ?>
+			<?php echo apply_filters( 'the_content', $data['mid'] ); ?>
 		</div>
     </div>
 	<?php endif; ?>

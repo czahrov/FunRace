@@ -124,7 +124,7 @@ get_header();
 							
 							if( DMODE ){
 								printf(
-									'<div>%s<br>%s</div>',
+									'<!--<div>%s<br>%s</div>-->',
 									$form_path,
 									$form_path_parent
 									
