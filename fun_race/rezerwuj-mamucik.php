@@ -13,8 +13,13 @@
 			$mail->addAddress( 'sprytne@scepter.pl' );
 		}
 		else{
-			$mail->addAddress( $formularz['Email_rezerwującego'] );
-			// $mail->addAddress( "biuro@funrace.pl" );
+			if( DEVELOP ){
+				$mail->addAddress( $formularz['Email_rezerwującego'] );
+			}
+			else{
+				$mail->addAddress( "biuro@funrace.pl" );
+			}
+			
 		}
 		$mail->Subject = "Rezerwacja kursu: {$formularz['wydarzenie']}";
 		
@@ -113,17 +118,27 @@ Mail wygenerowany automatycznie na stronie %s',
 			home_url()
 			
 		);
-	
-		if( DMODE ){
-			echo "<!--";
-			print_r( $mail->Body );
-			echo "-->";
-			$sended = true;
-			// $sended = $mail->send();
+		
+		/* sprawdzanie weryfikacji google recaptcha */
+		if( !empty( $formularz['g-recaptcha-response'] ) ){
+			
+			if( DMODE ){
+				echo "<!--";
+				print_r( $mail->Body );
+				echo "-->";
+				$sended = true;
+				// $sended = $mail->send();
+				
+			}
+			else{
+				$sended = $mail->send();
+				
+			}
 			
 		}
 		else{
-			$sended = $mail->send();
+			$sended = false;
+			$sended_msg = "Brak weryfikacji captcha";
 			
 		}
 		
@@ -131,7 +146,7 @@ Mail wygenerowany automatycznie na stronie %s',
 	
 	get_header();
 	?>
-<body id="rezerwuj-rafting" class='<?php do_action( 'body_hook' ); ?>'>
+<body id="rezerwuj" class='<?php do_action( 'body_hook' ); ?>'>
 	<header>
 		<?php get_template_part("template/menu"); ?>
 		<div class="poster-sub poster-sub-rezerwuj poster-sub-rezerwuj-single flex flex-justify-center flex-items-center">
@@ -176,7 +191,7 @@ Mail wygenerowany automatycznie na stronie %s',
 					?>
 				<div class='infobar <?php echo $class; ?>'>
 					<?php
-						echo $sended === true?( 'Wiadomość wysłana pomyślnie' ):( "Wysyłka maila nie powiodła się.<br>Przyczyna błędu: {$mail->ErrorInfo}" );
+						echo $sended === true?( 'Wiadomość wysłana pomyślnie' ):( sprintf( 'Wysyłka maila nie powiodła się.<br>Przyczyna błędu: %s', !empty( $sended_msg )?( $sended_msg ):( $mail->ErrorInfo ) ) );
 						?>
 				</div>
 				<?php endif; ?>
@@ -346,9 +361,7 @@ Mail wygenerowany automatycznie na stronie %s',
 										<input type="checkbox" id="statement" name="zgoda" required>
 										<label for="statement">Oświadczam, iż stan zdrowia uczestnika/ów pozwala na udział w zajęciach Akademii Narciarskiej Mamucik</label>
 									</div>
-									<div class="buttons flex flex-wrap base1 flex-justify-center">
-										<button class="send flex flex-justify-center flex-items-center" type='submit'>wyślij zgłoszenie</button>
-									</div>
+									<?php get_template_part('template/segment/google-recaptcha'); ?>
 								</div>
 							</div>
 						</div>

@@ -20,23 +20,32 @@ if( !empty( $_POST ) ){
 		
 	}
 	
-	$mail_path = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post()->post_title );
-	$mail_path_parent = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post( get_post()->post_parent )->post_title );
-	
 	/* sprawdzanie czy istnieje formatka maila i ładowanie jej */
+	
+	$mail_path = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post()->post_title );
+	
 	if( file_exists( $mail_path ) ){
 		include $mail_path;
 		
 	}
-	elseif( $mail_path_parent ){
-		include $mail_path_parent;
+	else{
+		$mail_path = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post( get_post()->post_parent )->post_title );
+		
+		if( file_exists( $mail_path ) ){
+			include $mail_path;
+			
+		}
+		else{
+			$mail_path = null;
+			
+		}
 		
 	}
 	
 	/* sprawdzanie weryfikacji google recaptcha */
 	if( !empty( $formularz['g-recaptcha-response'] ) ){
 		
-		if( isset( $mail_path ) ){
+		if( $mail_path !== null ){
 			if( DMODE ){
 				echo "<!--";
 				print_r( $mail->Body );
@@ -165,13 +174,7 @@ get_header();
 										</div>
 										
 									</div>
-									<div class="buttons flex flex-wrap flex-column flex-items-center">
-										<div class="g-recaptcha" data-sitekey="6LeF-lgUAAAAAHAe7SkWhDlGjOy-B3LFhSUePMzP"></div>
-										<button type='submit' class="send flex flex-justify-center flex-items-center">
-											wyślij zgłoszenie
-										</button>
-										
-									</div>
+									<?php get_template_part( 'template/segment/google-recaptcha' ); ?>
 									
 								</div>
 							</div>
