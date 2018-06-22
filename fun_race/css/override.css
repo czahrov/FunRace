@@ -923,6 +923,9 @@ body header nav .logo img {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start; }
+#kontakt .kontakt .grid .container .content .row2 .box {
+  height: initial;
+  min-height: 188px; }
 
 #aktualnosci .aktualnosci {
   padding-bottom: 80px; }
