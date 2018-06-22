@@ -113,7 +113,6 @@ echo <<<EOT
 			<div class="item kajak flex flex-column base1 base2-mm">
 				<label for="">Rodzaj kajaka</label>
 				<select name='kajak' required>
-					<option>Pneumatyczny (pompowany)</option>
 					<option>Polietylenowy (plastikowy)</option>
 					
 				</select>
