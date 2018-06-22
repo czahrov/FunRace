@@ -464,33 +464,16 @@ add_action( 'body_hook', function( $arg ){
 
 // sprawdza czy dana strona jest podstroną lata, czy zimy
 function getSeason(){
-	// lato - id 4
-	// zima - id 6
-	$id = get_post()->ID;
-	
-	if( !in_array( $id, array( 0, 4, 6 ) ) ){
-		$terminator = 0;
-		while( $terminator < 100 and !in_array( get_post( $id )->post_parent, array( 0, 4, 6 ) ) ){
-			$id = get_post( $id )->post_parent;
-			$terminator++;
-			
-		}
-		
-		$id = get_post( $id )->post_parent;
+	if( strpos( $_SERVER['REQUEST_URI'], '/lato/' ) !== false ){
+		return 'lato';
 		
 	}
-	
-	
-	switch( $id ){
-		case 4:
-			return 'lato';
-		break;
-		case 6:
-			return 'zima';
-		break;
-		default:
-			// strona nie jest podstoną ani lata, ani zimy
-			return false;
+	elseif( strpos( $_SERVER['REQUEST_URI'], '/zima/' ) !== false ){
+		return 'zima';
+		
+	}
+	else{
+		return null;
 		
 	}
 	

@@ -7,7 +7,14 @@
                 <button type='submit' class="flex flex-items-center flex-justify-center">
 					<div class="send">Wyślij</div>
 					<div class="arrow">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/arrow_orange.png"></div>
+						<?php
+							printf(
+								'<img src="%s/img/arrow_%s.png"/>',
+								get_template_directory_uri(),
+								getSeason() === 'lato'?( 'blue' ):( 'orange' )
+							);
+						?>
+					</div>
 				</button>
             </div>
         </form>

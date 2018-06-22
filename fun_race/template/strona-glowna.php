@@ -16,5 +16,5 @@
 	<?php get_template_part( 'template/segment/aktualnosci' ); ?>
 
 	<!-- NEWSLETTER -->
-	<?php get_template_part("template/newsletter-lato"); ?>
+	<?php get_template_part("template/newsletter"); ?>
 	<?php get_template_part("template/partners-full"); ?>
