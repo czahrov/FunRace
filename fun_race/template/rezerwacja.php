@@ -5,45 +5,50 @@
 
 if( !empty( $_POST ) ){
 	$formularz = $_POST;
-	
-	$mail = getMailer();
-	
-	$mail->setFrom( "noreply@{$_SERVER['HTTP_HOST']}", "Formularz rezerwacji" );
-	if( DMODE ){
-		$mail->addAddress( 'sprytne@scepter.pl' );
-	}
-	elseif( DEVELOP ){
-		$mail->addAddress( $formularz['Email_rezerwującego'] );
-	}
-	else{
-		$mail->addAddress( "biuro@funrace.pl" );
-		
-	}
-	
-	/* sprawdzanie czy istnieje formatka maila i ładowanie jej */
-	
-	$mail_path = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post()->post_title );
-	
-	if( file_exists( $mail_path ) ){
-		include $mail_path;
+	echo "<!--";
+	print_r( $formularz );
+	echo "-->";
+	if( !empty( $formularz['age'] ) ){
+		$sended = false;
+		$sended_msg = "Wiadomość została zatrzymana przez filtr antyspamowy.";
 		
 	}
 	else{
-		$mail_path = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post( get_post()->post_parent )->post_title );
+		$mail = getMailer();
+		
+		$mail->setFrom( "noreply@{$_SERVER['HTTP_HOST']}", "Formularz rezerwacji" );
+		if( DMODE ){
+			$mail->addAddress( 'sprytne@scepter.pl' );
+		}
+		elseif( DEVELOP ){
+			$mail->addAddress( $formularz['Email_rezerwującego'] );
+		}
+		else{
+			$mail->addAddress( "biuro@funrace.pl" );
+			
+		}
+		
+		/* sprawdzanie czy istnieje formatka maila i ładowanie jej */
+		
+		$mail_path = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post()->post_title );
 		
 		if( file_exists( $mail_path ) ){
 			include $mail_path;
 			
 		}
 		else{
-			$mail_path = null;
+			$mail_path = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post( get_post()->post_parent )->post_title );
+			
+			if( file_exists( $mail_path ) ){
+				include $mail_path;
+				
+			}
+			else{
+				$mail_path = null;
+				
+			}
 			
 		}
-		
-	}
-	
-	/* sprawdzanie weryfikacji google recaptcha */
-	if( !empty( $formularz['g-recaptcha-response'] ) ){
 		
 		if( $mail_path !== null ){
 			if( DMODE ){
@@ -62,12 +67,6 @@ if( !empty( $_POST ) ){
 		}
 		
 	}
-	else{
-		$sended = false;
-		$sended_msg = "Brak weryfikacji captcha";
-		
-	}
-	
 	
 }
 
@@ -170,16 +169,23 @@ get_header();
 										<div class="check-row polityka check2 flex">
 											<input type="checkbox" id="privacy" name="Akceptuję politykę prywatności" required>
 											<label for="privacy">Akceptuję politykę prywatności FunRace</label>
-											<a href="#">polityka prywatności</a>
+											<a href="<?php echo home_url('polityka-prywatnosci'); ?>">polityka prywatności</a>
 										</div>
 										
 									</div>
-									<?php get_template_part( 'template/segment/google-recaptcha' ); ?>
+									<div class="buttons flex flex-wrap flex-column flex-items-center">
+										<button type='submit' class="send flex flex-justify-center flex-items-center">
+											wyślij zgłoszenie
+										</button>
+										
+									</div>
 									
 								</div>
 							</div>
 						</div>
-						
+						<div hidden>
+							<input type='text' name='age'/>
+						</div>
 						
 					</div>
 				</form>

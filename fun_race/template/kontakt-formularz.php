@@ -38,4 +38,7 @@
 		</a>
 	</div>
 	<div class='notify'></div>
+	<div hidden>
+		<input type='text' name='age' />
+	</div>
 </form>

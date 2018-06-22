@@ -416,6 +416,10 @@ $(function () {
 				return /^(\+\d+\s*)?(\(\d+\)\s*)?(\d+(\s|\-)*)+$/.test(value);
 
 				break;
+			case undefined:
+				return true;
+				
+				break;
 			default:
 				return false;
 
@@ -619,14 +623,6 @@ $(function () {
 			}
 			
 		} )
-		.on( 'submit', function( e ){
-			if( !/g-recaptcha-response=[^&]+/.test( form.serialize() ) ){
-				e.preventDefault();
-				window.alert( 'Potwierdź że nie jesteś robotem' );
-				
-			}
-			
-		} );
 		
 	})
 	(

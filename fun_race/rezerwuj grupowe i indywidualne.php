@@ -4,64 +4,67 @@
 	if( !empty( $_POST ) ){
 		$formularz = $_POST;
 		
-		if( DEVELOP ){
-			echo "<!--";
-			print_r( $formularz );
-			echo "-->";
-		}
-		
-		$mail = getMailer();
-		
-		$mail->setFrom( "noreply@{$_SERVER['HTTP_HOST']}", "Formularz rezerwacji" );
-		if( DMODE ){
-			$mail->addAddress( 'sprytne@scepter.pl' );
-		}
-		elseif( DEVELOP ){
-			$mail->addAddress( $formularz['parent-email'] );
+		if( !empty( $formularz['age'] ) ){
+			$sended = false;
+			$sended_msg = "Wiadomość została zablokowana przez filtr antyspamowy";
 		}
 		else{
-			$mail->addAddress( "biuro@funrace.pl" );
-		}
-		
-		$mail->Subject = "Rezerwacja kursu: {$formularz['wydarzenie']}";
-		
-		$lista = "";
-		for( $i=0; $i<count( $formularz['uczestnik_imię'] ); $i++ ){
-			if( empty( $formularz['uczestnik_imię'][$i] ) ) continue;
+			if( DEVELOP ){
+				echo "<!--";
+				print_r( $formularz );
+				echo "-->";
+			}
 			
-			$lista .= sprintf(
-'
-Uczestnik: %u
+			$mail = getMailer();
+			
+			$mail->setFrom( "noreply@{$_SERVER['HTTP_HOST']}", "Formularz rezerwacji" );
+			if( DMODE ){
+				$mail->addAddress( 'sprytne@scepter.pl' );
+			}
+			elseif( DEVELOP ){
+				$mail->addAddress( $formularz['parent-email'] );
+			}
+			else{
+				$mail->addAddress( "biuro@funrace.pl" );
+			}
+			
+			$mail->Subject = "Rezerwacja kursu: {$formularz['wydarzenie']}";
+			
+			$lista = "";
+			for( $i=0; $i<count( $formularz['uczestnik_imię'] ); $i++ ){
+				if( empty( $formularz['uczestnik_imię'][$i] ) ) continue;
+				
+				$lista .= sprintf(
+'Uczestnik: %u
 	Imię: %s
 	Nazwisko: %s
-	Data urodzenia (rrrr-mm-dd): %s
-	
+	Data urodzenia (rrrr-mm-dd): %s	
 	Uczestnik korzysta z wypożyczalni: %s
 	%s
 	
 ',
-				$i + 1,
-				$formularz['uczestnik_imię'][$i],
-				$formularz['uczestnik_nazwisko'][$i],
-				$formularz['uczestnik_urodziny'][$i],
-				
-				( !empty( $formularz['uczestnik_stopa'][$i] ) and !empty( $formularz['uczestnik_wzrost'][$i] ) and !empty( $formularz['uczestnik_waga'][$i] ) )?('tak'):('nie'),
-				( !empty( $formularz['uczestnik_stopa'][$i] ) and !empty( $formularz['uczestnik_wzrost'][$i] ) and !empty( $formularz['uczestnik_waga'][$i] ) )?( sprintf(
-					'Długość stopy: %u cm
-	Wzrost: %u cm
-	Waga: %u kg',
-				$formularz['uczestnik_stopa'][$i],
-				$formularz['uczestnik_wzrost'][$i],
-				$formularz['uczestnik_waga'][$i]
+					$i + 1,
+					$formularz['uczestnik_imię'][$i],
+					$formularz['uczestnik_nazwisko'][$i],
+					$formularz['uczestnik_urodziny'][$i],
 					
-				) ):('')
+					( !empty( $formularz['uczestnik_stopa'][$i] ) and !empty( $formularz['uczestnik_wzrost'][$i] ) and !empty( $formularz['uczestnik_waga'][$i] ) )?('tak'):('nie'),
+					( !empty( $formularz['uczestnik_stopa'][$i] ) and !empty( $formularz['uczestnik_wzrost'][$i] ) and !empty( $formularz['uczestnik_waga'][$i] ) )?( sprintf(
+'Długość stopy: %u cm
+Wzrost: %u cm
+Waga: %u kg',
+					$formularz['uczestnik_stopa'][$i],
+					$formularz['uczestnik_wzrost'][$i],
+					$formularz['uczestnik_waga'][$i]
+						
+					) ):('')
+					
+					
+				);
 				
-				
-			);
+			}
 			
-		}
-		
-		$mail->Body = sprintf(
+			$mail->Body = sprintf(
 'Dane organizatora
 ---
 Imię: %s
@@ -76,9 +79,10 @@ Data odbycia kursu (rrrr-mm-dd): %s
 Liczba uczestników: %u
 
 Lista uczestników
----%s
+---
+%s
 
-Wiadomość
+Wiadomość:
 ---
 %s
 
@@ -89,36 +93,33 @@ Wyrażam zgodę na udział uczestników w kursie: %s
 
 ---
 Mail wygenerowany automatycznie na stronie %s',
-			$formularz['opiekun_imię'],
-			$formularz['opiekun_nazwisko'],
-			$formularz['opiekun_tel'],
-			$formularz['parent-email'],
-			
-			$formularz['typ'],
-			$formularz['data_kursu'],
-			count( $formularz['uczestnik_imię'] ),
-			
-			$lista,
-			
-			$formularz['wiadomość'],
-			
-			$formularz['regulamin'] === 'on'?( 'tak' ):( 'nie' ),
-			$formularz['polityka'] === 'on'?( 'tak' ):( 'nie' ),
-			$formularz['zgoda'] === 'on'?( 'tak' ):( 'nie' ),
-			
-			home_url()
-			
-		);
-		
-		/* sprawdzanie weryfikacji google recaptcha */
-		if( !empty( $formularz['g-recaptcha-response'] ) ){
+				$formularz['opiekun_imię'],
+				$formularz['opiekun_nazwisko'],
+				$formularz['opiekun_tel'],
+				$formularz['parent-email'],
+				
+				$formularz['typ'],
+				$formularz['data_kursu'],
+				count( $formularz['uczestnik_imię'] ),
+				
+				$lista,
+				
+				$formularz['wiadomość'],
+				
+				$formularz['regulamin'] === 'on'?( 'tak' ):( 'nie' ),
+				$formularz['polityka'] === 'on'?( 'tak' ):( 'nie' ),
+				$formularz['zgoda'] === 'on'?( 'tak' ):( 'nie' ),
+				
+				home_url()
+				
+			);
 			
 			if( DMODE ){
 				echo "<!--";
 				print_r( $mail->Body );
 				echo "-->";
-				$sended = true;
-				// $sended = $mail->send();
+				// $sended = true;
+				$sended = $mail->send();
 				
 			}
 			else{
@@ -127,11 +128,7 @@ Mail wygenerowany automatycznie na stronie %s',
 			}
 			
 		}
-		else{
-			$sended = false;
-			$sended_msg = "Brak weryfikacji captcha";
-			
-		}
+		
 		
 	}
 	
@@ -335,17 +332,25 @@ Mail wygenerowany automatycznie na stronie %s',
 									<div class="check-row check2 flex">
 										<input type="checkbox" id="privacy" name="polityka" required>
 										<label for="privacy">Akceptuję politykę prywatności FunRace</label>
-										<a href="#">polityka prywatności</a>
+										<a href="<?php echo home_url('polityka-prywatnosci'); ?>">polityka prywatności</a>
 									</div>
 									<div class="check-row check2 flex">
 										<input type="checkbox" id="statement" name="zgoda" required>
 										<label for="statement">Oświadczam, iż stan zdrowia uczestnika/ów pozwala na udział w zajęciach Akademii Narciarskiej Mamucik</label>
 									</div>
-									<?php get_template_part('template/segment/google-recaptcha'); ?>
+									<div class="buttons flex flex-wrap flex-column flex-items-center">
+										<button type='submit' class="send flex flex-justify-center flex-items-center">
+											wyślij zgłoszenie
+										</button>
+										
+									</div>
 								</div>
 							</div>
 						</div>
 						
+					</div>
+					<div hidden>
+						<input type='text' name='age'/>
 					</div>
 				</form>
 			</div>
