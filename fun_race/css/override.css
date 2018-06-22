@@ -29,7 +29,8 @@
   #intro .intro-poster .links a:nth-child(2) {
     background-color: var(--color-winter); }
   #intro .intro-poster .circles .circle {
-    background-color: rgba(255, 255, 255, 0.5); }
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none; }
 #intro .circles > .wheel {
   width: 25vw;
   min-width: 200px;
@@ -1033,5 +1034,19 @@ body header nav .logo img {
 
 #rezerwuj form [type=submit] {
   margin: 30px 0; }
+
+#page {
+  padding-top: 30px; }
+  #page * {
+    line-height: 30px; }
+  #page strong {
+    font-family: var(--font-medium); }
+  #page ol, #page ul {
+    margin-top: 20px;
+    list-style-position: inside; }
+    #page ol li, #page ul li {
+      margin-bottom: 20px; }
+  #page .content {
+    padding: 0 20px; }
 
 /*# sourceMappingURL=override.css.map */

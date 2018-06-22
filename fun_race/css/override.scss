@@ -67,7 +67,8 @@
 		.circles{
 			
 			.circle{
-				background-color: rgba(255,255,255,.5);
+				background-color: rgba(255,255,255,.8);
+				border: none;
 				
 			}
 			
@@ -2405,3 +2406,35 @@ body{
 	}
 	
 }
+
+#page{
+	padding-top: 30px;
+	
+	*{
+		line-height: 30px;
+		
+	}
+	
+	strong{
+		font-family: var(--font-medium);
+		
+	}
+	
+	ol, ul{
+		margin-top: 20px;
+		list-style-position: inside;
+		
+		li{
+			margin-bottom: 20px;
+			
+		}
+		
+	}
+	
+	.content{
+		padding: 0 20px;
+		
+	}
+	
+}
+
