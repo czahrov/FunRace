@@ -426,11 +426,12 @@ function banner(){
 			<div class='cover' style='background-image:url(%s);'></div>
 			<div class='filtr'></div>
 			<div class='content'>
-				<h2>%s<span class='block'>%s</span></h2>
+				<h2>
+					<span class='block'>%s</span>
+				</h2>
 			</div>
 		</div>",
 		get_the_post_thumbnail_url( get_post()->ID, 'full' ),
-		get_bloginfo( 'name' ),
 		get_post()->post_title
 		
 	);
