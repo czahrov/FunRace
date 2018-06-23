@@ -22,6 +22,14 @@
 		<label for="message">Treść wiadomości</label>
 		<textarea name="message" id="message"  value-type="message" required></textarea>
 	</div>
+	<div class='form-row'>
+		<div class='item base1 flex flex-items-start'>
+			<input id='zgoda' type='checkbox' name='zgoda' value-type='zgoda' required />
+			<label for='zgoda'>
+				Oświadczam, iż ukończyłam/em 16 rok życia i zgadzam się na przetwarzanie moich danych osobowych przez (dane administratora danych osobowych – tj. przedsiębiorcy prowadzącego sklep/stronę), w celu obsługi zapytania użytkownika. Podanie danych jest dobrowolne. Podstawą przetwarzania danych jest moja zgoda. Mam prawo wycofania zgody w dowolnym momencie. Dane osobowe będą przetwarzane do czasu obsługi zapytania. Mam prawo żądania od administratora dostępu do moich danych osobowych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, a także prawo wniesienia skargi do organu nadzorczego. Strona stosuje profilowanie użytkowników m.in. za pośrednictwem plików cookies, w tym analitycznych, o czym więcej w Polityce Prywatności.
+			</label>
+		</div>
+	</div>
 	<div class="flex flex-justify-end">
 		<a class="submit flex flex-items-center">
 			<div class="text">Wyślij wiadomość</div>

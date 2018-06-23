@@ -416,6 +416,10 @@ $(function () {
 				return /^(\+\d+\s*)?(\(\d+\)\s*)?(\d+(\s|\-)*)+$/.test(value);
 
 				break;
+			case 'zgoda':
+				return $(field).prop('checked');
+
+				break;
 			case undefined:
 				return true;
 				

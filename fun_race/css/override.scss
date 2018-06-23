@@ -2136,6 +2136,23 @@ body{
 		
 	}
 	
+	#zgoda
+	{
+		margin: 20px;
+		height: initial;
+		
+		& + label{
+			padding: 10px;
+			
+		}
+		
+		&.invalid + label{
+			border: solid 2px red;
+			
+		}
+		
+	}
+	
 }
 
 #aktualnosci

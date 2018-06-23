@@ -134,9 +134,24 @@ Dzięki tej usłudze będziesz na bierząco otrzymywać informacje o nowościach
 Aby aktytować usługę proszę kliknąć w link aktywacyjny, lub zignorować tę wiadomość.
 
 Link aktywacyjny: %s
+
+Administratorem Państwa danych osobowych zbieranych za pośrednictwem strony %s jest %s.
+Miejsce wykonywania działalności oraz adres do doręczeń: %s. , NIP: %s, REGON: %s, adres poczty elektronicznej (e-mail): %s.
+Państwa dane osobowe będą przetwarzane na podstawie art. 6 ust. 1 lit. a) rozporządzenia ogólnego w sprawie ochrony danych osobowych (RODO). Dane mogą być przetwarzane w celu przesyłania informacji handlowych drogą elektroniczną w celu marketingu bezpośredniego – odpowiednio w związku z art. 10 ust. 2 Ustawy z dnia 18 lipca 2002 roku o świadczeniu usług drogą elektroniczną lub art. 172 ust. 1 Ustawy z dnia 16 lipca 2004 roku – Prawo Telekomunikacyjne, w tym kierowanych w wyniku profilowania, o ile użytkownik wyraził stosowną zgodę.
+Dane mogą być udostępnione wyłącznie podmiotom, które obsługują Administratora lub jego podwykonawcom. Dane będą przetwarzane przez czas ważności zgody lub do czasu ustania celu dla jakiego zostały zebrane. Przysługuje Panu/i prawo żądania dostępu do Pana/i danych osobowych, ich sprostowania, usunięcia, lub ograniczenia przetwarzania, prawo do przeniesienia danych oraz prawo do wniesienia skargi do organu nadzorczego. Więcej informacji na temat przetwarzania danych osobowych znajdą Państwo w Polityce Prywatności dostępnej pod adresem %s.
+
 ---
 Mail wygenerowany automatycznie na stronie: %s',
 				home_url( "/newsletter?validate={$result[0]['ID']}" ),
+				
+				home_url(),
+				'Kamil Zaród',
+				'FUNANDRACE Kamil Zaród, ul. Jana Pawła II 54, 34-460 Szczawnica',
+				'35-247-46-57',
+				'12246583',
+				'biuro@funrace.pl',
+				home_url('polityka-prywatnosci'),
+				
 				home_url()
 				
 			);

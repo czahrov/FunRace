@@ -90,6 +90,7 @@ Wiadomość:
 Akceptuję regulamin FunRace: %s
 Akceptuję politykę prywatności FunRace: %s
 Wyrażam zgodę na udział uczestników w kursie: %s
+Wyrażam zgodę na przetwarzanie danych osobowych: %s
 
 ---
 Mail wygenerowany automatycznie na stronie %s',
@@ -109,6 +110,7 @@ Mail wygenerowany automatycznie na stronie %s',
 				$formularz['regulamin'] === 'on'?( 'tak' ):( 'nie' ),
 				$formularz['polityka'] === 'on'?( 'tak' ):( 'nie' ),
 				$formularz['zgoda'] === 'on'?( 'tak' ):( 'nie' ),
+				$formularz['Przetwarzanie_danych'] === 'on'?( 'tak' ):( 'nie' ),
 				
 				home_url()
 				
@@ -118,8 +120,8 @@ Mail wygenerowany automatycznie na stronie %s',
 				echo "<!--";
 				print_r( $mail->Body );
 				echo "-->";
-				// $sended = true;
-				$sended = $mail->send();
+				$sended = true;
+				// $sended = $mail->send();
 				
 			}
 			else{
@@ -337,6 +339,12 @@ Mail wygenerowany automatycznie na stronie %s',
 									<div class="check-row check2 flex">
 										<input type="checkbox" id="statement" name="zgoda" required>
 										<label for="statement">Oświadczam, iż stan zdrowia uczestnika/ów pozwala na udział w zajęciach Akademii Narciarskiej Mamucik</label>
+									</div>
+									<div class="check-row polityka check2 flex">
+										<input type="checkbox" id="dane" name="Przetwarzanie danych" required>
+										<label for="dane">
+											Oświadczam, iż ukończyłam/em 16 rok życia i zgadzam się na przetwarzanie moich danych osobowych przez (dane administratora danych osobowych – tj. przedsiębiorcy prowadzącego sklep/stronę), w celu obsługi zapytania użytkownika. Podanie danych jest dobrowolne. Podstawą przetwarzania danych jest moja zgoda. Mam prawo wycofania zgody w dowolnym momencie. Dane osobowe będą przetwarzane do czasu obsługi zapytania. Mam prawo żądania od administratora dostępu do moich danych osobowych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, a także prawo wniesienia skargi do organu nadzorczego. Strona stosuje profilowanie użytkowników m.in. za pośrednictwem plików cookies, w tym analitycznych, o czym więcej w Polityce Prywatności.
+										</label>
 									</div>
 									<div class="buttons flex flex-wrap flex-column flex-items-center">
 										<button type='submit' class="send flex flex-justify-center flex-items-center">

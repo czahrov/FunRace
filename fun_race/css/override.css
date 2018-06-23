@@ -926,6 +926,13 @@ body header nav .logo img {
 #kontakt .kontakt .grid .container .content .row2 .box {
   height: initial;
   min-height: 188px; }
+#kontakt #zgoda {
+  margin: 20px;
+  height: initial; }
+  #kontakt #zgoda + label {
+    padding: 10px; }
+  #kontakt #zgoda.invalid + label {
+    border: solid 2px red; }
 
 #aktualnosci .aktualnosci {
   padding-bottom: 80px; }
@@ -1056,5 +1063,4 @@ body header nav .logo img {
       margin-bottom: 20px; }
   #page .content {
     padding: 0 20px; }
-
 /*# sourceMappingURL=override.css.map */

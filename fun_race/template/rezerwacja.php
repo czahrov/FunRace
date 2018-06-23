@@ -171,6 +171,12 @@ get_header();
 											<label for="privacy">Akceptuję politykę prywatności FunRace</label>
 											<a href="<?php echo home_url('polityka-prywatnosci'); ?>">polityka prywatności</a>
 										</div>
+										<div class="check-row polityka check2 flex">
+											<input type="checkbox" id="dane" name="Przetwarzanie danych" required>
+											<label for="dane">
+												Oświadczam, iż ukończyłam/em 16 rok życia i zgadzam się na przetwarzanie moich danych osobowych przez (dane administratora danych osobowych – tj. przedsiębiorcy prowadzącego sklep/stronę), w celu obsługi zapytania użytkownika. Podanie danych jest dobrowolne. Podstawą przetwarzania danych jest moja zgoda. Mam prawo wycofania zgody w dowolnym momencie. Dane osobowe będą przetwarzane do czasu obsługi zapytania. Mam prawo żądania od administratora dostępu do moich danych osobowych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, a także prawo wniesienia skargi do organu nadzorczego. Strona stosuje profilowanie użytkowników m.in. za pośrednictwem plików cookies, w tym analitycznych, o czym więcej w Polityce Prywatności.
+											</label>
+										</div>
 										
 									</div>
 									<div class="buttons flex flex-wrap flex-column flex-items-center">

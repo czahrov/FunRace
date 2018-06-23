@@ -27,7 +27,7 @@ elseif( !empty( $_POST['register'] ) ){
 		Wkrótce otrzymasz wiadomość email z linkiem aktywacyjnym.";
 	}
 	else{
-		$msg =  "Rejestracja adresu email nie powiodła się.";
+		$msg =  "Ten adres został już zarejestrowany.";
 		
 	}
 	

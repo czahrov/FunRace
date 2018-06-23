@@ -70,6 +70,8 @@ Temat: %s
 Treść wiadomości:
 %s
 
+Zgoda na przetwarzanie danych osobowych: %s
+
 ---
 Mail wygenerowany automatycznie na %s',
 		$safe['person'],
@@ -77,6 +79,7 @@ Mail wygenerowany automatycznie na %s',
 		$safe['email'],
 		$safe['subject'],
 		$safe['message'],
+		$_POST['zgoda'] === 'on'?( 'tak' ):( 'nie' ),
 		home_url()
 		
 	);
