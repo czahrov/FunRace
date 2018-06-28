@@ -67,15 +67,18 @@
         <div class="container">
             <div class="inner flex flex-justify-around flex-justify-between-ds flex-items-center flex-wrap">
 				
-				<div class="item base1 base3-ml flex flex-items-center flex-justify-center flex-justify-start-ml">&copy; FunRace, 2017</div>
-                <div class="item base1 base3-ml flex flex-items-center flex-justify-center">
+				<div class="item base1 base4-ml flex flex-items-center flex-justify-center flex-justify-start-ml">&copy; FunRace, 2017</div>
+				<div class="item base1 base4-ml flex flex-items-center flex-justify-center flex-justify-start-ml">
+					<a href="<?php echo home_url('polityka-prywatnosci'); ?>">Polityka prywatności</a>
+				</div>
+                <div class="item base1 base4-ml flex flex-items-center flex-justify-center">
 					<a href="https://www.facebook.com/funracepl" class="box" target='_blank'><i class="fa fa-facebook" aria-hidden="true"></i></a>
 					<!--<a href="#" class="box"><i class="fa fa-youtube" aria-hidden="true"></i></a>-->
 					<a href="https://www.instagram.com/funrace.pl/" class="box" target='_blank'><i class="fa fa-instagram" aria-hidden="true"></i></a>
 					<a href="<?php echo home_url( sprintf( '%s/kontakt', getSeason() ) ); ?>" class="box"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                     
                 </div>
-                <div class="item base1 base3-ml flex flex-items-center flex-justify-center flex-justify-end-ml">
+                <div class="item base1 base4-ml flex flex-items-center flex-justify-center flex-justify-end-ml">
 					<a class="scepter" href="http://www.scepter.pl">Dlaczego Agencja interaktywna Scepter?</a>
 				</div>
             
