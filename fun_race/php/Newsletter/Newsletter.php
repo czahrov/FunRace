@@ -87,7 +87,7 @@ Pamiętaj, że w każdej chwili możesz zrezygnować z usługi klikając poniżs
 %s
 ---
 Mail wygenerowany automatycznie na stronie: %s',
-					home_url( "/{$season}/?unreg={$id}#newsletter" ),
+					home_url() . "/{$season}/?unreg={$id}#newsletter",
 					home_url()
 					
 				);
@@ -118,7 +118,7 @@ Mail wygenerowany automatycznie na stronie: %s',
 	}
 	
 	// wysyła aktywacyjny link dla danego maila
-	public function sendLink( $season = '' ){
+	public function sendLink( $mail = '', $season = '' ){
 		$sql = "SELECT * FROM newsletter WHERE mail = '{$mail}'";
 		$result = $this->_SQL( $sql );
 		

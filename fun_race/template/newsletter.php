@@ -1,10 +1,17 @@
 <?php
 	$news = getNL();
 	$season = $_SESSION['currentSeason'];
-
+	
+	if( DMODE ){
+		echo "<!--";
+		print_r( $_POST );
+		echo "-->";
+		
+	}
+	
 	if( !empty( $_GET['validate'] ) ){
 		
-		if( $news->activate( $_GET['validate'], $_POST['season'] ) ){
+		if( $news->activate( $_GET['validate'], $season ) ){
 			$msg = "Adres email został potwierdzony.<br>
 			Witamy na pokładzie!";
 			
