@@ -2143,6 +2143,7 @@ body{
 		
 		& + label{
 			padding: 10px;
+			text-transform: none;
 			
 		}
 		
@@ -2442,7 +2443,8 @@ body{
 	
 }
 
-#page{
+#page
+{
 	padding-top: 30px;
 	
 	*{
@@ -2473,3 +2475,24 @@ body{
 	
 }
 
+.news{
+	
+	.inner{
+		
+		.label{
+			
+			.text{
+				font-family: var(--font-light);
+				
+				img{
+					display: none !important;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

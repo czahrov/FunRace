@@ -87,7 +87,6 @@
       border-radius: 50%;
       background-origin: content-box;
       background-clip: content-box;
-      -webkit-transition: background .5s linear;
       transition: background .5s linear;
       cursor: pointer; }
 
@@ -95,17 +94,13 @@
   background-size: cover; }
 
 #splywy-kajakowe .container .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   align-justify: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   max-width: initial; }
   #splywy-kajakowe .container .wrapper .item {
     position: relative;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
     height: 280px;
     padding: 10px;
     background-size: cover;
@@ -115,8 +110,6 @@
     overflow: hidden;
     font-family: var(--font-medium); }
     #splywy-kajakowe .container .wrapper .item .hitbox {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
       position: absolute;
       z-index: 10;
@@ -126,7 +119,6 @@
       right: 0;
       bottom: 0;
       opacity: 0;
-      -webkit-transition: opacity .3s linear;
       transition: opacity .3s linear;
       background-color: rgba(0, 0, 0, 0.7); }
       #splywy-kajakowe .container .wrapper .item .hitbox .btn {
@@ -139,15 +131,9 @@
       #splywy-kajakowe .container .wrapper .item .hitbox, #splywy-kajakowe .container .wrapper .item .hitbox * {
         cursor: pointer; }
     #splywy-kajakowe .container .wrapper .item .name {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
+      align-items: center;
+      justify-content: center;
       position: absolute;
       z-index: 5;
       margin: 0 10px 10px;
@@ -164,12 +150,10 @@
       opacity: 1; }
     @media (min-width: 768px) {
       #splywy-kajakowe .container .wrapper .item {
-        -ms-flex-preferred-size: 50%;
-            flex-basis: 50%; } }
+        flex-basis: 50%; } }
     @media (min-width: 1280px) {
       #splywy-kajakowe .container .wrapper .item {
-        -ms-flex-preferred-size: 25%;
-            flex-basis: 25%; } }
+        flex-basis: 25%; } }
 
 #newsletter {
   margin: 100px 40px; }
@@ -253,8 +237,7 @@ footer .postext {
       padding: 10px;
       top: 50%;
       right: 0;
-      -webkit-transform: translate(0px, -50%);
-              transform: translate(0px, -50%);
+      transform: translate(0px, -50%);
       font-size: 20px;
       background-color: #fff; }
     .rezerwuj-single .grid .container .wrapper .details .personal .person > .head, .rezerwuj-single .grid .container .wrapper .details .personal .person > .head * {
@@ -328,8 +311,7 @@ body header .nav-act .grid .container .bar .select {
     body header .nav-act .grid .container .bar .select {
       padding: 0; }
       body header .nav-act .grid .container .bar .select, body header .nav-act .grid .container .bar .select:nth-of-type(2) {
-        -ms-flex-preferred-size: initial;
-            flex-basis: initial; }
+        flex-basis: initial; }
       body header .nav-act .grid .container .bar .select .select-head {
         padding: 20px 5px; }
       body header .nav-act .grid .container .bar .select .select-options {
@@ -344,7 +326,6 @@ body header nav .menu {
     height: 60px;
     padding: 0 20px 0 40px;
     font-family: var(--font-medium);
-    -webkit-transition: background 0.3s linear;
     transition: background 0.3s linear; }
     body header nav .menu .dropdown .drop-container .item a img {
       padding-left: 20px; }
@@ -396,7 +377,6 @@ body header nav .logo img {
       z-index: 10;
       background-color: rgba(0, 0, 0, 0.7);
       opacity: 0;
-      -webkit-transition: opacity 0.3s linear;
       transition: opacity 0.3s linear; }
       #oferta-single .single .kafelki .item .hitbox, #oferta-single .single .kafelki .item .hitbox * {
         cursor: pointer; }
@@ -428,8 +408,7 @@ body header nav .logo img {
 #oferta-single .single .tabela > .info .bar .head {
   padding: 0 20px;
   height: 74px;
-  -webkit-box-shadow: 0 0 0px 1px #ebebeb inset;
-          box-shadow: 0 0 0px 1px #ebebeb inset; }
+  box-shadow: 0 0 0px 1px #ebebeb inset; }
   #oferta-single .single .tabela > .info .bar .head .icon {
     max-width: 46px;
     max-height: 46px; }
@@ -459,9 +438,7 @@ body header nav .logo img {
   border-width: 0 0 6px 0; }
   #oferta-single .single .zakladki .head .item {
     position: relative;
-    -webkit-transition-property: background, font;
     transition-property: background, font;
-    -webkit-transition: .3s linear;
     transition: .3s linear;
     padding: 0 16px;
     height: 74px;
@@ -534,8 +511,7 @@ body header nav .logo img {
         border-width: 3px;
         border-color: inherit;
         border-radius: 50%;
-        -webkit-transform: translate(0, -50%);
-                transform: translate(0, -50%); }
+        transform: translate(0, -50%); }
   #oferta-single .single .zakladki .tabs .item.harmonogram ul {
     list-style: none; }
     #oferta-single .single .zakladki .tabs .item.harmonogram ul li {
@@ -583,30 +559,16 @@ body header nav .logo img {
 #oferta-single .single .su-tabs {
   padding: 0; }
   #oferta-single .single .su-tabs .su-tabs-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     margin-bottom: 4px; }
     #oferta-single .single .su-tabs .su-tabs-nav span {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      -ms-flex-preferred-size: 100%;
-          flex-basis: 100%;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 100%;
       margin: 0;
-      -webkit-transition-property: background, font;
       transition-property: background, font;
-      -webkit-transition: .3s linear;
       transition: .3s linear;
       background-color: #fff;
       text-align: center;
@@ -616,10 +578,7 @@ body header nav .logo img {
         color: #fff; }
     @media (min-width: 1024px) {
       #oferta-single .single .su-tabs .su-tabs-nav {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row; } }
+        flex-direction: row; } }
 #oferta-single .single ul.zegar {
   list-style: none; }
   #oferta-single .single ul.zegar li {
@@ -663,21 +622,12 @@ body header nav .logo img {
   margin-bottom: 20px;
   border-collapse: collapse; }
   #oferta-single.wypozyczalnia .single table tr {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
     #oferta-single.wypozyczalnia .single table tr td {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -ms-flex-preferred-size: 100%;
-          flex-basis: 100%;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
+      flex-basis: 100%;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       padding: 0 5px;
       height: 80px;
@@ -686,21 +636,12 @@ body header nav .logo img {
       border: solid #ebebeb;
       border-width: 0 1px 0 1px; }
   #oferta-single.wypozyczalnia .single table tr {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
     #oferta-single.wypozyczalnia .single table tr td {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -ms-flex-preferred-size: 100%;
-          flex-basis: 100%;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
+      flex-basis: 100%;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       padding: 0 5px;
       height: 80px;
@@ -737,12 +678,9 @@ body header nav .logo img {
     width: initial;
     max-width: 100%; }
   #oferta-single.wypozyczalnia-kajakow table tr {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
     #oferta-single.wypozyczalnia-kajakow table tr td {
-      -ms-flex-preferred-size: 100%;
-          flex-basis: 100%; }
+      flex-basis: 100%; }
   #oferta-single.wypozyczalnia-kajakow table thead td {
     background-color: #2d2d2d;
     color: #fff;
@@ -754,35 +692,22 @@ body header nav .logo img {
     text-transform: uppercase;
     letter-spacing: 1px; }
   #oferta-single.wypozyczalnia-kajakow table tbody tr {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
+    align-items: center;
+    flex-direction: column; }
     #oferta-single.wypozyczalnia-kajakow table tbody tr td {
       padding: 20px;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; }
+      align-items: center; }
       #oferta-single.wypozyczalnia-kajakow table tbody tr td p {
         line-height: 30px;
         font-size: 15px;
         font-family: var(--font-light); }
       #oferta-single.wypozyczalnia-kajakow table tbody tr td:nth-child(1) {
-        -ms-flex-preferred-size: 33%;
-            flex-basis: 33%; }
+        flex-basis: 33%; }
       #oferta-single.wypozyczalnia-kajakow table tbody tr td:nth-child(2) {
-        -webkit-box-flex: 1;
-            -ms-flex-positive: 1;
-                flex-grow: 1; }
+        flex-grow: 1; }
     @media (min-width: 768px) {
       #oferta-single.wypozyczalnia-kajakow table tbody tr {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row; } }
+        flex-direction: row; } }
 #oferta-single.szkolenia-grupowe table {
   width: 100%;
   border-collapse: collapse; }
@@ -808,12 +733,9 @@ body header nav .logo img {
     #oferta-single.szkolenia-grupowe table.mobile {
       display: none; } }
   #oferta-single.szkolenia-grupowe table.std tr {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
     #oferta-single.szkolenia-grupowe table.std tr td {
-      -ms-flex-preferred-size: 100%;
-          flex-basis: 100%; }
+      flex-basis: 100%; }
   #oferta-single.szkolenia-grupowe table.std tbody tr:nth-child(2n+3) {
     background-color: #ebebeb; }
   #oferta-single.szkolenia-grupowe table.std tbody tr:first-child td, #oferta-single.szkolenia-grupowe table.std tbody tr td:first-child {
@@ -825,12 +747,9 @@ body header nav .logo img {
   width: 100%;
   border-collapse: collapse; }
   #oferta-single.szkolenia-head table tr {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
     #oferta-single.szkolenia-head table tr td {
-      -ms-flex-preferred-size: 100%;
-          flex-basis: 100%;
+      flex-basis: 100%;
       line-height: 60px;
       text-align: center;
       border: solid #ebebeb;
@@ -873,12 +792,9 @@ body header nav .logo img {
     #oferta-single.szkolenia-indywidualne table.mobile {
       display: none; } }
   #oferta-single.szkolenia-indywidualne table.std tr {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
     #oferta-single.szkolenia-indywidualne table.std tr td {
-      -ms-flex-preferred-size: 100%;
-          flex-basis: 100%; }
+      flex-basis: 100%; }
   #oferta-single.szkolenia-indywidualne table.std tbody tr:nth-child(2n+3) {
     background-color: #ebebeb; }
   #oferta-single.szkolenia-indywidualne table.std tbody tr:first-child td, #oferta-single.szkolenia-indywidualne table.std tbody tr td:first-child {
@@ -890,12 +806,9 @@ body header nav .logo img {
   width: 100%;
   border-collapse: collapse; }
   #oferta-single.stubai-austria table tr {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
     #oferta-single.stubai-austria table tr td {
-      -ms-flex-preferred-size: 100%;
-          flex-basis: 100%;
+      flex-basis: 100%;
       padding: 0 10px;
       line-height: 60px;
       font-size: 16px;
@@ -920,9 +833,7 @@ body header nav .logo img {
     cursor: pointer; }
 #kontakt .kontakt .grid .container .content .row .box {
   padding: 15px 15px 15px 40px;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start; }
+  justify-content: start; }
 #kontakt .kontakt .grid .container .content .row2 .box {
   height: initial;
   min-height: 188px; }
@@ -930,7 +841,8 @@ body header nav .logo img {
   margin: 20px;
   height: initial; }
   #kontakt #zgoda + label {
-    padding: 10px; }
+    padding: 10px;
+    text-transform: none; }
   #kontakt #zgoda.invalid + label {
     border: solid 2px red; }
 
@@ -955,8 +867,7 @@ body header nav .logo img {
       top: 100%;
       background-color: #fff;
       border-radius: 10px;
-      -webkit-box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.3);
-              box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.3); }
+      box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.3); }
       #aktualnosci .aktualnosci .share .links .link {
         display: inline-block;
         margin: 10px;
@@ -971,22 +882,14 @@ body header nav .logo img {
   width: 100%; }
   .contact-bar .container .buttons .item .textwidget p a {
     position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    -webkit-transition-property: background, font;
     transition-property: background, font;
-    -webkit-transition: .3s linear;
     transition: .3s linear;
     font-family: var(--font-medium);
     font-size: 18px;
@@ -1020,9 +923,7 @@ body header nav .logo img {
 #form-side {
   width: 100%;
   max-width: 478px;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  order: 1;
   border: 1px solid #ebebeb;
   margin-bottom: 60px; }
   #form-side table {
@@ -1063,4 +964,10 @@ body header nav .logo img {
       margin-bottom: 20px; }
   #page .content {
     padding: 0 20px; }
+
+.news .inner .label .text {
+  font-family: var(--font-light); }
+  .news .inner .label .text img {
+    display: none !important; }
+
 /*# sourceMappingURL=override.css.map */

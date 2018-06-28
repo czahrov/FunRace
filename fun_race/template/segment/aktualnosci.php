@@ -48,13 +48,16 @@
 									
 								}
 								else{
-									$content = strip_tags( $post->post_content );
-									$content = preg_replace( '/<[^>]+>/', '', $content );
+									// $content = strip_tags( $post->post_content );
+									// $content = preg_replace( array( '/<[^>]+>/' ), array( '' ), $content );
+									$content = preg_replace( array( '/[^\w\d\sęóąśłżźćńĘÓĄŚŁŻŹĆŃ\!@#\$%\^\&\*\(\)\-_\+\=\|\:;\'",\.\/\?]/' ), ' ', strip_tags( $post->post_content ) );
+									$content = str_replace( '  ', ' ', $content );
 									preg_match( '/(?:\S+\s*){1,8}/', $content, $match );
 									echo $match[0] . " (...)";
 									echo "<!--";
 									print_r( $match );
 									echo "-->";
+									
 									
 								}
 								
