@@ -1,7 +1,8 @@
 <?php
+	$season = $_SESSION['currentSeason'];
 	$posts = get_posts( array(
 		'numberposts' => 5,
-		'cat' => empty( $_GET['cat'] )?( get_category_by_slug( sprintf( 'aktualnosci-%s', getSeason() ) )->cat_ID ):( $_GET['cat'] ),
+		'cat' => empty( $_GET['cat'] )?( get_category_by_slug( sprintf( 'aktualnosci-%s', $season ) )->cat_ID ):( $_GET['cat'] ),
 		'year' => empty( $_GET['season'] )?( '' ):( $_GET['season'] ),
 		
 	) );

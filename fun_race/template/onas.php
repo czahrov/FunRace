@@ -1,5 +1,6 @@
 <?php
-	$licencje_root = get_page_by_path( sprintf( '%s/o-nas/licencje', getSeason() ) );
+	$season = $_SESSION['currentSeason'];
+	$licencje_root = get_page_by_path( sprintf( '%s/o-nas/licencje', $season ) );
 	$licencje = get_pages( array(
 		'parent' => $licencje_root->ID,
 		'sort_order' => 'ASC',
@@ -7,7 +8,7 @@
 		
 	) );
 	
-	$team_root = get_page_by_path( sprintf( '%s/o-nas/team', getSeason() ) );
+	$team_root = get_page_by_path( sprintf( '%s/o-nas/team', $season ) );
 	$team = get_pages( array(
 		'parent' => $team_root->ID,
 		'sort_order' => 'ASC',
@@ -26,7 +27,7 @@
 			   <div class="content">
 					<div class="licencje"><?php echo $item->post_title; ?></div>
 					<div class="tag theme-color"><?php echo get_post_meta( $item->ID, 'subtitle', true ); ?></div>
-					<div class="arrow flex flex-justify-end" style="background-image: url(<?php printf( '%s/img/arrow_%s.png', get_template_directory_uri(), getSeason() === 'zima'?( 'orange' ):( 'blue' ) ); ?>);"></div>
+					<div class="arrow flex flex-justify-end" style="background-image: url(<?php printf( '%s/img/arrow_%s.png', get_template_directory_uri(), $season === 'zima'?( 'orange' ):( 'blue' ) ); ?>);"></div>
 				</div>
 			</a>
 			<?php endforeach; ?>

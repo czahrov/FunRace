@@ -1,7 +1,5 @@
 <?php
-	/*
-	Template Name: Oferta pojedyncza
-	*/
+	/* Template Name: Oferta pojedyncza */
 
 	get_header();
 ?>

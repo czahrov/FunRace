@@ -1,3 +1,6 @@
+<?php
+	$season = $_SESSION['currentSeason'];
+?>
 <h2>Formularz kontaktowy</h2>
 <form action="" class='fpcf'>
 	<div class="form-row flex flex-column flex-row-mm flex-wrap">
@@ -38,7 +41,7 @@
 					printf(
 						'%s/img/arrow_%s.png',
 						get_template_directory_uri(),
-						getSeason() === 'lato'?( 'blue' ):( 'orange' )
+						$season === 'lato'?( 'blue' ):( 'orange' )
 						
 					);
 				?>" alt="arrow">

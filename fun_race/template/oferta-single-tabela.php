@@ -1,4 +1,5 @@
 <?php
+	$season = $_SESSION['currentSeason'];
 	$logo = wp_get_attachment_url( get_post_meta( get_post()->ID, 'logo', true ) );
 	$info = array(
 		'dla_kogo' => array(
@@ -8,7 +9,7 @@
 		),
 		'poziom' => array(
 			'name' => 'Poziom',
-			'icon' => getSeason() === 'zima'?('zjazd.png'):('kajak.png'),
+			'icon' => $season === 'zima'?('zjazd.png'):('kajak.png'),
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'poziom', true ) ),
 		),
 		'miejsce' => array(

@@ -1,4 +1,5 @@
 <?php
+	$season = $_SESSION['currentSeason'];
 	if( DMODE ){
 		printf(
 			"<!-- %s -->",
@@ -20,7 +21,7 @@
 	) );
 	
 	$kafelki = get_pages( array(
-		'child_of' => get_page_by_path( sprintf( '%s/oferta', getSeason() ) )->ID,
+		'child_of' => get_page_by_path( sprintf( '%s/oferta', $season ) )->ID,
 		'meta_key' => 'kafelek',
 		// 'meta_value' => '1'		z niewiadomych przyczyn to nie działa w połączeniu z child_of
 		'sort_order' => 'ASC',

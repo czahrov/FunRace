@@ -1,5 +1,5 @@
 <?php
-	$season = getSeason();
+	$season = $_SESSION['currentSeason'];
 ?>
 <h2>Dane kontaktowe</h2>
 <div class="row row2 flex flex-column flex-row-mm flex-justify-center flex-justify-start-ds flex-wrap">

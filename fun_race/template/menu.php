@@ -1,7 +1,9 @@
 <?php
-	$season = getSeason();
+	$season = $_SESSION['currentSeason'];
 	$invert = $season === "zima"?("lato"):("zima");
 	
+	var_dump( $_SESSION );
+	var_dump( $season );
 ?>
 <nav class="flex flex-justify-between flex-items-center">
 	<a href="<?php echo home_url( $season ); ?>" class="logo no-shrink">
@@ -28,7 +30,7 @@
 					<div class="drop-container base1 flex flex-wrap">
 						<?php
 							$pages = get_pages( array(
-								"parent" => get_page_by_path( sprintf( "%s/oferta", getSeason() ) )->ID,
+								"parent" => get_page_by_path( sprintf( "%s/oferta", $season ) )->ID,
 								
 							) );
 							

@@ -1,5 +1,5 @@
 <?php
-	$season = stripos( $_SERVER['REQUEST_URI'], '/lato/' ) !== false?( 'lato' ):( 'zima' );
+	$season = $_SESSION['currentSeason'];
 	$fields = array( 'tel1', 'tel2', 'adres', 'email', 'top', 'mid' );
 	
 	$data = array();
@@ -75,7 +75,7 @@
 					<a href="https://www.facebook.com/funracepl" class="box" target='_blank'><i class="fa fa-facebook" aria-hidden="true"></i></a>
 					<!--<a href="#" class="box"><i class="fa fa-youtube" aria-hidden="true"></i></a>-->
 					<a href="https://www.instagram.com/funrace.pl/" class="box" target='_blank'><i class="fa fa-instagram" aria-hidden="true"></i></a>
-					<a href="<?php echo home_url( sprintf( '%s/kontakt', getSeason() ) ); ?>" class="box"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+					<a href="<?php echo home_url( sprintf( '%s/kontakt', $season ) ); ?>" class="box"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                     
                 </div>
                 <div class="item base1 base4-ml flex flex-items-center flex-justify-center flex-justify-end-ml">

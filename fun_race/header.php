@@ -29,6 +29,10 @@
 	wp_enqueue_script( "partnerzy", get_template_directory_uri() . "/js/partnerzy{$infix}.js", array( 'TweenLite' ), $buster, true );
     wp_enqueue_script( "main", get_template_directory_uri() . "/js/main{$infix}.js", array( 'jQ', 'TweenLite', 'TimelineLite' ), $buster, true );
 	
+	if( getSeason() !== null ){
+		$_SESSION['currentSeason'] = getSeason();
+	}
+	
 ?>
 <!DOCTYPE html>
 <html lang="pl">

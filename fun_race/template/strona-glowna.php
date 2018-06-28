@@ -1,8 +1,11 @@
+<?php
+	$season = $_SESSION['currentSeason'];
+?>
 <body class='<?php do_action( 'body_hook' ); ?>'>
 	<header>
 		<?php get_template_part("template/menu"); ?>
 		<div id="slider-main" class="poster flex flex-justify-center">
-			<?php mainSlider( sprintf( '%s/slider', getSeason() ) ); ?>
+			<?php mainSlider( sprintf( '%s/slider', $season ) ); ?>
 		</div>
 	</header>
 

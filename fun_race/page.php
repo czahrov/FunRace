@@ -1,7 +1,8 @@
 <?php get_header(); ?>
-<body>
+<body class='<?php echo $_SESSION['currentSeason']; ?>'>
 	<header>
 		<?php get_template_part("template/menu"); ?>
+		<?php banner(); ?>
 	</header>
 	<!-- BREADCRUMBS -->
 	<?php get_template_part('template/breadcrumbs'); ?>

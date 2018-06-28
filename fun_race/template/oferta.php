@@ -1,5 +1,6 @@
 <?php
-	$oferta_root = get_page_by_path( sprintf( '%s/oferta', getSeason() ) );
+	$season = $_SESSION['currentSeason'];
+	$oferta_root = get_page_by_path( sprintf( '%s/oferta', $season ) );
 	$oferty = get_pages( array(
 		'parent' => $oferta_root->ID,
 		
@@ -16,7 +17,7 @@
 		<div class="link flex">
 			<div class="text">Czytaj więcej</div>
 			<div class="rotate">
-				<img src="<?php printf( '%s/img/arrow_%s.png', get_template_directory_uri(), getSeason() === 'zima'?( 'orange' ):( 'blue' ) ); ?>" alt="arrow">
+				<img src="<?php printf( '%s/img/arrow_%s.png', get_template_directory_uri(), $season === 'zima'?( 'orange' ):( 'blue' ) ); ?>" alt="arrow">
 			</div>
 		</div>
 	</a>

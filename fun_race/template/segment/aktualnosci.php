@@ -1,5 +1,5 @@
 <?php
-	$season = getSeason();
+	$season = $_SESSION['currentSeason'];
 	$season_name = "aktualnosci-{$season}";
 	
 	if( $season !== false ){
@@ -66,7 +66,7 @@
                         <a href="<?php
 							printf(
 								'%s?item=%u',
-								home_url( sprintf( '%s/aktualnosci', getSeason() ) ),
+								home_url( sprintf( '%s/aktualnosci', $season ) ),
 								$post->ID
 							);
 							

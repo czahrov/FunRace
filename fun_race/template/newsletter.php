@@ -1,5 +1,6 @@
 <?php
 	$news = getNL();
+	$season = $_SESSION['currentSeason'];
 
 	if( !empty( $_GET['validate'] ) ){
 		
@@ -61,13 +62,13 @@
 							printf(
 								'<img src="%s/img/arrow_%s.png"/>',
 								get_template_directory_uri(),
-								getSeason() === 'lato'?( 'blue' ):( 'orange' )
+								$season === 'lato'?( 'blue' ):( 'orange' )
 							);
 						?>
 					</div>
 				</button>
             </div>
-			<input type='hidden' name='season' value='<?php echo getSeason(); ?>'>
+			<input type='hidden' name='season' value='<?php echo $season; ?>'>
         </form>
         <p>W każdej chwili możesz się z niego wypisać</p>
 		<?php if( isset( $msg ) ): ?>

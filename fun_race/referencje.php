@@ -1,9 +1,8 @@
 <?php
-	/*
-	Template Name: referencje
-	*/
-
+	/*	Template Name: referencje */
+	
 	get_header();
+	$season = $_SESSION['currentSeason'];
 	
 	$referencje_lato = get_pages( array(
 		'parent' => get_page_by_path( "lato/referencje" )->ID,
@@ -39,7 +38,7 @@
 				<?php
 					$pages = array();
 					
-					if( getSeason() === 'zima' ){
+					if( $season === 'zima' ){
 						$pages = array_merge(
 							$pages,
 							$referencje_zima,
