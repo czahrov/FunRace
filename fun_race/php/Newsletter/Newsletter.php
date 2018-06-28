@@ -66,7 +66,7 @@ class Newsletter{
 	}
 	
 	// aktywacja adresu email
-	public function activate( $id = null ){
+	public function activate( $id = null, $season = '' ){
 		// sprawdza czy dany email istnieje w bazie
 		$sql = "SELECT * FROM newsletter WHERE ID = '{$id}'";
 		$result = $this->_SQL( $sql );
@@ -87,7 +87,7 @@ Pamiętaj, że w każdej chwili możesz zrezygnować z usługi klikając poniżs
 %s
 ---
 Mail wygenerowany automatycznie na stronie: %s',
-					home_url( "/newsletter?unreg={$id}" ),
+					home_url( "/{$season}/?unreg={$id}#newsletter" ),
 					home_url()
 					
 				);
@@ -118,7 +118,7 @@ Mail wygenerowany automatycznie na stronie: %s',
 	}
 	
 	// wysyła aktywacyjny link dla danego maila
-	public function sendLink( $mail = null ){
+	public function sendLink( $season = '' ){
 		$sql = "SELECT * FROM newsletter WHERE mail = '{$mail}'";
 		$result = $this->_SQL( $sql );
 		
@@ -142,7 +142,7 @@ Dane mogą być udostępnione wyłącznie podmiotom, które obsługują Administ
 
 ---
 Mail wygenerowany automatycznie na stronie: %s',
-				home_url( "/newsletter?validate={$result[0]['ID']}" ),
+				home_url( "/{$season}/?validate={$result[0]['ID']}#newsletter" ),
 				
 				home_url(),
 				'Kamil Zaród',
