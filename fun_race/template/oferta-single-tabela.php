@@ -48,12 +48,6 @@
 	if( get_post_meta( get_post()->ID, 'on_tabela', true ) == true ):
 ?>
 <div class='tabela flex flex-wrap'>
-	<?php if( !empty( $logo ) ): ?>
-	<div class='img base1 base2-ml flex flex-items-start flex-justify-center'>
-		<img src="<?php echo $logo; ?>" />
-		
-	</div>
-	<?php endif; ?>
 	<div class='info base0 grow'>
 		<?php
 			foreach( $info as $name => $item ):
@@ -81,6 +75,12 @@
 		?>
 		
 	</div>
+	<?php if( !empty( $logo ) ): ?>
+	<div class='img base1 base2-ml flex flex-items-start flex-justify-center'>
+		<img src="<?php echo $logo; ?>" />
+		
+	</div>
+	<?php endif; ?>
 	
 </div>
 <?php endif; ?>

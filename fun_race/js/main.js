@@ -393,7 +393,7 @@ $(function () {
 	/* slider główny */
 
 	// formularz kontaktowy
-	(function (form, inputs, notify_bar, submit) {
+	/* (function (form, inputs, notify_bar, submit) {
 		function veryfi(field) {
 			var type = $(field).attr('value-type');
 			var value = $(field).val();
@@ -541,7 +541,7 @@ $(function () {
 		$('form.fpcf').find('input, textarea'),
 		$('form.fpcf .notify'),
 		$('form.fpcf .submit')
-	);
+	); */
 	
 	// rezerwacja
 	(function( form, addUser, zgody, personal, submit_btn ){

@@ -6,11 +6,6 @@
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'opis_oferty', true ) ),
 			
 		),
-		'jak_dojechac' => array(
-			'title' => 'Jak dojechać',
-			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'jak_dojechać', true ) ),
-			
-		),
 		'harmonogram' => array(
 			'title' => 'Harmonogram',
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'program_kursu', true ) ),
@@ -24,6 +19,11 @@
 		'cennik' => array(
 			'title' => 'Cennik',
 			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'cennik', true ) ),
+			
+		),
+		'jak_dojechac' => array(
+			'title' => 'Jak dojechać',
+			'content' => apply_filters( 'the_content', get_post_meta( get_post()->ID, 'jak_dojechać', true ) ),
 			
 		),
 		'informacje' => array(

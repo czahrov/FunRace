@@ -1,5 +1,5 @@
 <?php
-	/* Template Name: zima rezerwuj grupowe i indywidualne */
+	/* Template Name: zima rezerwuj grupowe dla dorosłych */
 	
 	if( !empty( $_POST ) ){
 		$formularz = $_POST;
@@ -38,7 +38,10 @@
 'Uczestnik: %u
 	Imię: %s
 	Nazwisko: %s
-	Pełnoletność: %s
+	Urodziny: %s
+	Poziom umiejętności: %s
+	Dodatkowe umiejętności/uwagi: %s
+	Dolegliwości zdrowotne: %s
 	Uczestnik korzysta z wypożyczalni: %s
 	%s
 	
@@ -46,7 +49,10 @@
 					$i + 1,
 					$formularz['uczestnik_imię'][$i],
 					$formularz['uczestnik_nazwisko'][$i],
-					$formularz['uczestnik_wiek'][$i],
+					$formularz['uczestnik_urodziny'][$i],
+					$formularz['poziom_umiejętności'][$i],
+					$formularz['umiejętności'][$i],
+					$formularz['alergie'][$i],
 					
 					( !empty( $formularz['uczestnik_stopa'][$i] ) and !empty( $formularz['uczestnik_wzrost'][$i] ) and !empty( $formularz['uczestnik_waga'][$i] ) )?('tak'):('nie'),
 					( !empty( $formularz['uczestnik_stopa'][$i] ) and !empty( $formularz['uczestnik_wzrost'][$i] ) and !empty( $formularz['uczestnik_waga'][$i] ) )?( sprintf(
@@ -58,7 +64,6 @@
 					$formularz['uczestnik_waga'][$i]
 						
 					) ):('')
-					
 					
 				);
 				
@@ -74,10 +79,7 @@ Adres e-mail: %s
 
 Informacje o kursie
 ---
-Typ szkolenia: %s
-Data odbycia się kursu (rrrr-mm-dd): %s do %s
-Liczba godzin: %s
-Preferowana godzina rozpoczęcia: %s
+Data kursu: %s
 Liczba uczestników: %u
 
 Lista uczestników
@@ -103,11 +105,7 @@ Mail wygenerowany automatycznie na stronie %s',
 				$formularz['opiekun_tel'],
 				$formularz['parent-email'],
 				
-				$formularz['typ'],
-				$formularz['początek_kursu'],
-				$formularz['koniec_kursu'],
-				$formularz['ilość_godzin'],
-				$formularz['godzina_rozpoczęcia'],
+				$formularz['data_kursu'],
 				count( $formularz['uczestnik_imię'] ),
 				
 				$lista,
@@ -128,8 +126,8 @@ Mail wygenerowany automatycznie na stronie %s',
 				echo "<!--MAIL BODY\r\n";
 				print_r( $mail->Body );
 				echo "\r\n-->";
-				$sended = true;
-				// $sended = $mail->send();
+				// $sended = true;
+				$sended = $mail->send();
 				
 			}
 			else{
@@ -228,43 +226,24 @@ Mail wygenerowany automatycznie na stronie %s',
 						<div class="row termin row1 flex flex-column flex-row-mm flex-justify-between">
 							<div class="label flex flex-items-center">
 								<div class="inner">
-									<div class="title">Termin i typ</div>
+									<div class="title">Termin</div>
 									<div class="person">kursu</div>
 								</div>
 							</div>
 							<div class="personal personal-parent">
 								<div class="flex flex-wrap">
 									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Typ kursu</label>
-										<select name='typ' required>
-											<option>Narty</option>
-											<option>Snowboard</option>
-										</select>
-									</div>
-									
-								</div>
-								<div class="flex flex-wrap">
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Data rozpoczęcia kursu</label>
-										<input type="date" id="" name="początek kursu" required>
-									</div>
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Data zakończenia kursu</label>
-										<input type="date" id="" name="koniec kursu" required>
-									</div>
-									
-								</div>
-								<div class="flex flex-wrap">
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Preferowana godzina rozpoczęcia</label>
-										<input type='time' name='godzina rozpoczęcia' required>
-									</div>
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Ilość godzin</label>
-										<select name='ilość godzin' required>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
+										<label for="">Data kursu</label>
+										<select name='data kursu' required>
+											<option>kurs I - 25-29.12</option>
+											<option>kurs II - 01-05.01</option>
+											<option>kurs III - 08-12.01</option>
+											<option>kurs IV - 15-19.01</option>
+											<option>kurs IX - 19-23.01</option>
+											<option>kurs V - 22-26.01</option>
+											<option>kurs VI - 29.01-02.02</option>
+											<option>kurs VII - 05-09.02</option>
+											<option>kurs VIII - 05-09.02</option>
 										</select>
 									</div>
 									
@@ -295,12 +274,25 @@ Mail wygenerowany automatycznie na stronie %s',
 												<label for="">Nazwisko</label>
 												<input type="text" id="" name="uczestnik nazwisko[]" required>
 											</div>
-											<div class="item wiek flex flex-column base1 base2-mm">
-												<label for="">Wiek</label>
-												<select name='uczestnik wiek[]' required>
-													<option>Dorosły</option>
-													<option>Dziecko</option>
+											<div class="item urodziny flex flex-column base1 base2-mm">
+												<label for="">Urodziny</label>
+												<input type='date' name='uczestnik urodziny[]' required>
+											</div>
+											<div class="item poziom flex flex-column base1 base2-mm">
+												<label for="">Poziom umiejętności</label>
+												<select name='poziom umiejętności[]' required>
+													<option title='Rozpoczyna dopiero naukę jazdy na nartach.'>Poziom 0</option>
+													<option title='Potrafi skręcać pługiem, hamować na żądanie. Kontroluje prędkość. Zjeżdża z tras niebieskich/czerwonych. Samodzielnie korzysta z wyciągów. Min. dwa sezony na nartach.'>Poziom 1</option>
+													<option title='Ustawia narty do układu równoległego. Potrafi skręcać, hamować na żądanie i przed przeszkodą, kontroluje prędkość. Zjeżdża z tras czerwonych/czarnych. Samodzielnie korzysta z wyciągów. Co najmniej 3 sezony na nartach.'>Poziom 2</option>
 												</select>
+											</div>
+											<div class="item opis flex flex-column base1">
+												<label for="">Dodatkowy opis umiejętności/uwagi</label>
+												<textarea name='umiejętności[]'></textarea>
+											</div>
+											<div class="item alergie flex flex-column base1">
+												<label for="">Czy uczestnik jest na coś uczulony, zażywa leki bądź przewlekle na coś choruje?</label>
+												<textarea name='alergie[]'></textarea>
 											</div>
 											<div class="check-row flex">
 												<input type="checkbox" id="" class='promo' name="uczestnik wypożyczalnia[]">
@@ -330,66 +322,7 @@ Mail wygenerowany automatycznie na stronie %s',
 										</div>
 									</div>
 								</div>
-								<div class=''>
-									Cennik:
-								</div>
-								<div class='cennik flex'>
-									<div class='godziny'>
-										<div class='cell'></div>
-										<div class='cell'>1h</div>
-										<div class='cell'>2h</div>
-										<div class='cell'>3h</div>
-									</div>
-									<div class='osoby flex'>
-										<div class='clm'>
-											<div class='cell'>
-												1 os.
-											</div>
-											<div class='cell'>90 zł</div>
-											<div class='cell'>180 zł</div>
-											<div class='cell'>250 zł</div>
-											
-										</div>
-										<div class='clm'>
-											<div class='cell'>
-												2 os.
-											</div>
-											<div class='cell'>160 zł</div>
-											<div class='cell'>300 zł</div>
-											<div class='cell'>390 zł</div>
-											
-										</div>
-										<div class='clm'>
-											<div class='cell'>
-												3 os.
-											</div>
-											<div class='cell'>210 zł</div>
-											<div class='cell'>390 zł</div>
-											<div class='cell'>540 zł</div>
-											
-										</div>
-										<div class='clm'>
-											<div class='cell'>
-												4 os.
-											</div>
-											<div class='cell'>240 zł</div>
-											<div class='cell'>440 zł</div>
-											<div class='cell'>600 zł</div>
-											
-										</div>
-										<div class='clm'>
-											<div class='cell'>
-												> 4 os.
-											</div>
-											<div class='cell'>do uzgodnienia</div>
-											<div class='cell'>do uzgodnienia</div>
-											<div class='cell'>do uzgodnienia</div>
-											
-										</div>
-										
-									</div>
-									
-								</div>
+								
 							</div>
 						</div>
 						<div class="row wiadomo row1 flex flex-column flex-row-mm flex-justify-between">

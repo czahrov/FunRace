@@ -32,7 +32,10 @@ Wiadomość
 
 Akceptuję regulamin FunRace: %s
 Akceptuję politykę prywatności FunRace: %s
-Wyrażam zgodę na przetwarzanie danych osobowych: %s
+Wyrażam zgodę na przetwarzanie moich danych osobowych w celach:
+obsługi zapytania: %s
+działań marketingowych: %s
+otrzymywania informacji handlowych: %s
 
 ---
 Mail wygenerowany automatycznie na stronie %s',
@@ -54,9 +57,11 @@ Mail wygenerowany automatycznie na stronie %s',
 	
 	$formularz['wiadomosc'],
 	
-	$formularz['Akceptuję_regulamin'] === 'on'?( 'tak' ):( 'nie' ),
-	$formularz['Akceptuję_politykę_prywatności'] === 'on'?( 'tak' ):( 'nie' ),
-	$formularz['Przetwarzanie_danych'] === 'on'?( 'tak' ):( 'nie' ),
+	$formularz['regulamin'] === 'on'?( 'tak' ):( 'nie' ),
+	$formularz['polityka'] === 'on'?( 'tak' ):( 'nie' ),
+	$formularz['zapytanie'] === 'on'?( 'tak' ):( 'nie' ),
+	$formularz['marketing'] === 'on'?( 'tak' ):( 'nie' ),
+	$formularz['oferta'] === 'on'?( 'tak' ):( 'nie' ),
 	
 	home_url()
 	

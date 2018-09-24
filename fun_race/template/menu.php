@@ -2,8 +2,6 @@
 	$season = $_SESSION['currentSeason'];
 	$invert = $season === "zima"?("lato"):("zima");
 	
-	var_dump( $_SESSION );
-	var_dump( $season );
 ?>
 <nav class="flex flex-justify-between flex-items-center">
 	<a href="<?php echo home_url( $season ); ?>" class="logo no-shrink">

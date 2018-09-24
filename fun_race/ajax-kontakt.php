@@ -6,7 +6,7 @@
 // if( !isAjax() ) header( "Location: " . home_url() );
 
 /* honeypot */
-if( !empty( $_POST['age'] ) ){
+/* if( !empty( $_POST['age'] ) ){
 	echo json_encode( array(
 		'status' => 'fail',
 		'msg' => 'Wiadomość została zablokowana przez filtr antyspamowy!',
@@ -113,5 +113,5 @@ Mail wygenerowany automatycznie na %s',
 	}
 	
 }
-
+ */
 

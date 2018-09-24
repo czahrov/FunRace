@@ -1,6 +1,5 @@
 *{
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	
 }
 
 #intro
@@ -512,6 +511,10 @@ footer{
 								
 							}
 							
+						}
+						
+						@media( min-width: 768px ){
+							width: calc( 100% - 230px );
 						}
 						
 					}
@@ -1398,7 +1401,7 @@ body{
 		}
 		
 		img{
-			width: 100%;
+			max-width: 100%;
 			max-height: 100%;
 			height: auto;
 			
@@ -2078,6 +2081,7 @@ body{
 	
 	.notify{
 		padding: 10px 20px;
+		margin-bottom: 20px;
 		color: #fff;
 		text-align: center;
 		font-family: var(--font-light);
@@ -2137,8 +2141,7 @@ body{
 		
 	}
 	
-	#zgoda
-	{
+	.zgoda{
 		margin: 20px;
 		height: initial;
 		
@@ -2151,6 +2154,33 @@ body{
 		&.invalid + label{
 			border: solid 2px red;
 			
+		}
+		
+	}
+	
+	form{
+		
+		.form-row{
+			
+			.item{
+				margin-bottom: 10px;
+				
+				label{
+					font:{
+						family: var(--font-light);
+						size: 12px;
+					}
+					line-height: 20px;
+					
+				}
+				
+			}
+			
+		}
+		
+		button[type=submit]{
+			background-color: transparent;
+			border: none;
 		}
 		
 	}
@@ -2442,6 +2472,68 @@ body{
 		
 	}
 	
+	.cennik{
+		
+		.cell{
+			position: relative;
+			padding: 5px 10px;
+			height: 30px;
+			white-space: nowrap;
+			font-family: var(--font-light);
+			
+			&::after{
+				content: '';
+				margin: -0.5px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				border: solid 1px black;
+				
+			}
+			
+		}
+		
+		.clm{
+			
+		}
+		
+		.godziny{
+			
+			.cell{
+				font-family: var(--font-medium);
+				
+			}
+			
+		}
+		
+		.osoby{
+			overflow: auto;
+			padding-bottom: 1px;
+			
+			.clm{
+				
+				.cell{
+					
+					&:first-child{
+						font-family: var(--font-medium);
+						
+					}
+					
+				}
+				
+				&:nth-child( odd ){
+					background-color: #eee;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
 }
 
 #page
@@ -2497,3 +2589,4 @@ body{
 	}
 	
 }
+

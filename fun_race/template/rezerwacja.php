@@ -16,7 +16,7 @@ if( !empty( $_POST ) ){
 	else{
 		$mail = getMailer();
 		
-		$mail->setFrom( "noreply@{$_SERVER['HTTP_HOST']}", "Formularz rezerwacji" );
+		$mail->setFrom( "noreply@{$_SERVER['HTTP_HOST']}", "FUNRACE – formularz rezerwacji" );
 		if( DMODE ){
 			$mail->addAddress( 'sprytne@scepter.pl' );
 		}
@@ -160,30 +160,14 @@ get_header();
 							</div>
 							<div class="personal personal-parent">
 								<div class="flex flex-wrap">
-									<div class='zgody'>
-										<div class="check-row regulamin check2 flex">
-											<input type="checkbox" id="statute" name="Akceptuję regulamin" required>
-											<label for="statute">Akceptuję regulamin</label>
-											<a href="<?php echo home_url(); ?>">regulamin</a>
+									<div class="zgody flex flex-wrap">
+										<?php get_template_part('template/segment/checkbox','rezerwacja'); ?>
+										<div class="buttons flex flex-wrap flex-column flex-items-center">
+											<button type='submit' class="send flex flex-justify-center flex-items-center">
+												wyślij zgłoszenie
+											</button>
+											
 										</div>
-										<div class="check-row polityka check2 flex">
-											<input type="checkbox" id="privacy" name="Akceptuję politykę prywatności" required>
-											<label for="privacy">Akceptuję politykę prywatności FunRace</label>
-											<a href="<?php echo home_url('polityka-prywatnosci'); ?>">polityka prywatności</a>
-										</div>
-										<div class="check-row polityka check2 flex">
-											<input type="checkbox" id="dane" name="Przetwarzanie danych" required>
-											<label for="dane">
-												Oświadczam, iż ukończyłam/em 16 rok życia i zgadzam się na przetwarzanie moich danych osobowych przez (dane administratora danych osobowych – tj. przedsiębiorcy prowadzącego sklep/stronę), w celu obsługi zapytania użytkownika. Podanie danych jest dobrowolne. Podstawą przetwarzania danych jest moja zgoda. Mam prawo wycofania zgody w dowolnym momencie. Dane osobowe będą przetwarzane do czasu obsługi zapytania. Mam prawo żądania od administratora dostępu do moich danych osobowych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, a także prawo wniesienia skargi do organu nadzorczego. Strona stosuje profilowanie użytkowników m.in. za pośrednictwem plików cookies, w tym analitycznych, o czym więcej w Polityce Prywatności.
-											</label>
-										</div>
-										
-									</div>
-									<div class="buttons flex flex-wrap flex-column flex-items-center">
-										<button type='submit' class="send flex flex-justify-center flex-items-center">
-											wyślij zgłoszenie
-										</button>
-										
 									</div>
 									
 								</div>
