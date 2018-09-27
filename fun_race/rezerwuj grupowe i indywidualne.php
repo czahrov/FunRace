@@ -65,7 +65,7 @@
 			}
 			
 			$mail->Body = sprintf(
-'Dane organizatora
+'Dane uczestnika
 ---
 Imię: %s
 Nazwisko: %s
@@ -75,9 +75,8 @@ Adres e-mail: %s
 Informacje o kursie
 ---
 Typ szkolenia: %s
-Data odbycia się kursu (rrrr-mm-dd): %s do %s
-Liczba godzin: %s
-Preferowana godzina rozpoczęcia: %s
+Termin kursu: %s
+Liczba godzin (dziennie): %s
 Liczba uczestników: %u
 
 Lista uczestników
@@ -104,10 +103,8 @@ Mail wygenerowany automatycznie na stronie %s',
 				$formularz['parent-email'],
 				
 				$formularz['typ'],
-				$formularz['początek_kursu'],
-				$formularz['koniec_kursu'],
+				$formularz['termin_kursu'],
 				$formularz['ilość_godzin'],
-				$formularz['godzina_rozpoczęcia'],
 				count( $formularz['uczestnik_imię'] ),
 				
 				$lista,
@@ -201,7 +198,7 @@ Mail wygenerowany automatycznie na stronie %s',
 							<div class="label flex flex-items-center">
 								<div class="inner">
 									<div class="title">Dane osobowe</div>
-									<div class="person">Organizatora</div>
+									<div class="person">Uczestnika</div>
 								</div>
 							</div>
 							<div class="personal personal-parent">
@@ -223,53 +220,6 @@ Mail wygenerowany automatycznie na stronie %s',
 										<input type="email" name="parent-email" id="opiekun mail" pattern="^[^@]+@[^\.]+\..+$" title="[użytkownik]@[domena] np: jan@kowalski.pl" required>
 									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row termin row1 flex flex-column flex-row-mm flex-justify-between">
-							<div class="label flex flex-items-center">
-								<div class="inner">
-									<div class="title">Termin i typ</div>
-									<div class="person">kursu</div>
-								</div>
-							</div>
-							<div class="personal personal-parent">
-								<div class="flex flex-wrap">
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Typ kursu</label>
-										<select name='typ' required>
-											<option>Narty</option>
-											<option>Snowboard</option>
-										</select>
-									</div>
-									
-								</div>
-								<div class="flex flex-wrap">
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Data rozpoczęcia kursu</label>
-										<input type="date" id="" name="początek kursu" required>
-									</div>
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Data zakończenia kursu</label>
-										<input type="date" id="" name="koniec kursu" required>
-									</div>
-									
-								</div>
-								<div class="flex flex-wrap">
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Preferowana godzina rozpoczęcia</label>
-										<input type='time' name='godzina rozpoczęcia' required>
-									</div>
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Ilość godzin</label>
-										<select name='ilość godzin' required>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-										</select>
-									</div>
-									
-								</div>
-								
 							</div>
 						</div>
 						<div class="row uczestnicy row1 flex flex-column flex-row-mm flex-justify-between">
@@ -297,10 +247,7 @@ Mail wygenerowany automatycznie na stronie %s',
 											</div>
 											<div class="item wiek flex flex-column base1 base2-mm">
 												<label for="">Wiek</label>
-												<select name='uczestnik wiek[]' required>
-													<option>Dorosły</option>
-													<option>Dziecko</option>
-												</select>
+												<input type='number' min=1 step=1 name='uczestnik wiek[]' required>
 											</div>
 											<div class="check-row flex">
 												<input type="checkbox" id="" class='promo' name="uczestnik wypożyczalnia[]">
@@ -309,15 +256,15 @@ Mail wygenerowany automatycznie na stronie %s',
 											<div class='dimms flex flex-wrap optional'>
 												<div class="item flex flex-column base1 base2-mm">
 													<label for="">Długość stopy (cm)</label>
-													<input type="number" id="" name="uczestnik stopa[]">
+													<input type="number" id="" min=0 step=1 name="uczestnik stopa[]">
 												</div>
 												<div class="item flex flex-column base1 base2-mm">
 													<label for="">Wzrost (cm)</label>
-													<input type="number" id="" name="uczestnik wzrost[]">
+													<input type="number" id="" min=0 step=1 name="uczestnik wzrost[]">
 												</div>
 												<div class="item flex flex-column base1 base2-mm">
 													<label for="">Waga (kg)</label>
-													<input type="number" id="" name="uczestnik waga[]" step=1 min=0>
+													<input type="number" id="" min=0 step=1 name="uczestnik waga[]">
 												</div>
 											</div>
 											
@@ -330,66 +277,53 @@ Mail wygenerowany automatycznie na stronie %s',
 										</div>
 									</div>
 								</div>
-								<div class=''>
-									Cennik:
-								</div>
-								<div class='cennik flex'>
-									<div class='godziny'>
-										<div class='cell'></div>
-										<div class='cell'>1h</div>
-										<div class='cell'>2h</div>
-										<div class='cell'>3h</div>
+								<div class='cennik'>
+									<div class='title'>
+										Cennik:
 									</div>
-									<div class='osoby flex'>
-										<div class='clm'>
-											<div class='cell'>
-												1 os.
-											</div>
-											<div class='cell'>90 zł</div>
-											<div class='cell'>180 zł</div>
-											<div class='cell'>250 zł</div>
-											
-										</div>
-										<div class='clm'>
-											<div class='cell'>
-												2 os.
-											</div>
-											<div class='cell'>160 zł</div>
-											<div class='cell'>300 zł</div>
-											<div class='cell'>390 zł</div>
-											
-										</div>
-										<div class='clm'>
-											<div class='cell'>
-												3 os.
-											</div>
-											<div class='cell'>210 zł</div>
-											<div class='cell'>390 zł</div>
-											<div class='cell'>540 zł</div>
-											
-										</div>
-										<div class='clm'>
-											<div class='cell'>
-												4 os.
-											</div>
-											<div class='cell'>240 zł</div>
-											<div class='cell'>440 zł</div>
-											<div class='cell'>600 zł</div>
-											
-										</div>
-										<div class='clm'>
-											<div class='cell'>
-												> 4 os.
-											</div>
-											<div class='cell'>do uzgodnienia</div>
-											<div class='cell'>do uzgodnienia</div>
-											<div class='cell'>do uzgodnienia</div>
-											
-										</div>
-										
+									<?php echo apply_filters( 'the_content', get_post_meta( get_post()->ID, 'cennik', true ) ); ?>
+								</div>
+							</div>
+						</div>
+						<div class="row termin row1 flex flex-column flex-row-mm flex-justify-between">
+							<div class="label flex flex-items-center">
+								<div class="inner">
+									<div class="title">Termin i typ</div>
+									<div class="person">kursu</div>
+								</div>
+							</div>
+							<div class="personal personal-parent">
+								<div class="flex flex-wrap">
+									<div class="item flex flex-column base1 base2-mm">
+										<label for="">Typ szkolenia</label>
+										<select name='typ' required>
+											<option>Narty</option>
+											<option>Snowboard</option>
+										</select>
+									</div>
+									<div class="item flex flex-column base1 base2-mm">
+										<label for="">Termin kursu</label>
+										<select name='termin kursu' required>
+											<?php
+												$terminy = get_post_meta( get_post()->ID, 'terminy', true );
+												$terminy_a = explode( "\r\n", $terminy );
+												if( !empty( $terminy_a ) ) foreach( $terminy_a as $single ){
+													echo "<option>{$single}</option>";
+												}
+											?>
+										</select>
+									</div>
+									<div class="item flex flex-column base1 base2-mm">
+										<label for="">Ilość godzin/dziennie</label>
+										<select name='ilość godzin' required>
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+										</select>
 									</div>
 									
 								</div>
+								
 							</div>
 						</div>
 						<div class="row wiadomo row1 flex flex-column flex-row-mm flex-justify-between">

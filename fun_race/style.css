@@ -3705,8 +3705,8 @@ form textarea {
 
 .kontakt .grid .container .content form .area>label {
 	margin-bottom: 13px;
-	font-family: var(--font-medium);
-	font-size: 14px;
+	font-family: var(--font-light);
+	font-size: 12px;
 	text-transform: uppercase;
 }
 

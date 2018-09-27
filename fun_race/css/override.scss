@@ -2474,57 +2474,47 @@ body{
 	
 	.cennik{
 		
-		.cell{
-			position: relative;
-			padding: 5px 10px;
-			height: 30px;
-			white-space: nowrap;
-			font-family: var(--font-light);
-			
-			&::after{
-				content: '';
-				margin: -0.5px;
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				border: solid 1px black;
-				
-			}
-			
+		.title{
+			padding: 10px 0;
+			font-family: var(--font-medium);
 		}
 		
-		.clm{
+		table{
 			
-		}
-		
-		.godziny{
-			
-			.cell{
-				font-family: var(--font-medium);
+			tr{
 				
-			}
-			
-		}
-		
-		.osoby{
-			overflow: auto;
-			padding-bottom: 1px;
-			
-			.clm{
-				
-				.cell{
+				td{
+					position: relative;
+					padding: 5px 10px;
+					height: 30px;
+					white-space: nowrap;
+					font-family: var(--font-light);
 					
-					&:first-child{
-						font-family: var(--font-medium);
+					&::after{
+						content: '';
+						margin: -0.5px;
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						border: solid 1px black;
+						
+					}
+					
+					
+					&:nth-child(even){
+						background-color: #eee;
 						
 					}
 					
 				}
 				
-				&:nth-child( odd ){
-					background-color: #eee;
+				&:first-child{
+					
+					td{
+						font-family: var(--font-medium);	
+					}
 					
 				}
 				

@@ -38,7 +38,7 @@
 'Uczestnik: %u
 	Imię: %s
 	Nazwisko: %s
-	Urodziny: %s
+	Wiek: %s
 	Poziom umiejętności: %s
 	Dodatkowe umiejętności/uwagi: %s
 	Dolegliwości zdrowotne: %s
@@ -49,7 +49,7 @@
 					$i + 1,
 					$formularz['uczestnik_imię'][$i],
 					$formularz['uczestnik_nazwisko'][$i],
-					$formularz['uczestnik_urodziny'][$i],
+					$formularz['uczestnik_wiek'][$i],
 					$formularz['poziom_umiejętności'][$i],
 					$formularz['umiejętności'][$i],
 					$formularz['alergie'][$i],
@@ -70,7 +70,7 @@
 			}
 			
 			$mail->Body = sprintf(
-'Dane organizatora
+'Dane uczestnika
 ---
 Imię: %s
 Nazwisko: %s
@@ -199,7 +199,7 @@ Mail wygenerowany automatycznie na stronie %s',
 							<div class="label flex flex-items-center">
 								<div class="inner">
 									<div class="title">Dane osobowe</div>
-									<div class="person">Organizatora</div>
+									<div class="person">Uczestnika</div>
 								</div>
 							</div>
 							<div class="personal personal-parent">
@@ -221,34 +221,6 @@ Mail wygenerowany automatycznie na stronie %s',
 										<input type="email" name="parent-email" id="opiekun mail" pattern="^[^@]+@[^\.]+\..+$" title="[użytkownik]@[domena] np: jan@kowalski.pl" required>
 									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row termin row1 flex flex-column flex-row-mm flex-justify-between">
-							<div class="label flex flex-items-center">
-								<div class="inner">
-									<div class="title">Termin</div>
-									<div class="person">kursu</div>
-								</div>
-							</div>
-							<div class="personal personal-parent">
-								<div class="flex flex-wrap">
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Data kursu</label>
-										<select name='data kursu' required>
-											<option>kurs I - 25-29.12</option>
-											<option>kurs II - 01-05.01</option>
-											<option>kurs III - 08-12.01</option>
-											<option>kurs IV - 15-19.01</option>
-											<option>kurs IX - 19-23.01</option>
-											<option>kurs V - 22-26.01</option>
-											<option>kurs VI - 29.01-02.02</option>
-											<option>kurs VII - 05-09.02</option>
-											<option>kurs VIII - 05-09.02</option>
-										</select>
-									</div>
-									
-								</div>
-								
 							</div>
 						</div>
 						<div class="row uczestnicy row1 flex flex-column flex-row-mm flex-justify-between">
@@ -275,8 +247,8 @@ Mail wygenerowany automatycznie na stronie %s',
 												<input type="text" id="" name="uczestnik nazwisko[]" required>
 											</div>
 											<div class="item urodziny flex flex-column base1 base2-mm">
-												<label for="">Urodziny</label>
-												<input type='date' name='uczestnik urodziny[]' required>
+												<label for="">Wiek</label>
+												<input type='number' min=18 step=1 name='uczestnik wiek[]' required>
 											</div>
 											<div class="item poziom flex flex-column base1 base2-mm">
 												<label for="">Poziom umiejętności</label>
@@ -325,6 +297,32 @@ Mail wygenerowany automatycznie na stronie %s',
 								
 							</div>
 						</div>
+						<div class="row termin row1 flex flex-column flex-row-mm flex-justify-between">
+							<div class="label flex flex-items-center">
+								<div class="inner">
+									<div class="title">Termin</div>
+									<div class="person">kursu</div>
+								</div>
+							</div>
+							<div class="personal personal-parent">
+								<div class="flex flex-wrap">
+									<div class="item flex flex-column base1 base2-mm">
+										<label for="">Termin kursu</label>
+										<select name='data kursu' required>
+											<?php
+												$terminy = get_post_meta( get_post()->ID, 'terminy', true );
+												$terminy_a = explode( "\r\n", $terminy );
+												if( !empty( $terminy_a ) ) foreach( $terminy_a as $single ){
+													echo "<option>{$single}</option>";
+												}
+											?>
+										</select>
+									</div>
+									
+								</div>
+								
+							</div>
+						</div>
 						<div class="row wiadomo row1 flex flex-column flex-row-mm flex-justify-between">
 							<div class="label flex flex-items-center">
 								<div class="inner">
@@ -351,6 +349,9 @@ Mail wygenerowany automatycznie na stronie %s',
 							</div>
 							<div class="personal personal-parent">
 								<div class="zgody flex flex-wrap">
+									<div class='check-row check2'>
+										Oświadczam, iż stan zdrowia uczestnika/ów pozwala na udział w kursie narciarskim dla dorosłych.
+									</div>
 									<?php get_template_part('template/segment/checkbox','rezerwacja'); ?>
 									<div class="buttons flex flex-wrap flex-column flex-items-center">
 										<button type='submit' class="send flex flex-justify-center flex-items-center">

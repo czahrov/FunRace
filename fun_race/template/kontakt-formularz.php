@@ -29,10 +29,6 @@
 					),
 					
 				),
-				'subject' => array(
-					'filter' => FILTER_SANITIZE_STRING,
-					
-				),
 				'message' => array(
 					'filter' => FILTER_SANITIZE_STRING,
 					
@@ -52,26 +48,35 @@
 				$mail->addAddress( $safe['email'] );
 			}
 			else{
+				$mail->addAddress( $safe['email'] );
 				$mail->addAddress( 'biuro@funrace.pl' );
 			}
 			
 			$mail->addReplyTo( $safe['email'] );
-			$mail->Subject = sprintf(
-				'Nowa wiadomość: %s',
-				$safe['subject']
-				
-			);
+			$mail->Subject = 'FUNRACE - formularz kontaktowy';
 			
-			switch( $_POST['zgoda_na'] ){
-				case 'odpowiedź':
-					$zgoda_na = 'odpowiedzi na tą wiadomość';
-				break;
-				case 'marketing':
-					$zgoda_na = 'przeprowadzania działań marketingowych';
-				break;
-				case 'oferta':
-					$zgoda_na = 'otrzymywania informacji handlowych';
-				break;
+			$zgody_na = array();
+			if( !empty( $_POST['zgoda_na'] ) ){
+				foreach( $_POST['zgoda_na'] as $single ){
+					
+					switch( $single ){
+						case 'odpowiedź':
+							$zgody_na[] = '- odpowiedzi na tą wiadomość';
+						break;
+						case 'marketing':
+							$zgody_na[] = '- przeprowadzania działań marketingowych';
+						break;
+						case 'oferta':
+							$zgody_na[] = '- otrzymywania informacji handlowych';
+						break;
+						
+					}
+					
+				}
+				
+			}
+			else{
+				$zgody_na[] = '- brak';
 				
 			}
 			
@@ -79,28 +84,28 @@
 				'Wiadomość od: %s
 Telefon: %s
 Email: %s
-Temat: %s
 Treść wiadomości:
 %s
 
-Wyrażam zgodę na przetwarzanie moich danych osobowych w celu: %s
+---
+Wyrażam zgodę na przetwarzanie moich danych osobowych w celu/celach:
+%s
 
 ---
 Mail wygenerowany automatycznie na %s',
 				$safe['person'],
 				$safe['phone'],
 				$safe['email'],
-				$safe['subject'],
 				$safe['message'],
-				$zgoda_na,
+				implode( "\r\n", $zgody_na ),
 				home_url()
 				
 			);
 
 			if( DMODE ){
-				// echo "<!--MAIL_BODY:\r\n{$mail->Body}\r\n-->";
-				$sended = $mail->send();
+				echo "<!--MAIL_BODY:\r\n{$mail->Body}\r\n-->";
 				// $sended = true;
+				$sended = $mail->send();
 				
 			}
 			else{
@@ -141,10 +146,6 @@ Mail wygenerowany automatycznie na %s',
 			<label for="phone">Numer telefonu</label>
 			<input type="tel" id="phone" name="phone" value="" class="" value-type="phone" pattern="^\d([\d\- ])+\d$" title="Dozwolone znaki: cyfry, myślinki oraz spacje" required>
 		</div>
-		<div class="item base1 base2-mm base4-ds flex flex-column">
-			<label for="subject">Temat</label>
-			<input type="text" id="subject" name="subject" value-type="subject" required>
-		</div>
 	</div>
 	<div class="area flex flex-column">
 		<label for="message">Treść wiadomości</label>
@@ -158,22 +159,28 @@ Mail wygenerowany automatycznie na %s',
 			</label>
 		</div>
 		<div class='item base1 flex flex-items-start'>
+			<input class='zgoda' type="checkbox" name="polityka" required>
+			<label for="privacy">
+				Akceptuję <a href="<?php echo home_url('polityka-prywatnosci'); ?>">polityka prywatności</a> FunRace
+			</label>
+		</div>
+		<div class='item base1 flex flex-items-start'>
 			Prosimy o zaznaczenie jednego z poniższych pól, w zakresie wyrażenia przez Pana/Panią zgody na posługiwanie się przez FUNRACE Kamil Zaród Pani/Pana danymi osobowymi.
 		</div>
 		<div class='item base1 flex flex-items-start'>
-			<input id='zgoda_formularz' class='zgoda' type='radio' name='zgoda_na' value='odpowiedź' value-type='zgoda' required/>
+			<input id='zgoda_formularz' class='zgoda' type='checkbox' name='zgoda_na[]' value='odpowiedź' value-type='zgoda'/>
 			<label for='zgoda_formularz'>
 				<b>Wyrażam zgodę na przetwarzanie</b> przez FUNANDRACE z siedzibą w Szczawnicy, ul. Jana Pawła II 54 <b>moich danych osobowych</b> w zakresie: imię, nazwisko, dane teleadresowe, adres e-mail, wskazanych w niniejszym formularzu, <b>w celu wysłania odpowiedzi na zadane przeze mnie pytanie.</b> Oświadczam, że moja zgoda jest dobrowolna i może być w każdej chwili wycofana.
 			</label>
 		</div>
 		<div class='item base1 flex flex-items-start'>
-			<input id='zgoda_marketing' class='zgoda' type='radio' name='zgoda_na' value='marketing' value-type='zgoda'  required/>
+			<input id='zgoda_marketing' class='zgoda' type='checkbox' name='zgoda_na[]' value='marketing' value-type='zgoda' />
 			<label for='zgoda_marketing'>
 				<b>Wyrażam zgodę na przetwarzanie</b> przez FUNANDRACE z siedzibą w Szczawnicy, ul. Jana Pawła II 54 <b>moich danych osobowych</b> w zakresie: imię, nazwisko, dane teleadresowe, adres e-mail, <b>w celach marketingowych w tym marketingu bezpośredniego usług własnych.</b> Oświadczam, że moja zgoda jest dobrowolna i może być w każdej chwili wycofana.
 			</label>
 		</div>
 		<div class='item base1 flex flex-items-start'>
-			<input id='zgoda_oferta' class='zgoda' type='radio' name='zgoda_na' value='oferta' value-type='zgoda'  required/>
+			<input id='zgoda_oferta' class='zgoda' type='checkbox' name='zgoda_na[]' value='oferta' value-type='zgoda' />
 			<label for='zgoda_oferta'>
 				<b>Wyrażam zgodę na otrzymywanie</b> od FUNANDRACE z siedzibą w Szczawnicy, ul. Jana Pawła II 54 <b>drogą elektroniczną na wskazany przeze mnie we wniosku adres e-mail, informacji handlowych, dotyczących produktów i usług</b> oferowanych przez FUNRACE w rozumieniu ustawy o świadczeniu usług drogą elektroniczną z dnia 18 lipca 2002 r. (Dz. U z 2013 r., poz. 1422 ze zm.) Oświadczam, że moja zgoda jest dobrowolna i może być w każdej chwili wycofana.
 			</label>

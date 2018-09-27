@@ -241,8 +241,16 @@ Mail wygenerowany automatycznie na stronie %s',
 							<div class="personal personal-parent">
 								<div class="flex flex-wrap">
 									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Data</label>
-										<input type="date" id="" name="data kursu" required>
+										<label for="">Termin</label>
+										<select name='data kursu' required>
+											<?php
+												$terminy = get_post_meta( get_post()->ID, 'terminy', true );
+												$terminy_a = explode( "\r\n", $terminy );
+												foreach( $terminy_a as $termin ){
+													echo "<option>{$termin}</option>";
+												}
+											?>
+										</select>
 									</div>
 								</div>
 							</div>
@@ -297,20 +305,15 @@ Mail wygenerowany automatycznie na stronie %s',
 											<div class='dimms flex optional'>
 												<div class="item flex flex-column base1 base2-mm">
 													<label for="">Długość stopy (cm)</label>
-													<input type="number" id="" name="uczestnik stopa[]">
+													<input type="number" min=0 step=1 id="" name="uczestnik stopa[]">
 												</div>
 												<div class="item flex flex-column base1 base2-mm">
 													<label for="">Wzrost (cm)</label>
-													<input type="number" id="" name="uczestnik wzrost[]">
+													<input type="number" min=0 step=1 id="" name="uczestnik wzrost[]">
 												</div>
 												<div class="item flex flex-column base1 base2-mm">
 													<label for="">Waga (kg)</label>
-													<select name="uczestnik waga[]">
-														<option>&lt;30</option>
-														<option>30-34</option>
-														<option>35-39</option>
-														<option>40-44</option>
-													</select>
+													<input type='number' min=0 step=1 name="uczestnik waga[]">
 												</div>
 											</div>
 											
