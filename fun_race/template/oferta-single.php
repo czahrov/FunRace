@@ -19,11 +19,11 @@
 
 
 <!-- OFFER SINGLE -->
+<?php the_post(); ?>
 <div class="single grid">
     <div class="container padding">
         <div class="content">
             <?php
-				the_post();
 				the_content();
 			?>
         </div>

@@ -1,7 +1,7 @@
 <?php
 $mail->Subject = "Rezerwacja spływu kajakiem";
 $mail->Body = sprintf(
-'Dane organizatora
+'Dane uczestnika
 ---
 Imię: %s
 Nazwisko: %s

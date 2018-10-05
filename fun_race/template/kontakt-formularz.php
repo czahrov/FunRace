@@ -104,8 +104,8 @@ Mail wygenerowany automatycznie na %s',
 
 			if( DMODE ){
 				echo "<!--MAIL_BODY:\r\n{$mail->Body}\r\n-->";
-				// $sended = true;
-				$sended = $mail->send();
+				$sended = true;
+				// $sended = $mail->send();
 				
 			}
 			else{
@@ -159,13 +159,13 @@ Mail wygenerowany automatycznie na %s',
 			</label>
 		</div>
 		<div class='item base1 flex flex-items-start'>
-			<input class='zgoda' type="checkbox" name="polityka" required>
+			<input id='privacy' class='zgoda' type="checkbox" name="polityka" required>
 			<label for="privacy">
 				Akceptuję <a href="<?php echo home_url('polityka-prywatnosci'); ?>">polityka prywatności</a> FunRace
 			</label>
 		</div>
 		<div class='item base1 flex flex-items-start'>
-			Prosimy o zaznaczenie jednego z poniższych pól, w zakresie wyrażenia przez Pana/Panią zgody na posługiwanie się przez FUNRACE Kamil Zaród Pani/Pana danymi osobowymi.
+			Prosimy o zaznaczenie poniższych pól, w zakresie wyrażenia przez Pana/Panią zgody na posługiwanie się przez FUNRACE Kamil Zaród Pani/Pana danymi osobowymi.
 		</div>
 		<div class='item base1 flex flex-items-start'>
 			<input id='zgoda_formularz' class='zgoda' type='checkbox' name='zgoda_na[]' value='odpowiedź' value-type='zgoda'/>

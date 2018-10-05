@@ -5,9 +5,12 @@
 
 if( !empty( $_POST ) ){
 	$formularz = $_POST;
-	echo "<!--";
-	print_r( $formularz );
-	echo "-->";
+	if( DMODE ){
+		echo "<!--FORMULARZ\r\n";
+		print_r( $formularz );
+		echo "\r\n-->";
+	}
+		
 	if( !empty( $formularz['age'] ) ){
 		$sended = false;
 		$sended_msg = "Wiadomość została zatrzymana przez filtr antyspamowy.";
@@ -25,6 +28,7 @@ if( !empty( $_POST ) ){
 		}
 		else{
 			$mail->addAddress( "biuro@funrace.pl" );
+			$mail->addAddress( $formularz['Email_rezerwującego'] );
 			
 		}
 		
@@ -52,12 +56,11 @@ if( !empty( $_POST ) ){
 		
 		if( $mail_path !== null ){
 			if( DMODE ){
-				echo "<!--";
+				echo "<!--MAIL_BODY\r\n";
 				print_r( $mail->Body );
-				echo "-->";
+				echo "\r\n-->";
 				$sended = true;
 				// $sended = $mail->send();
-				
 			}
 			else{
 				$sended = $mail->send();
@@ -65,6 +68,8 @@ if( !empty( $_POST ) ){
 			}
 			
 		}
+		
+		sendConfirm( $formularz['Email_rezerwującego'], $mail->Body );
 		
 	}
 	

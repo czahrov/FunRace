@@ -26,6 +26,7 @@
 			}
 			else{
 				$mail->addAddress( "biuro@funrace.pl" );
+				$mail->addAddress( $formularz['parent-email'] );
 			}
 			
 			$mail->Subject = "Rezerwacja kursu: {$formularz['wydarzenie']}";
@@ -75,7 +76,8 @@ Adres e-mail: %s
 Informacje o kursie
 ---
 Typ szkolenia: %s
-Termin kursu: %s
+Data odbycia się kursu (rrrr-mm-dd): %s do %s
+Preferowana godzina rozpoczęcia: %s
 Liczba godzin (dziennie): %s
 Liczba uczestników: %u
 
@@ -88,6 +90,7 @@ Wiadomość:
 %s
 
 
+Oświadczam, iż stan zdrowia zgłoszonego uczestnika/ów pozwala na udział w szkoleniu narciarskim/snowboardowym. : %s
 Akceptuję regulamin FunRace: %s
 Akceptuję politykę prywatności FunRace: %s
 Wyrażam zgodę na przetwarzanie moich danych osobowych w celach:
@@ -103,7 +106,9 @@ Mail wygenerowany automatycznie na stronie %s',
 				$formularz['parent-email'],
 				
 				$formularz['typ'],
-				$formularz['termin_kursu'],
+				$formularz['początek_kursu'],
+				$formularz['koniec_kursu'],
+				$formularz['preferowana_godzina'],
 				$formularz['ilość_godzin'],
 				count( $formularz['uczestnik_imię'] ),
 				
@@ -111,6 +116,7 @@ Mail wygenerowany automatycznie na stronie %s',
 				
 				$formularz['wiadomość'],
 				
+				$formularz['zdrowie'] === 'on'?( 'tak' ):( 'nie' ),
 				$formularz['regulamin'] === 'on'?( 'tak' ):( 'nie' ),
 				$formularz['polityka'] === 'on'?( 'tak' ):( 'nie' ),
 				$formularz['zapytanie'] === 'on'?( 'tak' ):( 'nie' ),
@@ -126,16 +132,15 @@ Mail wygenerowany automatycznie na stronie %s',
 				print_r( $mail->Body );
 				echo "\r\n-->";
 				$sended = true;
-				// $sended = $mail->send();
-				
+				// $sended = $mail->send();	
 			}
 			else{
 				$sended = $mail->send();
-				
 			}
 			
+			sendConfirm( $formularz['parent-email'], $mail->Body );
+			
 		}
-		
 		
 	}
 	
@@ -222,6 +227,53 @@ Mail wygenerowany automatycznie na stronie %s',
 								</div>
 							</div>
 						</div>
+						<div class="row termin row1 flex flex-column flex-row-mm flex-justify-between">
+							<div class="label flex flex-items-center">
+								<div class="inner">
+									<div class="title">Termin i typ</div>
+									<div class="person">kursu</div>
+								</div>
+							</div>
+							<div class="personal personal-parent">
+								<div class="flex flex-wrap">
+									<div class="item flex flex-column base1 base2-mm">
+										<label for="">Typ kursu</label>
+										<select name='typ' required>
+											<option>Narty</option>
+											<option>Snowboard</option>
+										</select>
+									</div>
+									
+								</div>
+								<div class="flex flex-wrap">
+									<div class="item flex flex-column base1 base2-mm">
+										<label for="">Data rozpoczęcia kursu</label>
+										<input type="date" id="" name="początek kursu" required>
+									</div>
+									<div class="item flex flex-column base1 base2-mm">
+										<label for="">Data zakończenia kursu</label>
+										<input type="date" id="" name="koniec kursu" required>
+									</div>
+									
+								</div>
+								<div class="flex flex-wrap">
+									<div class="item flex flex-column base1 base2-mm">
+										<label for="">Preferowana godzina</label>
+										<input type='time' name='preferowana godzina' required>
+									</div>
+									<div class="item flex flex-column base1 base2-mm">
+										<label for="">Ilość godzin (dziennie)</label>
+										<select name='ilość godzin' required>
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+										</select>
+									</div>
+									
+								</div>
+								
+							</div>
+						</div>
 						<div class="row uczestnicy row1 flex flex-column flex-row-mm flex-justify-between">
 							<div class="label flex flex-items-center">
 								<div class="inner">
@@ -285,47 +337,6 @@ Mail wygenerowany automatycznie na stronie %s',
 								</div>
 							</div>
 						</div>
-						<div class="row termin row1 flex flex-column flex-row-mm flex-justify-between">
-							<div class="label flex flex-items-center">
-								<div class="inner">
-									<div class="title">Termin i typ</div>
-									<div class="person">kursu</div>
-								</div>
-							</div>
-							<div class="personal personal-parent">
-								<div class="flex flex-wrap">
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Typ szkolenia</label>
-										<select name='typ' required>
-											<option>Narty</option>
-											<option>Snowboard</option>
-										</select>
-									</div>
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Termin kursu</label>
-										<select name='termin kursu' required>
-											<?php
-												$terminy = get_post_meta( get_post()->ID, 'terminy', true );
-												$terminy_a = explode( "\r\n", $terminy );
-												if( !empty( $terminy_a ) ) foreach( $terminy_a as $single ){
-													echo "<option>{$single}</option>";
-												}
-											?>
-										</select>
-									</div>
-									<div class="item flex flex-column base1 base2-mm">
-										<label for="">Ilość godzin/dziennie</label>
-										<select name='ilość godzin' required>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-										</select>
-									</div>
-									
-								</div>
-								
-							</div>
-						</div>
 						<div class="row wiadomo row1 flex flex-column flex-row-mm flex-justify-between">
 							<div class="label flex flex-items-center">
 								<div class="inner">
@@ -352,6 +363,12 @@ Mail wygenerowany automatycznie na stronie %s',
 							</div>
 							<div class="personal personal-parent">
 								<div class="zgody flex flex-wrap">
+									<div class="check-row check2 flex">
+										<input type="checkbox" id="zdrowie" name="zdrowie" required="">
+										<label for="zdrowie">
+											Oświadczam, iż stan zdrowia zgłoszonego uczestnika/ów pozwala na udział w szkoleniu narciarskim/snowboardowym.
+										</label>
+									</div>
 									<?php get_template_part('template/segment/checkbox','rezerwacja'); ?>
 									<div class="buttons flex flex-wrap flex-column flex-items-center">
 										<button type='submit' class="send flex flex-justify-center flex-items-center">

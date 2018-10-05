@@ -2,7 +2,7 @@
 add_theme_support('post-thumbnails');
 add_theme_support('widgets');
 
-define( 'DEVELOP', true );
+define( 'DEVELOP', false );
 define( 'DMODE', isset( $_COOKIE[ 'sprytne' ] ) );
 
 include __DIR__ . "/php/PHPMailer/PHPMailerAutoload.php";
@@ -19,10 +19,10 @@ function getNL(){
 	return $NL;
 }
 
-function getMailer(){
+function getMailer( $new = false ){
 	static $mailer = null;
 	
-	if( $mailer === null ){
+	if( $new === true or $mailer === null ){
 		$mailer = new PHPMailer();
 		$mailer->Encoding = "base64";
 		$mailer->CharSet = "utf-8";
@@ -671,3 +671,31 @@ function getMarkers(){
 	return $markers;
 	
 }
+
+/* funkcja wysyłająca potwierdzenie złożenia rezerwacji na konto klienta */
+function sendConfirm( $adres = null, $msg = '' ){
+	$out = sprintf(
+			'Kopia złożonego zamówienia
+======================
+%s',
+			$msg,
+			home_url()
+			
+		);
+	
+	if( DMODE ){
+		echo "<!--CONFIRM:\r\n";
+		echo $out;		
+		echo "\r\n-->";	
+	}
+	else{
+		$mail = getMailer( true );
+		$mail->setFrom( "noreply@{$_SERVER['HTTP_HOST']}", "FUNRACE – formularz rezerwacji" );
+		$mail->addAddress( $adres );
+		$mail->Subject = "Potwierdzenie złożenia rezerwacji";
+		$mail->Body = $out;
+		$mail->send();
+	}
+	
+}
+

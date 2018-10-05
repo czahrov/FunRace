@@ -2410,8 +2410,22 @@ body{
 	border: 1px solid #ebebeb;
 	margin-bottom: 60px;
 	
+	@mixin tableHead{
+		padding-left: 30px;
+		height: 68px;
+		background-color: transparent;
+		line-height: 1.5em;
+		color: #fff;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 26px;
+		font-family: var(--font-medium);
+		
+	}
+	
 	table{
 		width: 100%;
+		border: none;
 		border-collapse: collapse;
 		
 		thead{
@@ -2419,14 +2433,7 @@ body{
 			tr{
 				
 				td{
-					padding-left: 30px;
-					height: 68px;
-					line-height: 1.5em;
-					color: #fff;
-					text-transform: uppercase;
-					letter-spacing: 1px;
-					font-size: 26px;
-					font-family: var(--font-medium);
+					@include tableHead;
 					
 				}
 				
@@ -2444,6 +2451,14 @@ body{
 					font-size: 16px;
 					font-family: var(--font-light);
 					line-height: 2.1em;
+					
+				}
+				
+				&:first-child{
+					
+					td{
+						@include tableHead;
+					}
 					
 				}
 				
@@ -2474,51 +2489,70 @@ body{
 	
 	.cennik{
 		
-		.title{
-			padding: 10px 0;
-			font-family: var(--font-medium);
+		.cell{
+			position: relative;
+			padding: 5px 10px;
+			height: 30px;
+			white-space: nowrap;
+			font-family: var(--font-light);
+			
+			&::after{
+				content: '';
+				margin: -0.5px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				border: solid 1px black;
+				
+			}
+			
 		}
 		
-		table{
+		.clm{
 			
-			tr{
+		}
+		
+		.godziny{
+			
+			.cell{
+				font-family: var(--font-medium);
 				
-				td{
-					position: relative;
-					padding: 5px 10px;
-					height: 30px;
-					white-space: nowrap;
-					font-family: var(--font-light);
+			}
+			
+		}
+		
+		.osoby{
+			overflow: auto;
+			padding-bottom: 1px;
+			
+			.clm{
+				
+				.cell{
 					
-					&::after{
-						content: '';
-						margin: -0.5px;
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
-						border: solid 1px black;
-						
-					}
-					
-					
-					&:nth-child(even){
-						background-color: #eee;
+					&:first-child{
+						font-family: var(--font-medium);
 						
 					}
 					
 				}
 				
-				&:first-child{
-					
-					td{
-						font-family: var(--font-medium);	
-					}
+				&:nth-child( odd ){
+					background-color: #eee;
 					
 				}
 				
 			}
+			
+		}
+		
+	}
+	
+	.nav-act{
+		
+		.container{
+			height: initial;
 			
 		}
 		
@@ -2571,6 +2605,92 @@ body{
 					display: none !important;
 					
 				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+.wypozyczalnia-kajakow-na-dunajcu{
+	
+	table{
+		border-collapse: collapse;
+		
+		tr{
+			
+			td{
+				border: solid 1px #ebebeb;
+				padding: 5px 10px;
+				
+				img{
+					display: block;
+					margin: auto;
+					padding: 10px;
+					
+				}
+				
+			}
+			
+		}
+		
+		thead{
+			
+			td{
+				padding: 15px;
+				min-height: 60px;
+				line-height: 30px;
+				font-family: var(--font-bold);
+				
+			}
+			
+		}
+		
+		tbody{
+			
+			td{
+				font-family: var(--font-medium);
+				
+				&:first-child{
+					padding: 0;
+					width: 33%;
+					
+				}
+				
+				&:nth-child(2){
+					
+					p{
+						font-family: var(--font-light);
+						
+						strong{
+							font-family: var(--font-medium) !important;
+							
+						}
+						
+					}
+					
+				}
+				
+				@media( max-width: 767px ){
+					display: block;
+					
+					&:first-child{
+						width: initial;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		@media( max-width: 767px ){
+			
+			td{
+				display: block;
 				
 			}
 			

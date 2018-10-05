@@ -4,9 +4,13 @@
 	*/
 	
 	if( DMODE ){
-		echo "<!--";
+		echo "<!--META\r\n";
+		print_r( get_post_meta( get_post()->ID ) );
+		echo "\r\n-->";
+		echo "<!--POST\r\n";
 		print_r( $_POST );
-		echo "-->";
+		echo "\r\n-->";
+		
 	}
 	
 	if( !empty( $_POST ) ){
@@ -25,10 +29,11 @@
 				$mail->addAddress( 'sprytne@scepter.pl' );
 			}
 			elseif( DEVELOP ){
-				$mail->addAddress( $formularz['Email_rezerwującego'] );
+				$mail->addAddress( $formularz['parent-email'] );
 			}
 			else{
 				$mail->addAddress( "biuro@funrace.pl" );
+				$mail->addAddress( $formularz['parent-email'] );
 			}
 			
 			$mail->Subject = "Rezerwacja kursu: {$formularz['wydarzenie']}";
@@ -63,9 +68,9 @@ Uczestnik: %u
 					$formularz['uczestnik_opis'][$i],
 					$formularz['uczestnik_wypożyczalnia'][$i] === 'on'?('tak'):('nie'),
 					$formularz['uczestnik_wypożyczalnia'][$i] === 'on'?( sprintf(
-	'Długość stopy: %u cm
-	Wzrost: %u cm
-	Waga: %u kg',
+	'	Długość stopy: %u cm
+		Wzrost: %u cm
+		Waga: %u kg',
 					$formularz['uczestnik_stopa'][$i],
 					$formularz['uczestnik_wzrost'][$i],
 					$formularz['uczestnik_waga'][$i]
@@ -78,7 +83,7 @@ Uczestnik: %u
 			}
 			
 			$mail->Body = sprintf(
-'Dane organizatora
+'Dane Opiekuna
 ---
 Imię: %s
 Nazwisko: %s
@@ -99,12 +104,13 @@ Wiadomość
 %s
 
 
+Oświadczam, iż stan zdrowia zgłoszonego uczestnika/ów pozwala na udział w zajęciach Akademii Narciarskiej Mamucik: %s
 Akceptuję regulamin FunRace: %s
 Akceptuję politykę prywatności FunRace: %s
 Wyrażam zgodę na przetwarzanie moich danych osobowych w celach:
-obsługi zapytania: %s
-działań marketingowych: %s
-otrzymywania informacji handlowych: %s
+- obsługi zapytania: %s
+- działań marketingowych: %s
+- otrzymywania informacji handlowych: %s
 
 ---
 Mail wygenerowany automatycznie na stronie %s',
@@ -121,6 +127,7 @@ Mail wygenerowany automatycznie na stronie %s',
 				
 				$formularz['wiadomość'],
 				
+				$formularz['zdrowie'] === 'on'?( 'tak' ):( 'nie' ),
 				$formularz['regulamin'] === 'on'?( 'tak' ):( 'nie' ),
 				$formularz['polityka'] === 'on'?( 'tak' ):( 'nie' ),
 				$formularz['zapytanie'] === 'on'?( 'tak' ):( 'nie' ),
@@ -135,14 +142,16 @@ Mail wygenerowany automatycznie na stronie %s',
 				echo "<!--Mail:\r\n";
 				print_r( $mail->Body );
 				echo "\r\n-->";
-				// $sended = true;
-				$sended = $mail->send();
+				$sended = true;
+				// $sended = $mail->send();
 				
 			}
 			else{
 				$sended = $mail->send();
 				
 			}
+			
+			sendConfirm( $formularz['parent-email'], $mail->Body );
 			
 		}	
 		
@@ -242,7 +251,7 @@ Mail wygenerowany automatycznie na stronie %s',
 								<div class="flex flex-wrap">
 									<div class="item flex flex-column base1 base2-mm">
 										<label for="">Termin</label>
-										<select name='data kursu' required>
+										<select name='data kursu'>
 											<?php
 												$terminy = get_post_meta( get_post()->ID, 'terminy', true );
 												$terminy_a = explode( "\r\n", $terminy );
@@ -354,6 +363,10 @@ Mail wygenerowany automatycznie na stronie %s',
 							</div>
 							<div class="personal personal-parent">
 								<div class="zgody flex flex-wrap">
+									<div class="check-row check2 flex">
+										<input type="checkbox" id="zdrowie" name="zdrowie" required>
+										<label for="zdrowie">Oświadczam, iż stan zdrowia zgłoszonego uczestnika/ów pozwala na udział w zajęciach Akademii Narciarskiej Mamucik </label>
+									</div>
 									<?php get_template_part('template/segment/checkbox','rezerwacja'); ?>
 									<div class="buttons flex flex-wrap flex-column flex-items-center">
 										<button type='submit' class="send flex flex-justify-center flex-items-center">
