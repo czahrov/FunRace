@@ -3,6 +3,12 @@
 	Template Name: Rezerwacja - formularz i mail
 */
 
+if( DMODE ){
+	echo "<!--\r\n";
+	print_r( get_post() );
+	echo "\r\n-->";
+}
+
 if( !empty( $_POST ) ){
 	$formularz = $_POST;
 	if( DMODE ){
@@ -33,15 +39,18 @@ if( !empty( $_POST ) ){
 		}
 		
 		/* sprawdzanie czy istnieje formatka maila i ładowanie jej */
+		$mail_path = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post()->post_name );
 		
-		$mail_path = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post()->post_title );
+		if( DMODE ){
+			echo "<!-- PATH:\r\n{$mail_path}\r\n-->";
+		}
 		
 		if( file_exists( $mail_path ) ){
 			include $mail_path;
 			
 		}
 		else{
-			$mail_path = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post( get_post()->post_parent )->post_title );
+			$mail_path = sprintf( '%s/php/rezerwacja/mail/%s.php', get_template_directory(), get_post( get_post()->post_parent )->post_name );
 			
 			if( file_exists( $mail_path ) ){
 				include $mail_path;
@@ -132,8 +141,8 @@ get_header();
 						<input type='hidden' name='Wydarzenie' value='<?php echo get_post()->post_title; ?>'>
 						<?php
 							/* Ładowanie formularza z pliku php */
-							$form_path = sprintf( '%s/php/rezerwacja/form/%s.php', get_template_directory(), get_post()->post_title );
-							$form_path_parent = sprintf( '%s/php/rezerwacja/form/%s.php', get_template_directory(), get_post( get_post()->post_parent )->post_title );
+							$form_path = sprintf( '%s/php/rezerwacja/form/%s.php', get_template_directory(), get_post()->post_name );
+							$form_path_parent = sprintf( '%s/php/rezerwacja/form/%s.php', get_template_directory(), get_post( get_post()->post_parent )->post_name );
 							
 							if( DMODE ){
 								printf(
