@@ -20,7 +20,7 @@
             <a href="<?php echo home_url('zima'); ?>" class="flex flex-justify-center flex-items-center">oferta zimowa</a>
             <a href="<?php echo home_url('lato'); ?>" class="flex flex-justify-center flex-items-center"> oferta letnia</a>
         </div>
-        <p>wszystkie prawa zastrzeżone FunRace.pl 2017</p>
+        <p>wszystkie prawa zastrzeżone &copy; FunRace.pl <?php echo date('Y'); ?></p>
     </header>
 	<?php wp_footer(); ?>
 </body>

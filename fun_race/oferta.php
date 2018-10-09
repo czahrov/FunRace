@@ -9,10 +9,12 @@
 	<header>
 		<?php get_template_part("template/menu"); ?>	
 		<div class="poster-sub flex flex-justify-center flex-items-center">
-			<div class="cover parallax"></div>
+			<div class="cover parallax" style='background-image:url( <?php echo get_the_post_thumbnail_url( $oferta->ID, 'large' ); ?> )'></div>
 			<div class="filtr"></div>
 			<div class="content">
-				<h2>Fun&amp;Race <span class="block">Oferta zimowa</span></h2>
+				<h2>
+					<span class="block">Oferta zimowa</span>
+				</h2>
 			</div>
 		</div>
 	</header>

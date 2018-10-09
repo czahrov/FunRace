@@ -1500,28 +1500,55 @@ body{
 		.single{
 			
 			table{
-				width: 100%;
-				margin-bottom: 20px;
-				border-collapse: collapse;
+		border-collapse: collapse;
+		
+		tr{
+			
+			td{
+				border: solid 1px #ebebeb;
+				padding: 5px 10px;
 				
-				tr{
-					display: flex;
+				img{
+					display: block;
+					margin: auto;
+					padding: 10px;
 					
-					td{
-						display: flex;
-						flex-basis: 100%;
-						align-items: center;
-						justify-content: center;
-						text-align: center;
-						padding: 0 5px;
-						height: 80px;
-						font-size: 28px;
-						font-family: var(--font-sec-black);
-						border: solid $border;
-						border-width: 0 1px 0 1px;
+				}
+				
+			}
+			
+		}
+		
+		thead{
+			
+			td{
+				padding: 15px;
+				min-height: 60px;
+				line-height: 30px;
+				font-family: var(--font-bold);
+				
+			}
+			
+		}
+		
+		tbody{
+			
+			td{
+				font-family: var(--font-medium);
+				
+				&:first-child{
+					padding: 0;
+					width: 33%;
+					
+				}
+				
+				&:nth-child(2){
+					
+					p{
+						font-family: var(--font-light);
 						
-						&:first-child{
-							
+						strong{
+							font-family: var(--font-medium) !important;
 							
 						}
 						
@@ -1529,92 +1556,31 @@ body{
 					
 				}
 				
-				
-				
-				tr{
-					display: flex;
+				@media( max-width: 767px ){
+					display: block;
 					
-					td{
-						display: flex;
-						flex-basis: 100%;
-						align-items: center;
-						justify-content: center;
-						text-align: center;
-						padding: 0 5px;
-						height: 80px;
-						font-size: 28px;
-						font-family: var(--font-sec-black);
-						border: solid $border;
-						border-width: 0 1px 0 1px;
-						
-						&:first-child{
-							
-							
-						}
-						
-					}
-					
-				}
-				
-				thead{
-					
-					tr{
-						
-						td{
-							height: 60px;
-							
-							&:not(:first-child){
-								@include header();							
-								border: solid $border;
-								border-width: 0 0 1px 1px;
-								
-							}
-							
-						}
-						
-					}
-					
-				}
-				
-				tbody{
-					
-					tr{
-						
-						td{
-							
-							&:first-child{
-								@include header();
-								
-							}
-							
-							&:not(:first-child)::after{
-								content: 'zł';
-								
-							}
-							
-						}
-						
-					}
-					
-				}
-				
-				&.std{
-					@media( max-width: 1023px ){
-						display: none;
-						
-					}
-					
-				}
-				
-				&.mobile{
-					@media( min-width: 1024px ){
-						display: none;
+					&:first-child{
+						width: initial;
 						
 					}
 					
 				}
 				
 			}
+			
+		}
+		
+		@media( max-width: 767px ){
+			
+			td{
+				display: block;
+				
+			}
+			
+		}
+		
+	}
+	
 			
 		}
 		
@@ -2614,89 +2580,4 @@ body{
 	
 }
 
-.wypozyczalnia-kajakow-na-dunajcu{
-	
-	table{
-		border-collapse: collapse;
-		
-		tr{
-			
-			td{
-				border: solid 1px #ebebeb;
-				padding: 5px 10px;
-				
-				img{
-					display: block;
-					margin: auto;
-					padding: 10px;
-					
-				}
-				
-			}
-			
-		}
-		
-		thead{
-			
-			td{
-				padding: 15px;
-				min-height: 60px;
-				line-height: 30px;
-				font-family: var(--font-bold);
-				
-			}
-			
-		}
-		
-		tbody{
-			
-			td{
-				font-family: var(--font-medium);
-				
-				&:first-child{
-					padding: 0;
-					width: 33%;
-					
-				}
-				
-				&:nth-child(2){
-					
-					p{
-						font-family: var(--font-light);
-						
-						strong{
-							font-family: var(--font-medium) !important;
-							
-						}
-						
-					}
-					
-				}
-				
-				@media( max-width: 767px ){
-					display: block;
-					
-					&:first-child{
-						width: initial;
-						
-					}
-					
-				}
-				
-			}
-			
-		}
-		
-		@media( max-width: 767px ){
-			
-			td{
-				display: block;
-				
-			}
-			
-		}
-		
-	}
-	
-}
 
