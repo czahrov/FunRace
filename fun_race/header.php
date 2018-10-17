@@ -1,11 +1,11 @@
 <?php
 	session_start();
 	
-	if( !checkAccess() ){
+	/* if( !checkAccess() ){
 		include 'wbudowie.php';
 		exit;
 		
-	}
+	} */
 	
 	$infix = DMODE?( "" ):( ".min" );
 	$buster = DMODE?( time() ):( false );
