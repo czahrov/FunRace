@@ -5,6 +5,9 @@
 ?>
 <body id="oferta-single" class='<?php do_action( 'body_hook' ); ?>'>
 	<?php if( DMODE ): ?>
+	<!-- WP_POST
+		<?php var_dump( get_post() ); ?>
+	-->
 	<!-- META
 		<?php var_dump( get_post_meta( get_post()->ID ) ); ?>
 	-->
@@ -23,9 +26,7 @@
 <div class="single grid">
     <div class="container padding">
         <div class="content">
-            <?php
-				the_content();
-			?>
+            <?php the_content(); ?>
         </div>
         <div class="white-space-40"></div>
 		<?php //get_template_part('template/oferta-single-opis'); ?>
@@ -39,6 +40,12 @@
     </div>
 	
 </div>
+<?php
+	if( get_post()->post_title == 'Centrum Testowe HEAD' ){
+		get_template_part('template/formularz-rezerwacja-nart');
+		
+	}
+?>
 
 
 
